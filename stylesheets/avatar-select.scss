@@ -1,0 +1,83 @@
+#avatar-select {
+  background-color: $avatar-sidebar-background;
+  position:fixed;
+  top:0;
+  left:0;
+  width:$avatar-sidebar-width;
+  height:100%;
+  padding-top:10px;
+  z-index:10;
+}
+.admin-bar #avatar-select {
+  padding-top:32px;
+}
+#avatar-select ul li:first-child {
+  margin-bottom:20px;
+}
+#avatar-select ul li {
+  margin-bottom:15px;
+}
+#avatar-select ul li a {
+  margin:10px auto 10px;
+  color:$avatar-sidebar-link-color;
+  text-decoration:none;
+  font-family: 'Montserrat', sans-serif;
+  text-align:center;
+}
+.avatar-icon {
+  display:block;
+  background-size:36px 36px;
+  padding-top:40px;
+  background-position:top center;
+  background-repeat:no-repeat;
+
+  text-align:center;
+  font-size:11px;
+  text-transform:uppercase;
+
+  opacity:1;
+  @include transition(opacity, 0.2s, ease-in-out);
+}
+.avatar-icon.disabled {
+  opacity:0.5;
+}
+.avatar-icon:hover {
+  opacity:0.75;
+}
+#collapse-sidebar {
+  width:30px;
+  height:30px;
+  display:block;
+  font-weight:bolder;
+  background-color:#efebe4;
+  border-radius:100%;
+  border:1px solid #c1bebc;
+  font-size: 22px;
+  @include transition(all, 0.5s, ease-in-out);
+  animation-delay:0.4s;
+  -webkit-animation-delay:0.4s;
+}
+#collapse-sidebar.closed {
+  -webkit-transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -ms-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+#collapse-sidebar span {
+  color:#c1bebc;
+  width:100%;
+  line-height:34px;
+}
+.icon-politics {
+  background-image:url('images/politics_icon.png');
+}
+.icon-gaming {
+  background-image:url('images/gaming_icon.png');
+}
+.icon-pop-culture {
+  background-image:url('images/pop_culture_icon.png');
+}
+.icon-tech {
+  background-image:url('images/tech_icon.png');
+}

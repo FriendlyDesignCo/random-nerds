@@ -1,0 +1,82 @@
+#article-sidebar {
+  position:fixed;
+  width:$article-sidebar-width;
+  background-color:$article-sidebar-background;
+  height:100%;
+  @include transition(margin-left, 0.5s, ease-in-out);
+
+  .article {
+    padding:20px;
+    box-sizing:border-box;
+    color:$paragraph-color;
+    font-family: 'Playfair Display', serif;
+    font-size:20px;
+    line-height:1.2em;
+    border-bottom:1px solid $line-color;
+    @include transition(all, 0.5s, ease);
+    position:relative;
+  }
+  .article.featured {
+    background-color:$header-footer-background;
+    color:#fff;
+    padding-top:30px;
+    padding-bottom:30px;
+  }
+  .article.featured h2 {
+    font-family: 'Covered By Your Grace', cursive;
+    font-size:30px;
+    -webkit-transform:rotate(-8deg);
+    -moz-transform:rotate(-8deg);
+    padding-bottom:10px;
+    overflow:display;
+  }
+
+  .article .cover {
+    opacity:0;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    font-family: 'Covered By Your Grace', cursive;
+    -webkit-transform:rotate(-8deg);
+    -moz-transform:rotate(-8deg);
+    padding:30px;
+    box-sizing:border-box;
+    @include transition(opacity, 0.8s, ease);
+    text-align:center;
+    color:#fff;
+  }
+  .article:hover .cover {
+    display:block;
+    opacity:1;
+  }
+
+  .article:hover h3, .article:hover h2 {
+    color:#fff;
+    opacity:0.15;
+  }
+  .article.category-politics:hover {
+    background-color:$politics-color;
+  }
+  .article.category-gaming:hover {
+    background-color:$gaming-color;
+  }
+  .article.category-tech:hover {
+    background-color:$tech-color;
+  }
+  .article.category-pop-culture:hover {
+    background-color:$pop-culture-color;
+  }
+
+  h3.category {
+    text-transform:uppercase;
+    font-family: 'Montserrat', sans-serif;
+    font-size:14px;
+    color:$avatar-sidebar-category-color;
+  }
+}
+
+#article-sidebar.hidden {
+  margin-left:-$article-sidebar-width;
+}

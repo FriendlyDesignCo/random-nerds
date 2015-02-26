@@ -4,4 +4,33 @@ Author: Friendy Design Co
 Author URI: http://friendlydesign.co
 */
 
-@import 'stylesheets/_meyer-reset.scss'
+@import 'stylesheets/_meyer-reset.scss';
+@import 'stylesheets/_transitions.scss';
+
+$handwriting-color: #588aaf;
+$paragraph-color: #666;
+$politics-color: #865e81;
+$pop-culture-color: #ce4b43;
+$gaming-color: #fdb548;
+$tech-color: #a9c5d3;
+$line-color:#d3cfc9;
+
+$article-sidebar-background: #f4f1ed;
+$article-sidebar-width:300px;
+
+$avatar-sidebar-background: #e5e0d8;
+$avatar-sidebar-link-color: #96918f;
+$avatar-sidebar-width:60px;
+$avatar-sidebar-category-color: #c5c1be;
+
+$header-footer-background: #303b47;
+
+body {
+  padding-left:$avatar-sidebar-width
+}
+a {
+  text-decoration:none;
+}
+
+@import 'stylesheets/avatar-select.scss';
+@import 'stylesheets/article-sidebar.scss';
