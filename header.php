@@ -37,7 +37,7 @@
         ?>
           <a href="<?php the_permalink(); ?>">
             <div class="article <?php echo implode(' ', $categorySlugs); ?>">
-              <div class="cover">SUBTITLE</div>
+              <div class="cover"><?php the_field('post_subtitle'); ?></div>
               <h3 class="category"><?php echo implode(', ', $categoryNames);?></h3>
               <h2><?php the_title(); ?></h2>
             </div>
