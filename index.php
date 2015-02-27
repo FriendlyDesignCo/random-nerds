@@ -15,7 +15,7 @@
           <div class="category-info">
             <a href="#"><?php echo implode(', ', $categoryNames); ?></a> post # <a href="<?php the_permalink(); ?>" class="black"><?php the_ID(); ?></a>
           </div>
-          <h2><?php the_title(); ?></h2>
+          <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
           <div class="meta-row">
             <hr>
             <span class="light-grey">By:</span> <a class="author-link" href="#">Author Name</a> <span class="light-grey">Posted In:</span> <a href="#">Tag</a>, <a href="#">Tag</a>

@@ -15,6 +15,12 @@ function randomNerdsScripts()
 }
 add_action('wp_enqueue_scripts', 'randomNerdsScripts');
 
+function aside($attributes, $content)
+{
+  return '<aside><img src="' . get_bloginfo('template_url') . '/images/aside_arrow.png"><br>' . $content . '</aside>';
+}
+add_shortcode('aside', 'aside');
+
 /* Advanced Custom Fields PRO */
 add_filter('acf/settings/path', 'my_acf_settings_path');
 function my_acf_settings_path( $path ) {
