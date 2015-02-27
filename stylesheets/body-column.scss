@@ -110,12 +110,17 @@
     }
 
     aside {
-      position:absolute;
-      top:30px;
-      right:-120px;
+      @media (min-width:1280px) {
+        position:absolute;
+        right:-140px;
+      }
+      @media (max-width:1280px) {
+        float:right;
+        padding-left:10px;
+      }
       font-family: 'Covered By Your Grace', cursive;
       color:$aside-color;
-      width:100px;
+      width:125px;
       font-size:22px;
       -webkit-transform:rotate(-10deg);
       -moz-transform:rotate(-10deg);
@@ -123,6 +128,11 @@
         width:30px;
         clear:both;
       }
+    }
+
+    iframe {
+      margin:0 auto;
+      display:block;
     }
 
   }
