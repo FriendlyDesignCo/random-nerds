@@ -38,6 +38,9 @@ a {
 .clearfix {
   clear:both;
 }
+.text-center {
+  text-align:center;
+}
 hr.divider {
   padding: 0;
   border: none;
@@ -58,6 +61,9 @@ hr.divider.signature:after {
   border-right:1px solid $hr-color;
   padding-left:10px;
   padding-right:10px;
+}
+hr.small {
+  width:250px;
 }
 
 @import 'stylesheets/avatar-select.scss';

@@ -23,6 +23,35 @@
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
+        },
+        {
+            "key": "field_54f0b74f4752a",
+            "label": "Color Mode",
+            "name": "color_mode",
+            "prefix": "",
+            "type": "select",
+            "instructions": "For posts with a lightly-colored feature image, choose \"Light Mode\" to use a dark headline color for contrast. For posts with a darkly-colored feature image, choose \"Dark Mode\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "dark-mode": "Dark Mode",
+                "light-mode": "Light Mode"
+            },
+            "default_value": {
+                "dark-mode": "dark-mode"
+            },
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
         }
     ],
     "location": [
@@ -40,5 +69,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1425022827
+    "modified": 1425061794
 }
