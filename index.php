@@ -2,7 +2,7 @@
 
 
   <section id="content-body">
-    <?php while (have_posts()): the_post();
+    <?php $i = 0; while (have_posts()): the_post();
     $categories = get_the_category();
     $categoryNames = array(); $categorySlugs = array();
     foreach ($categories as $category) {
@@ -24,6 +24,9 @@
           <?php the_content('<div class="read-more"><span>Read More</span> <div class="arrow">&#8594;</div><div class="clearfix"></div></div>'); ?>
         </div>
       </article>
-    <?php endwhile; ?>
+      <?php if ($i < ($wp_query->found_posts - 1)): ?>
+        <hr class="divider <?php if ($i == 0): ?>signature<?php endif; ?>">
+      <?php endif; ?>
+    <?php $i++; endwhile; ?>
   </section>
 <?php get_footer(); ?>
