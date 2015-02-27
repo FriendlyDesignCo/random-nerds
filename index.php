@@ -64,7 +64,7 @@ $i = 0; ?>
           <?php the_content('<div class="read-more"><span>Read More</span> <div class="arrow">&#8594;</div><div class="clearfix"></div></div>'); ?>
         </div>
       </article>
-      <?php if ($i < ($wp_query->found_posts - 1)): ?>
+      <?php if ($i < ($wp_query->found_posts)): ?>
         <hr class="divider <?php if ($i == 0): ?>signature<?php endif; ?>">
       <?php endif; ?>
     <?php $i++; endwhile; ?>
