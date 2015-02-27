@@ -14,7 +14,8 @@ e,b,e,g,d);a.widthOnly?(c.css({"font-size":l,"white-space":"nowrap"}),a.changeLi
       $(window).resize(function(){
         $(".fittext").textfill({maxFontPixels: 100});
       });
-      $("#collapse-sidebar").click(function(){
+      $("#collapse-sidebar").click(function(event){
+        event.preventDefault();
         $(this).toggleClass('closed');
         $("#content").toggleClass('sidebar-hidden');
         $("#content").toggleClass('sidebar-visible');

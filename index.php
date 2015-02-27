@@ -31,7 +31,7 @@ $i = 0; ?>
                 <span class="light-grey">By:</span> <a class="author-link" href="<?php echo get_author_posts_url(get_the_author_ID()); ?>"><?php the_author(); ?></a>
               </div>
               <hr class="small">
-              <?php the_content(); ?>
+              <?php the_content('<div class="read-more"><span>Read More</span> <div class="arrow">&#8594;</div><div class="clearfix"></div></div>'); ?>
             </div>
           </article>
           <hr class="divider signature">
