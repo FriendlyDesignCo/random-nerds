@@ -19,7 +19,9 @@
           <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
           <div class="meta-row">
             <hr>
-            <span class="light-grey">By:</span> <a class="author-link" href="#">Author Name</a> <span class="light-grey">Posted In:</span> <?php echo implode(', ', $categoryLinks); ?>
+            <span class="light-grey">
+              By:</span> <a class="author-link" href="<?php echo get_author_posts_url(get_the_author_ID()); ?>"><?php the_author(); ?></a>
+              <span class="light-grey">Posted In:</span> <?php echo implode(', ', $categoryLinks); ?>
             <hr>
           </div>
           <?php the_content('<div class="read-more"><span>Read More</span> <div class="arrow">&#8594;</div><div class="clearfix"></div></div>'); ?>
