@@ -4,10 +4,11 @@
   <section id="content-body">
     <?php $i = 0; while (have_posts()): the_post();
     $categories = get_the_category();
-    $categoryNames = array(); $categorySlugs = array();
+    $categoryNames = array(); $categorySlugs = array(); $categoryLinks = array();
     foreach ($categories as $category) {
       $categoryNames[] = $category->cat_name;
       $categorySlugs[] = 'category-'.$category->slug;
+      $categoryLinks[] = '<a href="' . get_category_link($category->cat_ID) . '">' . $category->cat_name . '</a>';
     }
     ?>
       <article class="<?php echo implode(' ', $categorySlugs); ?>">
@@ -18,7 +19,7 @@
           <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
           <div class="meta-row">
             <hr>
-            <span class="light-grey">By:</span> <a class="author-link" href="#">Author Name</a> <span class="light-grey">Posted In:</span> <a href="#">Tag</a>, <a href="#">Tag</a>
+            <span class="light-grey">By:</span> <a class="author-link" href="#">Author Name</a> <span class="light-grey">Posted In:</span> <?php echo implode(', ', $categoryLinks); ?>
             <hr>
           </div>
           <?php the_content('<div class="read-more"><span>Read More</span> <div class="arrow">&#8594;</div><div class="clearfix"></div></div>'); ?>
