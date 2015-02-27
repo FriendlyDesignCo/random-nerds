@@ -13,7 +13,8 @@ $politics-color: #865e81;
 $pop-culture-color: #ce4b43;
 $gaming-color: #fdb548;
 $tech-color: #a9c5d3;
-$line-color:#d3cfc9;
+$line-color: #d3cfc9;
+$light-grey: #ccc;
 
 $article-sidebar-background: #f4f1ed;
 $article-sidebar-width:300px;
@@ -31,6 +32,14 @@ body {
 a {
   text-decoration:none;
 }
+.clearfix {
+  clear:both;
+}
 
 @import 'stylesheets/avatar-select.scss';
 @import 'stylesheets/article-sidebar.scss';
+@import 'stylesheets/body-column.scss';
+
+.black {
+  color:#000;
+}

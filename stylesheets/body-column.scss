@@ -1,0 +1,108 @@
+.sidebar-visible #content-body {
+  margin-left:$article-sidebar-width;
+}
+#content-body {
+  @include transition(margin-left, 0.5s, ease-in-out);
+
+  article.category-politics a {
+    color: $politics-color;
+  }
+  article.category-gaming a {
+    color: $gaming-color;
+  }
+  article.category-tech a {
+    color: $tech-color;
+  }
+  article.category-pop-culture a {
+    color: $pop-culture-color;
+  }
+
+  article {
+    width:70%;
+    max-width:1000px;
+    margin:0 auto;
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size:40px;
+      padding-top:10px;
+      padding-bottom:10px;
+    }
+
+    hr {
+      background-color: $light-grey;
+      border:0;
+      height:1px;
+      margin-top:20px;
+      margin-bottom:20px;
+    }
+
+    .category-info {
+      padding-top:20px;
+      padding-bottom:10px;
+      text-transform:uppercase;
+      font-family: 'Montserrat', sans-serif;
+      font-size:11px;
+      letter-spacing:0.1em;
+      color: $light-grey;
+
+      a.black {
+        color:#000;
+      }
+    }
+
+    .meta-row {
+      font-family: 'Lora', serif;
+      font-size:14px;
+
+      .light-grey {
+        font-family: 'Montserrat', sans-serif;
+        color:$light-grey;
+        text-transform:uppercase;
+      }
+
+      .author-link {
+        color:#000;
+      }
+    }
+
+    p {
+      font-family: 'Lora', serif;
+      font-size: 20px;
+      line-height:1.5em;
+    }
+    p + p {
+      margin-top:2em;
+    }
+
+    .read-more {
+      border-top:1px solid $light-grey;
+      border-bottom:1px solid $light-grey;
+      width:230px;
+      margin:0 auto;
+      text-align:center;
+      a {
+        color:#000;
+        font-family: 'Montserrat', sans-serif;
+        text-transform:uppercase;
+        font-size:24px;
+        padding:20px;
+        display:block;
+
+        span {
+          float:left;
+        }
+        .arrow {
+          border:1px solid #000;
+          border-radius:100%;
+          font-weight:100;
+          float:right;
+          width: 25px;
+          height: 25px;
+          line-height: 25px;
+        }
+      }
+    }
+
+  }
+}

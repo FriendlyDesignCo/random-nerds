@@ -1,10 +1,7 @@
 <?php get_header(); ?>
-<section id="content">
-  <section id="article-sidebar">
-    <div class="article featured">
-      <h2>Featured Article Title</h2>
-    </div>
 
+
+  <section id="content-body">
     <?php while (have_posts()): the_post();
     $categories = get_the_category();
     $categoryNames = array(); $categorySlugs = array();
@@ -13,14 +10,20 @@
       $categorySlugs[] = 'category-'.$category->slug;
     }
     ?>
-      <a href="#">
-        <div class="article <?php echo implode(' ', $categorySlugs); ?>">
-          <div class="cover">SUBTITLE</div>
-          <h3 class="category"><?php echo implode(', ', $categoryNames);?></h3>
+      <article class="<?php echo implode(' ', $categorySlugs); ?>">
+        <div class="article">
+          <div class="category-info">
+            <a href="#"><?php echo implode(', ', $categoryNames); ?></a> post # <a href="<?php the_permalink(); ?>" class="black"><?php the_ID(); ?></a>
+          </div>
           <h2><?php the_title(); ?></h2>
+          <div class="meta-row">
+            <hr>
+            <span class="light-grey">By:</span> <a class="author-link" href="#">Author Name</a> <span class="light-grey">Posted In:</span> <a href="#">Tag</a>, <a href="#">Tag</a>
+            <hr>
+          </div>
+          <?php the_content('<div class="read-more"><span>Read More</span> <div class="arrow">&#8594;</div><div class="clearfix"></div></div>'); ?>
         </div>
-      </a>
+      </article>
     <?php endwhile; ?>
   </section>
-</section>
 <?php get_footer(); ?>
