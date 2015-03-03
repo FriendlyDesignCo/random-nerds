@@ -82,3 +82,9 @@
 .sidebar-hidden #article-sidebar {
   margin-left:-$article-sidebar-width;
 }
+
+@media screen and (max-width:640px) {
+  #article-sidebar {
+    display:none;
+  }
+}

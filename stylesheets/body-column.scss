@@ -1,5 +1,7 @@
-.sidebar-visible #content-body {
-  margin-left:$article-sidebar-width;
+@media screen and (min-width:641px) {
+  .sidebar-visible #content-body {
+    margin-left:$article-sidebar-width;
+  }
 }
 #content-body {
   @include transition(margin-left, 0.5s, ease-in-out);

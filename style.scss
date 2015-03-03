@@ -44,8 +44,10 @@ $avatar-sidebar-category-color: #c5c1be;
 $header-footer-background: #303b47;
 $hr-color: #dbd8d5;
 
-body {
-  padding-left:$avatar-sidebar-width
+@media screen and (min-width:641px) {
+  body {
+    padding-left:$avatar-sidebar-width
+  }
 }
 a {
   text-decoration:none;
