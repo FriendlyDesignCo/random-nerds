@@ -44,18 +44,9 @@
 
     <section id="content" class="sidebar-visible">
       <section id="article-sidebar">
-
-        <?php
-        $query = new WP_Query(array('cat' => 6, 'posts_per_page' => 1));
-        if ($query->have_posts()):
-          while ($query->have_posts()): $query->the_post(); $featuredArticle = get_post(); ?>
-            <a href="<?php the_permalink(); ?>">
-              <div class="article featured">
-                <h2><?php the_title(); ?></h2>
-              </div>
-            </a>
-          <?php endwhile; ?>
-        <?php endif; ?>
+          <div class="article featured">
+            <h2><?php echo ot_get_option('sidebar_top_comment'); ?></h2>
+          </div>
 
         <?php while (have_posts()): the_post();
         $categories = get_the_category();

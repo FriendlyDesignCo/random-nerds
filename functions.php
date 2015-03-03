@@ -45,3 +45,8 @@ function my_acf_settings_dir( $dir ) {
 //add_filter('acf/settings/show_admin', '__return_false');
 include_once( get_stylesheet_directory() . '/acf/acf.php' );
 /* END ACF */
+
+/* OptionTree */
+add_filter( 'ot_theme_mode', '__return_true' );
+require( trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php' );
+/* END OT */
