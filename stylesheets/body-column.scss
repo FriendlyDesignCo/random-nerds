@@ -47,12 +47,14 @@
       font-size:40px;
       padding-top:10px;
       padding-bottom:10px;
+      text-align:center;
     }
     h2 a {
       color:#000 !important;
     }
 
     .category-info {
+      text-align:center;
       padding-top:20px;
       padding-bottom:10px;
       text-transform:uppercase;
@@ -63,6 +65,9 @@
 
       a.black {
         color:#000;
+      }
+      a.grey {
+        color:#ccc;
       }
     }
 
@@ -196,5 +201,9 @@
     .meta-row {
       padding-top:25px;
     }
+  }
+
+  .pad-bottom {
+    padding-bottom:40px;
   }
 }
