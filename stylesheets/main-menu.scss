@@ -70,7 +70,7 @@
     font-size:46px;
     font-weight:bold;
     line-height:1.7em;
-    @include transition(opacity, 0.3s, ease-in-out);
+    @include transition(all, 0.3s, ease-in-out);
     opacity:1;
   }
   li a:hover {
@@ -85,6 +85,39 @@
     display:inline-block;
     font-size:32px;
     margin-right:16px;
+  }
+  .textwidget ul li a {
+    position:relative;
+
+    .underlay {
+      position:absolute;
+      top:15px;
+      left:-2px;
+      background-color:transparent;
+      border-radius:100%;
+      z-index:9;
+      width:42.5px;
+      height:43px;
+    }
+    span {
+      position:relative;
+      z-index:10;
+    }
+  }
+  .textwidget ul li a.facebook:hover {
+    color:#3b5998;
+    opacity:1;
+  }
+  .textwidget ul li a.twitter:hover {
+    color:#44acee;
+    opacity:1;
+  }
+  .textwidget ul li a.tumblr:hover {
+    color:#35465c;
+    opacity:1;
+  }
+  .textwidget ul li a:hover .underlay {
+    background-color:#fff;
   }
 }
 
