@@ -184,7 +184,9 @@
         height:400px;
         margin:0 auto;
         padding-top:50px;
-        line-height:200%;
+        span {
+          line-height:120%;
+        }
       }
     }
 
