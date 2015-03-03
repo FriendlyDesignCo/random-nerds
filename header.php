@@ -26,7 +26,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <div id="main-menu" class="hidden">
+    <div id="main-menu" class="offscreen">
       <button id="menu-close"><img src="<?php echo bloginfo('template_url'); ?>/images/close_button.png"></button>
       <div class="clearfix"></div>
       <hr>
