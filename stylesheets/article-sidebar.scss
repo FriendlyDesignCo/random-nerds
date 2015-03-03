@@ -1,6 +1,9 @@
 #article-sidebar {
   position:fixed;
   width:$article-sidebar-width;
+  @media screen and (max-width:900px) {
+    width:$article-sidebar-width-tablet;
+  }
   background-color:$article-sidebar-background;
   height:100%;
   @include transition(margin-left, 0.5s, ease-in-out);
@@ -16,6 +19,9 @@
     color:$paragraph-color;
     font-family: 'Playfair Display', serif;
     font-size:20px;
+    @media screen and (max-width:900px) {
+      font-size:16px;
+    }
     line-height:1.2em;
     border-bottom:1px solid $line-color;
     position:relative;
@@ -47,6 +53,10 @@
     -moz-transform:rotate(-8deg);
     font-size:26px;
     line-height:26px;
+    @media screen and (max-width:900px) {
+      font-size:20px;
+      line-height:20px;
+    }
     padding:26px;
     box-sizing:border-box;
     text-align:center;

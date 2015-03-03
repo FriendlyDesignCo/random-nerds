@@ -1,5 +1,10 @@
 @media screen and (min-width:641px) {
   .sidebar-visible #content-body {
+    margin-left:$article-sidebar-width-tablet;
+  }
+}
+@media screen and (min-width:900px) {
+  .sidebar-visible #content-body {
     margin-left:$article-sidebar-width;
   }
 }
