@@ -19,6 +19,12 @@ e,b,e,g,d);a.widthOnly?(c.css({"font-size":l,"white-space":"nowrap"}),a.changeLi
         $(this).toggleClass('closed');
         $("#content").toggleClass('sidebar-hidden');
         $("#content").toggleClass('sidebar-visible');
+        setTimeout(function(){
+          $(".fittext").textfill({maxFontPixels: 100});
+        }, 100);
+        setTimeout(function(){
+          $(".fittext").textfill({maxFontPixels: 100});
+        }, 525);
       });
       $("#menu-open, #menu-close").click(function(){
         $("#main-menu").toggleClass('offscreen');
