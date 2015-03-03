@@ -50,6 +50,9 @@ $hr-color: #dbd8d5;
     padding-left:$avatar-sidebar-width
   }
 }
+body {
+  color:#666;
+}
 a {
   text-decoration:none;
 }
@@ -117,5 +120,5 @@ a.symbol:before {
 @import 'stylesheets/font-awesome.min.css';
 
 .black {
-  color:#000;
+  color:#333;
 }

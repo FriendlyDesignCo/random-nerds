@@ -49,7 +49,7 @@
       text-align:center;
     }
     h2 a {
-      color:#000 !important;
+      color:#333 !important;
     }
 
     .category-info {
@@ -63,7 +63,7 @@
       color: $light-grey;
 
       a.black {
-        color:#000;
+        color:#333;
       }
       a.grey {
         color:#ccc;
@@ -101,7 +101,7 @@
       margin:0 auto;
       text-align:center;
       a {
-        color:#000;
+        color:#333;
         font-family: 'Montserrat', sans-serif;
         text-transform:uppercase;
         font-size:24px;
@@ -113,7 +113,7 @@
           @include transition(color, 0.5s, ease-in-out);
         }
         .arrow {
-          border:1px solid #000;
+          border:1px solid #333;
           border-radius:100%;
           font-weight:100;
           float:right;
