@@ -59,7 +59,7 @@ $i = 0; ?>
             <span class="light-grey">By:</span> <a class="author-link" href="<?php echo get_author_posts_url(get_the_author_ID()); ?>"><?php the_author(); ?></a>
           </div>
 
-          <?php the_content('<div class="read-more"><span>Read More</span> <div class="arrow">&#8594;</div><div class="clearfix"></div></div>'); ?>
+          <?php the_content('<div class="read-more hidden"><span>Read More</span> <div class="arrow">&#8594;</div><div class="clearfix"></div></div>'); ?>
 
           <?php if ($i < ($wp_query->found_posts)): ?>
             <div class="divider-row"><hr class="divider <?php if ($i == 0): ?>signature<?php endif; ?>"></div>
