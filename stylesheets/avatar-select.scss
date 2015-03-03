@@ -39,7 +39,9 @@
   @include transition(opacity, 0.2s, ease-in-out);
 }
 .avatar-icon.disabled {
-  opacity:0.5;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 .avatar-icon:hover {
   opacity:0.75;
