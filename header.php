@@ -13,7 +13,7 @@
   <body <?php body_class(); ?>>
     <div id="avatar-select">
       <ul>
-        <li><a href="#" id="collapse-sidebar"><span>&lt;</span></a></li>
+        <li><a href="#" id="collapse-sidebar"><i class="fa fa-chevron-left"></i></a></li>
         <li><a href="#" class="avatar-icon icon-politics disabled">Politics</a></li>
         <li><a href="#" class="avatar-icon icon-gaming">Gaming</a></li>
         <li><a href="#" class="avatar-icon icon-tech">Tech</a></li>

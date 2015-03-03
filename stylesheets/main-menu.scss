@@ -90,35 +90,49 @@
   .textwidget ul li a {
     position:relative;
 
+    i {
+      color:$main-menu-background;
+      position:relative;
+      z-index:10;
+      @include transition(color, 0.5s, ease-in-out);
+      font-size:30px;
+      width:37px;
+      text-align:center;
+      top:-1px;
+    }
     .underlay {
       position:absolute;
       top:15px;
       left:-2px;
-      background-color:transparent;
+      background-color:white;
       border-radius:100%;
       z-index:9;
       width:42.5px;
       height:43px;
-    }
-    span {
-      position:relative;
-      z-index:10;
+      @include transition(all, 0.5s, ease-in-out);
     }
   }
   .textwidget ul li a.facebook:hover {
-    color:#3b5998;
+    .underlay {
+      background-color:#3b5998;
+    }
     opacity:1;
   }
   .textwidget ul li a.twitter:hover {
-    color:#44acee;
+    .underlay {
+      background-color:#44acee;
+    }
     opacity:1;
   }
   .textwidget ul li a.tumblr:hover {
-    color:#35465c;
+    .underlay {
+      background-color:#35465c;
+    }
     opacity:1;
   }
-  .textwidget ul li a:hover .underlay {
-    background-color:#fff;
+  .textwidget ul li a:hover i {
+    color:#fff;
+    opacity:1;
   }
 }
 
