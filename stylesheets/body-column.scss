@@ -111,6 +111,7 @@
 
         span {
           float:left;
+          @include transition(color, 0.5s, ease-in-out);
         }
         .arrow {
           border:1px solid #000;
@@ -120,6 +121,12 @@
           width: 25px;
           height: 25px;
           line-height: 25px;
+          @include transition(margin-right, 0.5s, ease-in-out);
+        }
+      }
+      a:hover {
+        .arrow {
+          margin-right:-3px;
         }
       }
     }
@@ -206,5 +213,18 @@
 
   .pad-bottom {
     padding-bottom:40px;
+  }
+
+  article.category-tech .read-more a:hover span {
+    color:$tech-color;
+  }
+  article.category-pop-culture .read-more a:hover span {
+    color:$pop-culture-color;
+  }
+  article.category-politics .read-more a:hover span {
+    color:$politics-color;
+  }
+  article.category-gaming .read-more a:hover span {
+    color:$gaming-color;
   }
 }
