@@ -59,6 +59,7 @@
   @include transition(margin-right, 0.5s, ease-in-out);
 
   hr {
+    border:0;
     border-color:#5a5959;
     border-top: 1px solid #5a5959;
     border-bottom: 1px solid #5a5959;
