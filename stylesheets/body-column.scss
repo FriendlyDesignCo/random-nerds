@@ -38,9 +38,8 @@
         margin-top:20px;
         margin-bottom:20px;
       }
+      position:relative;
     }
-    position:relative;
-    overflow:display;
 
     h2 {
       font-family: 'Playfair Display', serif;
@@ -132,24 +131,41 @@
     }
 
     aside {
-      @media (min-width:1280px) {
-        position:absolute;
-        right:-140px;
-      }
-      @media (max-width:1280px) {
-        float:right;
-        padding-left:10px;
-      }
-      font-family: 'Covered By Your Grace', cursive;
-      color:$aside-color;
       width:125px;
-      font-size:22px;
+      transform:rotate(-10deg);
       -webkit-transform:rotate(-10deg);
       -moz-transform:rotate(-10deg);
+      font-family: 'Covered By Your Grace', cursive;
+      color:$aside-color;
+      font-size:22px;
       img {
         width:30px;
         clear:both;
       }
+
+      @media screen and (min-width:1280px) {
+        position:absolute;
+        right:-140px;
+      }
+      @media screen and (max-width:1280px) {
+        float:none;
+        margin:0 auto;
+        width:90%;
+        transform:rotate(-2deg);
+        -webkit-transform:rotate(-2deg);
+        -moz-transform:rotate(-2deg);
+        padding-bottom:10px;
+        br {
+          display:none;
+        }
+        img {
+          padding-right:10px;
+          transform:rotate(-75deg);
+          -webkit-transform:rotate(-75deg);
+          -moz-transform:rotate(-75deg);
+        }
+      }
+
     }
 
     iframe {
