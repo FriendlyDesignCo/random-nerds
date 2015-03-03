@@ -8,7 +8,10 @@
   overflow-x:hidden;
 
   .article {
-    padding:20px;
+    padding:20px 20px 30px 20px;
+    @media screen and (max-width:1024px) {
+      padding: 15px 15px 25px 15px;
+    }
     box-sizing:border-box;
     color:$paragraph-color;
     font-family: 'Playfair Display', serif;
@@ -75,7 +78,7 @@
   h3.category {
     text-transform:uppercase;
     font-family: 'Montserrat', sans-serif;
-    font-size:14px;
+    font-size:10px;
     color:$avatar-sidebar-category-color;
   }
 }
