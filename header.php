@@ -21,6 +21,22 @@
       </ul>
     </div>
 
+    <button type="button" id="menu-open">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <div id="main-menu" class="hidden">
+      <button id="menu-close"><img src="<?php echo bloginfo('template_url'); ?>/images/close_button.png"></button>
+      <div class="clearfix"></div>
+      <hr>
+      <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
+      <hr>
+      <?php if (is_active_sidebar('sidebar_menu_social')): ?>
+        <?php dynamic_sidebar('sidebar_menu_social'); ?>
+      <?php endif; ?>
+    </div>
+
     <section id="content" class="sidebar-visible">
       <section id="article-sidebar">
 

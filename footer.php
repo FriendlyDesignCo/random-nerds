@@ -20,6 +20,10 @@ e,b,e,g,d);a.widthOnly?(c.css({"font-size":l,"white-space":"nowrap"}),a.changeLi
         $("#content").toggleClass('sidebar-hidden');
         $("#content").toggleClass('sidebar-visible');
       });
+      $("#menu-open, #menu-close").click(function(){
+        $("#main-menu").toggleClass('hidden');
+        $("#menu-open").toggleClass('active');
+      });
     });
   </script>
 

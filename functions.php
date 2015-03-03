@@ -4,10 +4,22 @@ if (!function_exists('randomNerdsSetup'))
 {
   function randomNerdsSetup()
   {
+    register_nav_menus(array(
+      'primary' => 'Primary Menu'
+    ));
     add_theme_support('post-thumbnails');
   }
 }
 add_action('after_setup_theme', 'randomNerdsSetup');
+
+function randomNerdsWidgetAreas()
+{
+  register_sidebar(array(
+    'name' => 'Sidebar Menu Social Icons',
+    'id'   => 'sidebar_menu_social'
+  ));
+}
+add_action('widgets_init', 'randomNerdsWidgetAreas');
 
 function randomNerdsScripts()
 {
