@@ -14,7 +14,7 @@
     color: $gaming-color;
   }
   article.category-tech a {
-    color: $tech-color;
+    color: $tech-type-color;
   }
   article.category-pop-culture a {
     color: $pop-culture-color;
@@ -216,7 +216,7 @@
   }
 
   article.category-tech .read-more a:hover span {
-    color:$tech-color;
+    color:$tech-type-color;
   }
   article.category-pop-culture .read-more a:hover span {
     color:$pop-culture-color;
