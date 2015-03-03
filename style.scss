@@ -58,6 +58,9 @@ a {
 .text-center {
   text-align:center;
 }
+div.divider-row {
+  position:relative;
+}
 hr.divider {
   padding: 0;
   border: none;
@@ -67,6 +70,20 @@ hr.divider {
   text-align: center;
   margin-top:80px;
   margin-bottom:80px;
+  width:150%;
+}
+hr.divider:not(.signature):after {
+  content:(" ");
+  border-left:1px solid $hr-color;
+  display:inline-block;
+  position:absolute;
+  left:0;
+  top:-10px;
+  background:blue;
+  height:25px;
+}
+hr.signature {
+  width:100%;
 }
 hr.divider.signature:after {
   content: url("images/tiny_signature.png");

@@ -30,6 +30,14 @@
       }
       max-width:1000px;
       margin:0 auto;
+
+      hr:not(.divider) {
+        background-color: $light-grey;
+        border:0;
+        height:1px;
+        margin-top:20px;
+        margin-bottom:20px;
+      }
     }
     position:relative;
     overflow:display;
@@ -42,14 +50,6 @@
     }
     h2 a {
       color:#000 !important;
-    }
-
-    hr {
-      background-color: $light-grey;
-      border:0;
-      height:1px;
-      margin-top:20px;
-      margin-bottom:20px;
     }
 
     .category-info {

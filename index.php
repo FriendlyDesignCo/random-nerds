@@ -34,7 +34,7 @@ $i = 0; ?>
               <?php the_content('<div class="read-more"><span>Read More</span> <div class="arrow">&#8594;</div><div class="clearfix"></div></div>'); ?>
             </div>
           </article>
-          <hr class="divider signature">
+          <div class="row"><hr class="divider signature"></div>
         <?php endwhile; ?>
       <?php endif; ?>
     <?php endif; ?>
@@ -62,11 +62,12 @@ $i = 0; ?>
             <hr>
           </div>
           <?php the_content('<div class="read-more"><span>Read More</span> <div class="arrow">&#8594;</div><div class="clearfix"></div></div>'); ?>
+
+          <?php if ($i < ($wp_query->found_posts)): ?>
+            <div class="divider-row"><hr class="divider <?php if ($i == 0): ?>signature<?php endif; ?>"></div>
+          <?php endif; ?>
         </div>
       </article>
-      <?php if ($i < ($wp_query->found_posts)): ?>
-        <hr class="divider <?php if ($i == 0): ?>signature<?php endif; ?>">
-      <?php endif; ?>
     <?php $i++; endwhile; ?>
   </section>
 <?php get_footer(); ?>
