@@ -15,7 +15,6 @@
     font-size:20px;
     line-height:1.2em;
     border-bottom:1px solid $line-color;
-    @include transition(all, 0.5s, ease);
     position:relative;
   }
   .article.featured {
@@ -43,15 +42,17 @@
     font-family: 'Covered By Your Grace', cursive;
     -webkit-transform:rotate(-8deg);
     -moz-transform:rotate(-8deg);
-    padding:30px;
+    font-size:26px;
+    line-height:26px;
+    padding:26px;
     box-sizing:border-box;
-    @include transition(opacity, 0.8s, ease);
     text-align:center;
     color:#fff;
   }
   .article:hover .cover {
     display:block;
     opacity:1;
+    @include transition(opacity, 0.8s, ease);
   }
 
   .article:hover h3, .article:hover h2 {
