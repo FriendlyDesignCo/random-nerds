@@ -50,3 +50,29 @@ include_once( get_stylesheet_directory() . '/acf/acf.php' );
 add_filter( 'ot_theme_mode', '__return_true' );
 require( trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php' );
 /* END OT */
+
+add_action( 'init', 'cptui_register_my_cpts' );
+function cptui_register_my_cpts() {
+	$labels = array(
+		"name" => "Footer Messages",
+		"singular_name" => "Footer Message",
+		);
+
+	$args = array(
+		"labels" => $labels,
+		"description" => "The message (and avatar!) visible in the site footer",
+		"public" => true,
+		"show_ui" => true,
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"exclude_from_search" => true,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "footer-message", "with_front" => true ),
+		"query_var" => true,
+				"menu_icon" => "dashicons-download",					);
+	register_post_type( "footer-message", $args );
+
+// End of cptui_register_my_cpts()
+}

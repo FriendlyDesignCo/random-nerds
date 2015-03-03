@@ -36,6 +36,8 @@ $article-sidebar-width-tablet:250px;
 $main-menu-background: #3f3d3b;
 $main-menu-width: 350px;
 
+$footer-background: #313e4c;
+
 $aside-color:#588AAF;
 
 $avatar-sidebar-background: #e5e0d8;
@@ -104,6 +106,9 @@ hr.divider.signature:after {
 hr.small {
   width:250px;
 }
+hr.tiny {
+  width:100px;
+}
 .hidden {
   display:none;
 }
@@ -119,6 +124,7 @@ a.symbol:before {
 @import 'stylesheets/article-sidebar.scss';
 @import 'stylesheets/body-column.scss';
 @import 'stylesheets/font-awesome.min.css';
+@import 'stylesheets/footer.scss';
 
 .black {
   color:#333;

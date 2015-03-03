@@ -2,8 +2,6 @@
 
 $i = 0; ?>
 
-
-  <section id="content-body">
     <?php
 
     if (is_home()):
@@ -67,5 +65,4 @@ $i = 0; ?>
         </div>
       </article>
     <?php $i++; endwhile; ?>
-  </section>
 <?php get_footer(); ?>

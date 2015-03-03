@@ -1,3 +1,18 @@
+      <?php $footerQuery = new WP_Query(array('post_type' => 'footer-message', 'posts_per_page' => 1));
+
+      if ($footerQuery->have_posts()): ?>
+        <?php while ($footerQuery->have_posts()): $footerQuery->the_post(); ?>
+          <footer class="category-gaming">
+            <div class="footer-content">
+              <h3><?php the_title(); ?>:</h3>
+              <hr class="tiny">
+              <?php the_content(); ?>
+            </div>
+          </footer>
+        <?php endwhile; ?>
+      <?php endif; ?>
+    </section> <!-- END content-body -->
+
   </section>
 
   <?php wp_footer(); ?>
