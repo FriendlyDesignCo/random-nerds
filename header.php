@@ -56,13 +56,23 @@
           $categorySlugs[] = 'category-'.$category->slug;
         }
         ?>
-          <a href="<?php the_permalink(); ?>">
-            <div class="article <?php echo implode(' ', $categorySlugs); ?>">
-              <div class="cover"><?php the_field('post_subtitle'); ?></div>
-              <h3 class="category"><?php echo implode(', ', $categoryNames);?></h3>
-              <h2><?php the_title(); ?></h2>
+
+          <?php if (has_post_format('status')): ?>
+            <?php /* STATUS UPDATE */ ?>
+            <div class="status-update <?php echo implode(' ', $categorySlugs); ?> <?php the_field('avatar'); ?> avatar-<?php the_field('display_side'); ?>">
+              <h2>"<?php the_title(); ?>"</h2>
+              <img class="avatar" src="<?php echo bloginfo('template_url'); ?>/images/<?php echo str_replace('avatar-','avatar-sidebar-',get_field('avatar')); ?>.png">
             </div>
-          </a>
+          <?php else: ?>
+            <?php /* REGULAR POST */ ?>
+            <a href="<?php the_permalink(); ?>">
+              <div class="article <?php echo implode(' ', $categorySlugs); ?>">
+                <div class="cover"><?php the_field('post_subtitle'); ?></div>
+                <h3 class="category"><?php echo implode(', ', $categoryNames);?></h3>
+                <h2><?php the_title(); ?></h2>
+              </div>
+            </a>
+          <?php endif; ?>
         <?php endwhile; ?>
       </section>
       <section id="content-body">

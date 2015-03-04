@@ -8,6 +8,7 @@ if (!function_exists('randomNerdsSetup'))
       'primary' => 'Primary Menu'
     ));
     add_theme_support('post-thumbnails');
+    add_theme_support('post-formats', array('status'));
   }
 }
 add_action('after_setup_theme', 'randomNerdsSetup');

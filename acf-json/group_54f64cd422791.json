@@ -1,0 +1,84 @@
+{
+    "key": "group_54f64cd422791",
+    "title": "Status Avatar",
+    "fields": [
+        {
+            "key": "field_54f64cd9c1dbe",
+            "label": "Avatar",
+            "name": "avatar",
+            "prefix": "",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "avatar-gaming": "Gaming",
+                "avatar-politics": "Politics",
+                "avatar-pop-culture": "Pop Culture",
+                "avatar-tech": "Tech"
+            },
+            "default_value": {
+                "": ""
+            },
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "disabled": 0,
+            "readonly": 0
+        },
+        {
+            "key": "field_54f651250d52b",
+            "label": "Display Side",
+            "name": "display_side",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "Which side should the avatar appear on?",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "left": "Left",
+                "right": "Right"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_format",
+                "operator": "==",
+                "value": "status"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "discussion",
+        "comments",
+        "slug",
+        "featured_image",
+        "tags"
+    ],
+    "modified": 1425428804
+}

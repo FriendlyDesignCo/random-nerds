@@ -57,9 +57,9 @@
     "location": [
         [
             {
-                "param": "post_type",
+                "param": "post_format",
                 "operator": "==",
-                "value": "post"
+                "value": "standard"
             }
         ]
     ],
@@ -69,5 +69,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1425061794
+    "modified": 1425427310
 }
