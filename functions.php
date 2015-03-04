@@ -81,7 +81,7 @@ function cptui_register_my_cpts() {
 // Exclude status posts from the main query
 function excludeStatusPosts($query)
 {
-  if ($query->is_main_query())
+  if ($query->is_main_query() && !is_admin())
   {
     $taxQuery = array(array(
       'taxonomy' => 'post_format',
