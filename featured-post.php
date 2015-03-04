@@ -33,10 +33,19 @@ foreach ($categories as $category) {
           <img src="<?php the_field('signature', 'user_'.get_the_author_meta('ID')); ?>">
         </div>
         <?php get_template_part('author-info'); ?>
+
       <?php endif; ?>
     </div>
   </article>
   <?php if (is_home()): ?>
     <div class="row"><hr class="divider signature"></div>
-  <?php else: ?>
+  <?php elseif (is_single()): ?>
+    <div class="comment-divider">
+      <hr>
+      <div class="plus"><a href="#comments" data-identifier="post_<?php the_ID(); ?>" class="comment-async"><span>+</span></a></div>
+      <a href="#comments" class="load-comments comment-async" data-identifier="post_<?php the_ID(); ?>">Load Comments (<span class="disqus-comment-count" data-disqus-identifier="post_<?php the_ID(); ?>">0</span>)</a>
+    </div>
+
+    <a name="comments"></a>
+    <div id="disqus_thread"></div>
   <?php endif; ?>
