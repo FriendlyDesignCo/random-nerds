@@ -1,7 +1,7 @@
 #article-sidebar {
   position:fixed;
   width:$article-sidebar-width;
-  @media screen and (max-width:900px) {
+  @media screen and (max-width:1024px) {
     width:$article-sidebar-width-tablet;
   }
   background-color:$article-sidebar-background;
@@ -19,7 +19,7 @@
     color:$paragraph-color;
     font-family: 'Playfair Display', serif;
     font-size:20px;
-    @media screen and (max-width:900px) {
+    @media screen and (max-width:1024px) {
       font-size:16px;
     }
     line-height:1.2em;
@@ -53,7 +53,7 @@
     -moz-transform:rotate(-8deg);
     font-size:26px;
     line-height:26px;
-    @media screen and (max-width:900px) {
+    @media screen and (max-width:1024px) {
       font-size:20px;
       line-height:20px;
     }
