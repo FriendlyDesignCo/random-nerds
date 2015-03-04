@@ -48,8 +48,10 @@
             <h2><?php echo ot_get_option('sidebar_top_comment'); ?></h2>
           </div>
 
+          <div id="sidebar-posts">
         <?php
-        $sidebarQuery = new WP_Query(array('posts_per_page' => 25));
+        $page = isset($_GET['spage']) ? $_GET['spage'] : 1;
+        $sidebarQuery = new WP_Query(array('posts_per_page' => 3, 'paged' => $page));
         while ($sidebarQuery->have_posts()): $sidebarQuery->the_post();
         $categories = get_the_category();
         $categoryNames = array(); $categorySlugs = array();
@@ -79,6 +81,15 @@
               </a>
             </div>
           <?php endif; ?>
-        <?php endwhile; wp_reset_postdata(); ?>
+        <?php endwhile; ?>
+        </div>
+        <div class="sidebar-nav">
+          <?php if ($page < $sidebarQuery->max_num_pages): ?>
+            <a class="load-more-sidebar-pages" href="/?spage=<?php echo $page+1;?>">Load More Posts</a>
+            <div class="loader-container hidden"><div class="loader">Loading...</div><div class="clearfix"></div></div>
+          <?php endif; ?>
+        </div>
       </section>
       <section id="content-body">
+
+<?php if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest') exit(); ?>

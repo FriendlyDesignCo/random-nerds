@@ -127,6 +127,27 @@
   .status-update.avatar-gaming {
     color:$gaming-color;
   }
+
+  .load-more-sidebar-pages {
+    background-color:$header-footer-background;
+    text-align:center;
+    color:#fff;
+    text-transform:uppercase;
+    display:block;
+    width:100%;
+    padding:10px;
+    font-weight:bold;
+    box-sizing:border-box;
+  }
+  .loader-container {
+    background-color:$header-footer-background;
+    width:100%;
+    height:80px;
+  }
+}
+
+.admin-bar .loader-container {
+  margin-bottom:32px;
 }
 
 .sidebar-hidden #article-sidebar {
