@@ -58,8 +58,8 @@ e,b,e,g,d);a.widthOnly?(c.css({"font-size":l,"white-space":"nowrap"}),a.changeLi
           dataType: "script",
           cache: true
         });
-        $("div.plus").fadeOut();
-        $("a.comment-async").fadeOut();
+        $("div.plus a").addClass('comments-loaded');
+        $("a.load-comments").slideUp();
       });
       <?php endif; ?>
 

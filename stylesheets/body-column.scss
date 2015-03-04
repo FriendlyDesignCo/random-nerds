@@ -363,11 +363,11 @@
         height:32px;
         text-align:center;
         font-size:23px;
-        line-height:32px;
+        line-height:31px;
         box-sizing:border-box;
         @include transition(all, 0.5s, ease-in-out);
       }
-      a:hover {
+      a:hover, a.comments-loaded {
         background-color:#6291b4;
         color:#fff;
       }
@@ -385,5 +385,6 @@
   #disqus_thread {
     width:90%;
     margin:0 auto;
+    margin-top:60px;
   }
 }
