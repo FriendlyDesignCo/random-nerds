@@ -42,7 +42,7 @@ e,b,e,g,d);a.widthOnly?(c.css({"font-size":l,"white-space":"nowrap"}),a.changeLi
         }, 525);
       });
       $("#menu-open, #menu-close").click(function(){
-        $("#main-menu").toggleClass('offscreen');
+        $("#main-menu").toggleClass('onscreen');
         $("#menu-open").toggleClass('active');
       });
 

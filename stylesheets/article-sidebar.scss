@@ -6,7 +6,7 @@
   }
   background-color:$article-sidebar-background;
   height:100%;
-  @include transition(margin-left, 0.5s, ease-in-out);
+  @include transition(all, 0.5s, ease-in-out);
   overflow-y:scroll;
   overflow-x:hidden;
 

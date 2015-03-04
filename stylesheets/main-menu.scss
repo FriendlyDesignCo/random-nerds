@@ -56,6 +56,7 @@
   background-color:$main-menu-background;
   color:#fff;
 
+  margin-right:-$main-menu-width;
   @include transition(margin-right, 0.5s, ease-in-out);
 
   hr {
@@ -136,6 +137,6 @@
   }
 }
 
-#main-menu.offscreen {
-  margin-right:-$main-menu-width;
+#main-menu.onscreen {
+  margin-right:0;
 }
