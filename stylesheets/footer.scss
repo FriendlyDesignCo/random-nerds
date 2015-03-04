@@ -8,8 +8,15 @@ footer {
   box-sizing:border-box;
   margin-top:60px;
 
+  @media screen and (max-width:640px) {
+    margin-bottom:72px;
+  }
+
   .footer-content {
     width:90%;
+    @media screen and (max-width:640px) {
+      width:50%;
+    }
     max-width:600px;
     margin:0 auto;
     font-family: 'Montserrat', sans-serif;
@@ -34,4 +41,8 @@ footer {
 
 footer.category-gaming {
   background:$footer-background url("images/footer-avatar-gaming.png") no-repeat left bottom;
+  @media screen and (max-width:640px) {
+    background-size: 30% auto;
+    background-position-x: -40px;
+  }
 }
