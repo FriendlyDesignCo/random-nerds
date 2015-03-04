@@ -45,6 +45,20 @@ e,b,e,g,d);a.widthOnly?(c.css({"font-size":l,"white-space":"nowrap"}),a.changeLi
         $("#main-menu").toggleClass('offscreen');
         $("#menu-open").toggleClass('active');
       });
+
+      <?php /* Related Posts Leveling */ ?>
+      if ($("#related-posts").length > 0) {
+        var lowest = 0;
+        $("#related-posts span.yuzo_text").each(function(){
+          if ($(this).position().top > lowest)
+            lowest = $(this).position().top;
+        });
+        $("#related-posts span.yuzo_text").each(function(){
+          if ($(this).position().top != lowest) {
+            $(this).css('margin-top',20+lowest-$(this).position().top);
+          }
+        });
+      }
     });
   </script>
 

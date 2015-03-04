@@ -81,7 +81,9 @@ function cptui_register_my_cpts() {
 // Exclude status posts from the main query
 function excludeStatusPosts($query)
 {
-  if ($query->is_main_query() && !is_admin())
+  // The === 2 is to catch Yuzo's query for two related posts and eliminate
+  // the "status" post format. We also eliminate it on the main query
+  if (($query->is_main_query() || $query->query_vars['posts_per_page'] === 2) && !is_admin())
   {
     $taxQuery = array(array(
       'taxonomy' => 'post_format',
@@ -93,3 +95,9 @@ function excludeStatusPosts($query)
   }
 }
 add_action('pre_get_posts', 'excludeStatusPosts');
+
+function removeExtraScripts() {
+    global $wp_styles;
+    wp_dequeue_style('front-css-yuzo_related_post');
+}
+add_action( 'wp_print_styles', 'removeExtraScripts' );
