@@ -48,7 +48,9 @@
             <h2><?php echo ot_get_option('sidebar_top_comment'); ?></h2>
           </div>
 
-        <?php while (have_posts()): the_post();
+        <?php
+        $sidebarQuery = new WP_Query(array('posts_per_page' => 25));
+        while ($sidebarQuery->have_posts()): $sidebarQuery->the_post();
         $categories = get_the_category();
         $categoryNames = array(); $categorySlugs = array();
         foreach ($categories as $category) {
@@ -73,6 +75,6 @@
               </div>
             </a>
           <?php endif; ?>
-        <?php endwhile; ?>
+        <?php endwhile; wp_reset_postdata(); ?>
       </section>
       <section id="content-body">

@@ -77,3 +77,19 @@ function cptui_register_my_cpts() {
 
 // End of cptui_register_my_cpts()
 }
+
+// Exclude status posts from the main query
+function excludeStatusPosts($query)
+{
+  if ($query->is_main_query())
+  {
+    $taxQuery = array(array(
+      'taxonomy' => 'post_format',
+      'field'    => 'slug',
+      'terms'    => array('post-format-status'),
+      'operator' => 'NOT IN'
+    ));
+    $query->set('tax_query', $taxQuery);
+  }
+}
+add_action('pre_get_posts', 'excludeStatusPosts');
