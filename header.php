@@ -50,6 +50,9 @@
           </div>
 
           <div id="sidebar-posts">
+            <div class="loading-overlay">
+              <div class="loading-text">Refiltering Posts <div class="loader"></div></div>
+            </div>
         <?php
         if (isset($_COOKIE['ignoredCategories']))
           $ignoredCategories = json_decode(stripslashes($_COOKIE['ignoredCategories']), true);

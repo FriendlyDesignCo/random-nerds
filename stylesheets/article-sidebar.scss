@@ -158,4 +158,31 @@
   #article-sidebar {
     display:none;
   }
+
+  #filtering {
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    left: 0;
+    background-color: #96918f;
+    text-align: center;
+    color: #fff;
+    line-height: 40px;
+    text-transform: uppercase;
+    font-family:'Montserrat',sans-serif;
+
+    .loader {
+      font-size:4px;
+      margin-left: 0;
+      margin-right: 0;
+      display: inline-block;
+      left:16px;
+      top:-9px;
+    }
+    .loader:before, .loader:after, .loader {
+      width:5px;
+      height:5px;
+    }
+  }
 }

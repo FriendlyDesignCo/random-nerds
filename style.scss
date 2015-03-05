@@ -44,6 +44,7 @@ $avatar-sidebar-background: #e5e0d8;
 $avatar-sidebar-link-color: #96918f;
 $avatar-sidebar-width:60px;
 $avatar-sidebar-category-color: #c5c1be;
+$mobile-filtering-bar-height:40px;
 
 $header-footer-background: #303b47;
 $hr-color: #dbd8d5;
@@ -115,6 +116,12 @@ hr.tiny {
 }
 .hidden {
   display:none;
+}
+
+@media screen and (min-width:641px) {
+  .mobile-only {
+    display:none;
+  }
 }
 
 a.symbol:before {

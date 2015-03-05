@@ -2,6 +2,51 @@
   .sidebar-visible #content-body {
     margin-left:$article-sidebar-width-tablet;
   }
+
+  #sidebar-posts {
+    position:relative;
+  }
+  .loading-overlay {
+    position:absolute;
+    opacity:0;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-family:'Montserrat',sans-serif;
+    z-index:-1;
+    @include transition(all, 0.5s, ease-out);
+
+    .loading-text {
+      position:relative;
+      top:50%;
+      transform:translateY(-50%);
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+    }
+
+    .loader {
+      font-size:4px;
+      margin-left: 0;
+      margin-right: 0;
+      display: inline-block;
+      left:16px;
+      top:-9px;
+    }
+    .loader:before, .loader:after, .loader {
+      width:5px;
+      height:5px;
+    }
+  }
+  .filtering .loading-overlay {
+    opacity:1;
+    z-index:15;
+    background-color:rgba(150,145,143,0.8);
+    display:block;
+  }
 }
 @media screen and (min-width:1024px) {
   .sidebar-visible #content-body {

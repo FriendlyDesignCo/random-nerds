@@ -15,6 +15,10 @@
 
   </section>
 
+  <div class="mobile-only" id="filtering">
+    Refiltering Posts <div class="loader"></div>
+  </div>
+
   <?php wp_footer(); ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="<?php echo bloginfo('template_url'); ?>/js/jquery.cookie.js"></script>
@@ -132,8 +136,9 @@ e,b,e,g,d);a.widthOnly?(c.css({"font-size":l,"white-space":"nowrap"}),a.changeLi
             $(".filterable.category-"+value+".hidden").slideDown().removeClass('hidden');
           }
         });
-        console.log("Hiding " + selector);
         if (animate) {
+          $("body").addClass('filtering');
+          setTimeout(function(){ $("body").removeClass('filtering'); },1000);
           $(".filterable" + selector + ":not(.hidden)").slideUp(400,function(){
             $(this).addClass('hidden').removeAttr('style');
           });
