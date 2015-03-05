@@ -110,7 +110,7 @@ e,b,e,g,d);a.widthOnly?(c.css({"font-size":l,"white-space":"nowrap"}),a.changeLi
             post.find('filterable').addClass('hidden');
           });
           $("#sidebar-posts").append(newPosts);
-          updateIgnoredCategories(true);
+          updateIgnoredCategories(true, false);
           $("#article-sidebar .loader-container").slideUp(300,function(){$("#article-sidebar .loader-container").addClass("hidden").removeAttr('style');});
           $(data).find('a.load-more-sidebar-pages').insertBefore($(".loader-container"));
           window.sidebarLoadingMoreContent = false;
@@ -128,7 +128,7 @@ e,b,e,g,d);a.widthOnly?(c.css({"font-size":l,"white-space":"nowrap"}),a.changeLi
       if (ignoredCategories === undefined)
         ignoredCategories = [];
 
-      function updateIgnoredCategories(animate) {
+      function updateIgnoredCategories(animate, addFilteringClass) {
         var selector = '';
         $(categories).each(function(index,value){
           if ($.inArray(value, ignoredCategories) == -1) {
@@ -137,7 +137,8 @@ e,b,e,g,d);a.widthOnly?(c.css({"font-size":l,"white-space":"nowrap"}),a.changeLi
           }
         });
         if (animate) {
-          $("body").addClass('filtering');
+          if (addFilteringClass)
+            $("body").addClass('filtering');
           setTimeout(function(){ $("body").removeClass('filtering'); },1000);
           $(".filterable" + selector + ":not(.hidden)").slideUp(400,function(){
             $(this).addClass('hidden').removeAttr('style');
@@ -157,9 +158,9 @@ e,b,e,g,d);a.widthOnly?(c.css({"font-size":l,"white-space":"nowrap"}),a.changeLi
         }
         $(this).toggleClass('disabled');
         $.cookie('ignoredCategories',ignoredCategories,{path:'/',expires:365});
-        updateIgnoredCategories(true);
+        updateIgnoredCategories(true, true);
       });
-      updateIgnoredCategories(false);
+      updateIgnoredCategories(false, false);
     });
   </script>
 
