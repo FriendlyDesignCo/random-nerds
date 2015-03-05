@@ -26,6 +26,7 @@
   <script type="text/javascript">
   var sidebarLoadingMoreContent = false;
   var ignoredCategories; var categories = ['gaming','politics','pop-culture','tech'];
+  var headerBottom = 100; var pastHeader = false;
   (function(m){m.fn.textfill=function(r){function f(){a.debug&&"undefined"!=typeof console&&"undefined"!=typeof console.debug&&console.debug.apply(console,arguments)}function s(){"undefined"!=typeof console&&"undefined"!=typeof console.warn&&console.warn.apply(console,arguments)}function p(a,b,e,k,n,g){function d(a,b){var c=" / ";a>b?c=" > ":a==b&&(c=" = ");return c}f("[TextFill] "+a+" { font-size: "+b.css("font-size")+",Height: "+b.height()+"px "+d(b.height(),e)+e+"px,Width: "+b.width()+d(b.width(),
 k)+k+",minFontPixels: "+n+"px, maxFontPixels: "+g+"px }")}function q(a,b,e,k,f,g,d,h){for(p(a,b,f,g,d,h);d<h-1;){var l=Math.floor((d+h)/2);b.css("font-size",l);if(e.call(b)<=k){if(d=l,e.call(b)==k)break}else h=l;p(a,b,f,g,d,h)}b.css("font-size",h);e.call(b)<=k&&(d=h,p(a+"* ",b,f,g,d,h));return d}var a=m.extend({debug:!1,maxFontPixels:40,minFontPixels:4,innerTag:"span",widthOnly:!1,success:null,callback:null,fail:null,complete:null,explicitWidth:null,explicitHeight:null,changeLineHeight:!1},r);f("[TextFill] Start Debug");
 this.each(function(){var c=m(a.innerTag+":visible:first",this),b=a.explicitHeight||m(this).height(),e=a.explicitWidth||m(this).width(),k=c.css("font-size"),n=parseFloat(c.css("line-height"))/parseFloat(k);f("[TextFill] Inner text: "+c.text());f("[TextFill] All options: ",a);f("[TextFill] Maximum sizes: { Height: "+b+"px, Width: "+e+"px }");var g=a.minFontPixels,d=0>=a.maxFontPixels?b:a.maxFontPixels,h=void 0;a.widthOnly||(h=q("Height",c,m.fn.height,b,b,e,g,d));var l=void 0,l=q("Width",c,m.fn.width,
@@ -49,8 +50,31 @@ e,b,e,g,d);a.widthOnly?(c.css({"font-size":l,"white-space":"nowrap"}),a.changeLi
         }, 525);
       });
       $("#menu-open, #menu-close").click(function(){
+        $(this).toggleClass('open');
         $("#main-menu").toggleClass('onscreen');
-        $("#menu-open").toggleClass('active');
+        $("#home-signature").toggleClass('menu-open');
+      });
+
+      <?php /* Scroll for header */ ?>
+      headerBottom = $(".page-header").offset().top+$(".page-header").height()-32;
+      if ($(window).scrollTop() > headerBottom-32) {
+        $("body").addClass('past-header');
+        pastHeader = true;
+      }
+      $(window).scroll(function(){
+        if ($(window).scrollTop() > headerBottom-32) {
+          if (!pastHeader) {
+            $("body").addClass('past-header');
+            pastHeader = true;
+          }
+        }
+        else
+        {
+          if (pastHeader) {
+            $("body").removeClass('past-header');
+            pastHeader = false;
+          }
+        }
       });
 
       <?php /* Async Disqus */ ?>

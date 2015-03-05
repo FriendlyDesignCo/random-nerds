@@ -27,14 +27,15 @@
       </ul>
     </div>
 
-    <button type="button" id="menu-open">
+    <div id="menu-open">
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
-    </button>
+    </div>
+    <div id="home-signature">
+      <a href="/"><img src="<?php echo bloginfo('template_url'); ?>/images/small_signature.png" title="Return to Random Nerds Homepage"></a>
+    </div>
     <div id="main-menu">
-      <button id="menu-close"><img src="<?php echo bloginfo('template_url'); ?>/images/close_button.png"></button>
-      <div class="clearfix"></div>
       <hr>
       <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
       <hr>

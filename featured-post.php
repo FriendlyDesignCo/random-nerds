@@ -9,7 +9,7 @@ foreach ($categories as $category) {
  ?>
   <article class="<?php echo implode(' ', $categorySlugs); ?> first-article">
     <?php $thumbnail = false; if (has_post_thumbnail()) { $thumbObject = wp_get_attachment_image_src(get_post_thumbnail_id(), 'single-post-thumbnail'); $thumbnail = $thumbObject[0]; } ?>
-    <div class="article-header-image <?php the_field('color_mode', get_the_ID()); ?>" style="background-image:url('<?php echo $thumbnail; ?>');">
+    <div class="article-header-image <?php the_field('color_mode', get_the_ID()); ?> page-header" style="background-image:url('<?php echo $thumbnail; ?>');">
       <div class="cover">
         <h2 class="fittext"><span><?php the_title(); ?></span></h2>
         <a href="/" id="logo"><img src="<?php bloginfo('template_url'); ?>/images/signature-logo.png" title="Random Nerds"></a>
