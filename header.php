@@ -18,11 +18,12 @@
   <body <?php body_class(); ?>>
     <div id="avatar-select">
       <ul>
+        <?php if (isset($_COOKIE['ignoredCategories'])) $ignoredCategories = json_decode(stripslashes($_COOKIE['ignoredCategories']), true); else $ignoredCategories = array(); ?>
         <li><a href="#" id="collapse-sidebar"><i class="fa fa-chevron-left"></i></a></li>
-        <li><a href="#" class="avatar-icon icon-politics disabled">Politics</a></li>
-        <li><a href="#" class="avatar-icon icon-gaming">Gaming</a></li>
-        <li><a href="#" class="avatar-icon icon-tech">Tech</a></li>
-        <li><a href="#" class="avatar-icon icon-pop-culture">Pop Culture</a></li>
+        <li><a href="#" class="apply-filter avatar-icon icon-politics <?php if (in_array('politics',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="politics">Politics</a></li>
+        <li><a href="#" class="apply-filter avatar-icon icon-gaming <?php if (in_array('gaming',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="gaming">Gaming</a></li>
+        <li><a href="#" class="apply-filter avatar-icon icon-tech <?php if (in_array('tech',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="tech">Tech</a></li>
+        <li><a href="#" class="apply-filter avatar-icon icon-pop-culture <?php if (in_array('pop-culture',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="pop-culture">Pop Culture</a></li>
       </ul>
     </div>
 
@@ -50,21 +51,30 @@
 
           <div id="sidebar-posts">
         <?php
+        if (isset($_COOKIE['ignoredCategories']))
+          $ignoredCategories = json_decode(stripslashes($_COOKIE['ignoredCategories']), true);
+        else
+          $ignoredCategories = array();
         $page = isset($_GET['spage']) ? $_GET['spage'] : 1;
         $sidebarQuery = new WP_Query(array('posts_per_page' => 3, 'paged' => $page));
         while ($sidebarQuery->have_posts()): $sidebarQuery->the_post();
         $categories = get_the_category();
         $categoryNames = array(); $categorySlugs = array();
+        $hidden = true;
         foreach ($categories as $category) {
           $categoryNames[] = $category->cat_name;
           $categorySlugs[] = 'category-'.$category->slug;
+          if (!in_array($category->slug, $ignoredCategories))
+            $hidden = false;
         }
+
+
         ?>
 
           <?php if (has_post_format('status')): ?>
             <?php /* STATUS UPDATE */ ?>
             <div class="post" data-post-id="<?php the_ID(); ?>">
-              <div class="status-update <?php echo implode(' ', $categorySlugs); ?> <?php the_field('avatar'); ?> avatar-<?php the_field('display_side'); ?>">
+              <div class="status-update filterable <?php if ($hidden): ?>hidden<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?> <?php the_field('avatar'); ?> avatar-<?php the_field('display_side'); ?>">
                 <h2>"<?php the_title(); ?>"</h2>
                 <img class="avatar" src="<?php echo bloginfo('template_url'); ?>/images/<?php echo str_replace('avatar-','avatar-sidebar-',get_field('avatar')); ?>.png">
               </div>
@@ -73,7 +83,7 @@
             <?php /* REGULAR POST */ ?>
             <div class="post" data-post-id="<?php the_ID(); ?>">
               <a href="<?php the_permalink(); ?>">
-                <div class="article <?php echo implode(' ', $categorySlugs); ?>">
+                <div class="article <?php if ($hidden): ?>hidden<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?>">
                   <div class="cover"><?php the_field('post_subtitle'); ?></div>
                   <h3 class="category"><?php echo implode(', ', $categoryNames);?></h3>
                   <h2><?php the_title(); ?></h2>

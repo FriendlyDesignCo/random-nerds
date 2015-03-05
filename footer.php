@@ -17,9 +17,11 @@
 
   <?php wp_footer(); ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="<?php echo bloginfo('template_url'); ?>/js/jquery.cookie.js"></script>
 
   <script type="text/javascript">
   var sidebarLoadingMoreContent = false;
+  var ignoredCategories; var categories = ['gaming','politics','pop-culture','tech'];
   (function(m){m.fn.textfill=function(r){function f(){a.debug&&"undefined"!=typeof console&&"undefined"!=typeof console.debug&&console.debug.apply(console,arguments)}function s(){"undefined"!=typeof console&&"undefined"!=typeof console.warn&&console.warn.apply(console,arguments)}function p(a,b,e,k,n,g){function d(a,b){var c=" / ";a>b?c=" > ":a==b&&(c=" = ");return c}f("[TextFill] "+a+" { font-size: "+b.css("font-size")+",Height: "+b.height()+"px "+d(b.height(),e)+e+"px,Width: "+b.width()+d(b.width(),
 k)+k+",minFontPixels: "+n+"px, maxFontPixels: "+g+"px }")}function q(a,b,e,k,f,g,d,h){for(p(a,b,f,g,d,h);d<h-1;){var l=Math.floor((d+h)/2);b.css("font-size",l);if(e.call(b)<=k){if(d=l,e.call(b)==k)break}else h=l;p(a,b,f,g,d,h)}b.css("font-size",h);e.call(b)<=k&&(d=h,p(a+"* ",b,f,g,d,h));return d}var a=m.extend({debug:!1,maxFontPixels:40,minFontPixels:4,innerTag:"span",widthOnly:!1,success:null,callback:null,fail:null,complete:null,explicitWidth:null,explicitHeight:null,changeLineHeight:!1},r);f("[TextFill] Start Debug");
 this.each(function(){var c=m(a.innerTag+":visible:first",this),b=a.explicitHeight||m(this).height(),e=a.explicitWidth||m(this).width(),k=c.css("font-size"),n=parseFloat(c.css("line-height"))/parseFloat(k);f("[TextFill] Inner text: "+c.text());f("[TextFill] All options: ",a);f("[TextFill] Maximum sizes: { Height: "+b+"px, Width: "+e+"px }");var g=a.minFontPixels,d=0>=a.maxFontPixels?b:a.maxFontPixels,h=void 0;a.widthOnly||(h=q("Height",c,m.fn.height,b,b,e,g,d));var l=void 0,l=q("Width",c,m.fn.width,
@@ -96,8 +98,14 @@ e,b,e,g,d);a.widthOnly?(c.css({"font-size":l,"white-space":"nowrap"}),a.changeLi
         $("#article-sidebar .loader-container").toggleClass('hidden');
         $fixed.animate({scrollTop:$fixed.get(0).scrollHeight},400);
         $.get(targetURL, function(data){
-          $("#sidebar-posts").append($(data).find('#sidebar-posts div.post').hide());
-          $('#sidebar-posts div.post:hidden').slideDown(400, function(){ $("#article-sidebar .loader-container").slideUp(300,function(){$("#article-sidebar .loader-container").addClass("hidden").removeAttr('style'); }); });
+          var newPosts = $(data).find('#sidebar-posts div.post');
+          newPosts.each(function(){
+            var post = $(this);
+            post.find('filterable').addClass('hidden');
+          });
+          $("#sidebar-posts").append(newPosts);
+          updateIgnoredCategories(true);
+          $("#article-sidebar .loader-container").slideUp(300,function(){$("#article-sidebar .loader-container").addClass("hidden").removeAttr('style');});
           $(data).find('a.load-more-sidebar-pages').insertBefore($(".loader-container"));
           window.sidebarLoadingMoreContent = false;
         });
@@ -107,6 +115,44 @@ e,b,e,g,d);a.widthOnly?(c.css({"font-size":l,"white-space":"nowrap"}),a.changeLi
         loadMoreSidebarPosts();
       });
       $fixed.whenScrolledToBottom(loadMoreSidebarPosts, 0);
+
+      <?php /* Filtering */ ?>
+      $.cookie.json = true;
+      ignoredCategories = $.cookie('ignoredCategories');
+      if (ignoredCategories === undefined)
+        ignoredCategories = [];
+
+      function updateIgnoredCategories(animate) {
+        var selector = '';
+        $(categories).each(function(index,value){
+          if ($.inArray(value, ignoredCategories) == -1) {
+            selector = selector + ':not(.category-'+value+')';
+            $(".filterable.category-"+value+".hidden").slideDown().removeClass('hidden');
+          }
+        });
+        console.log("Hiding " + selector);
+        if (animate) {
+          $(".filterable" + selector + ":not(.hidden)").slideUp(400,function(){
+            $(this).addClass('hidden').removeAttr('style');
+          });
+        } else {
+          $(".filterable" + selector).addClass('hidden').removeAttr('style');
+        }
+      }
+
+      $("#avatar-select").on('click','a.apply-filter',function(event){
+        event.preventDefault();
+        var category = $(this).data('category');
+        if ($.inArray(category, ignoredCategories) != -1) {
+          ignoredCategories.splice($.inArray(category, ignoredCategories), 1);
+        } else {
+          ignoredCategories.push(category);
+        }
+        $(this).toggleClass('disabled');
+        $.cookie('ignoredCategories',ignoredCategories,{path:'/',expires:365});
+        updateIgnoredCategories(true);
+      });
+      updateIgnoredCategories(false);
     });
   </script>
 

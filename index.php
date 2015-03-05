@@ -22,7 +22,7 @@ $i = 0; ?>
       $categoryLinks[] = '<a href="' . get_category_link($category->cat_ID) . '">' . $category->cat_name . '</a>';
     }
     ?>
-      <article class="<?php echo implode(' ', $categorySlugs); ?>">
+      <article class="<?php if (!is_single()): ?>filterable<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?>">
         <div class="article">
           <div class="category-info">
             # <a href="<?php the_permalink(); ?>" class="grey"><?php the_ID(); ?></a> in <a href="#"><?php echo implode(', ', $categoryNames); ?></a>
