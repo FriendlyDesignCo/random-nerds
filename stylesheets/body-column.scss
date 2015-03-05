@@ -70,9 +70,93 @@
     color: $pop-culture-color;
   }
 
+  /* Article Styling */
+  .article-body {
+    h1,h2,h3,h4,h5,h6 {
+      line-height:1.2em;
+      margin:1em 0;
+      color:#666;
+      text-align:inherit;
+    }
+    img {
+      max-width:100%;
+    }
+    blockquote {
+      color:#588aaf;
+      float:left;
+      margin-left:-60px;
+      border-top:1px solid #ebe9e7;
+      border-bottom:1px solid #ebe9e7;
+      padding-top:40px;
+      padding-bottom:40px;
+      margin-right:40px;
+      max-width:50%;
+      p {
+        font-size:32px;
+        font-family: 'Playfair Display', serif;
+        line-height:32px;
+      }
+    }
+    h1,h2,h3,h4 {
+      font-family: 'Playfair Display', serif;
+    }
+    h1 {
+      font-weight:bold;
+      font-size:58px;
+    }
+    h2 {
+      font-weight:normal;
+      font-size:58px;
+    }
+    h3 {
+      font-weight:bold;
+      font-size:46px;
+    }
+    h4 {
+      font-weight:normal;
+      font-size:46px;
+    }
+    h5 {
+      font-family: 'Lora', serif;
+      font-weight:bold;
+      font-size:32px;
+    }
+    h6 {
+      font-family: 'Lora', serif;
+      font-weight:normal;
+      font-size:32px;
+    }
+
+    strong {
+      font-weight:bold;
+    }
+    em {
+      font-style:italic;
+    }
+    ul, ol {
+      margin-left:3em;
+    }
+    ul {
+      list-style-type:circle;
+    }
+    ol {
+      list-style-type:decimal;
+      li::marker {
+        font-style:italic;
+      }
+      li {
+        font-style:normal;
+      }
+    }
+    li {
+      margin-top:1em;
+      margin-bottom:1em;
+    }
+  }
+
   /* Drop cap */
   .first-article .article-body {
-    p:first-of-type::first-letter {
+    > p:first-of-type::first-letter {
       initial-letter: 2;
       font-size:57px;
       float:left;
