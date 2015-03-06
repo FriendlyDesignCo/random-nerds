@@ -2,6 +2,10 @@
   position:fixed;
   top:80px;
   right:35px;
+  @media (max-width:1024px) {
+    top:60px;
+    right:25px;
+  }
   width:32px;
   z-index:19;
   opacity:0;
@@ -35,6 +39,10 @@ body.past-header {
   position:fixed;
   top:40px;
   right:35px;
+  @media (max-width:1024px) {
+    top:25px;
+    right:25px;
+  }
   color:#fff;
   z-index: 20;
   background-color: transparent;
