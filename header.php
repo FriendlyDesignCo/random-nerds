@@ -60,7 +60,7 @@
         else
           $ignoredCategories = array();
         $page = isset($_GET['spage']) ? $_GET['spage'] : 1;
-        $sidebarQuery = new WP_Query(array('posts_per_page' => 3, 'paged' => $page));
+        $sidebarQuery = new WP_Query(array('posts_per_page' => ot_get_option('sidebar_post_count'), 'paged' => $page));
         while ($sidebarQuery->have_posts()): $sidebarQuery->the_post();
         $categories = get_the_category();
         $categoryNames = array(); $categorySlugs = array();
