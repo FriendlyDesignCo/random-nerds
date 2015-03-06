@@ -33,13 +33,12 @@ foreach ($categories as $category) {
           <img src="<?php the_field('signature', 'user_'.get_the_author_meta('ID')); ?>">
         </div>
         <?php get_template_part('author-info'); ?>
-
+      <?php else: ?>
+        <div class="divider-row"><hr class="divider"></div>
       <?php endif; ?>
     </div>
   </article>
-  <?php if (is_home()): ?>
-    <div class="row"><hr class="divider signature"></div>
-  <?php elseif (is_single()): ?>
+  <?php if (is_single()): ?>
     <div class="comment-divider">
       <hr>
       <div class="plus"><a href="#comments" data-identifier="post_<?php the_ID(); ?>" class="comment-async"><span>+</span></a></div>
