@@ -175,10 +175,10 @@
     }
 
     .article {
-      @media (min-width:1280px) {
+      @media (min-width:1024px) {
         width:70%;
       }
-      @media (max-width:1280px) {
+      @media (max-width:1024px) {
         width:90%;
       }
       max-width:1000px;
@@ -411,7 +411,7 @@
     }
     .article-header-image {
       background-size:cover;
-      min-height:600px;
+      height:600px;
       background-position:right bottom;
       position:relative;
 
