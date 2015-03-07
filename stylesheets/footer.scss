@@ -14,9 +14,6 @@ footer {
 
   .footer-content {
     width:90%;
-    @media screen and (max-width:640px) {
-      width:50%;
-    }
     max-width:600px;
     margin:0 auto;
     font-family: 'Montserrat', sans-serif;
