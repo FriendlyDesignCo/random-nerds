@@ -396,12 +396,19 @@
 
         a {
           font-size:27px;
+          display:block;
         }
         span {
           display:inline-block;
           font-size:20px;
           margin-top:20px;
           line-height:26px;
+        }
+      }
+
+      @media screen and (max-width:640px) {
+        .relatedthumb:last-child {
+          margin-top:20px;
         }
       }
     }
