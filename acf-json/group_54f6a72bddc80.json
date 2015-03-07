@@ -26,7 +26,25 @@
             "name": "signature",
             "prefix": "",
             "type": "image",
-            "instructions": "",
+            "instructions": "An image of your signature in black text",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "url",
+            "preview_size": "thumbnail",
+            "library": "all"
+        },
+        {
+            "key": "field_54fb79cb8171d",
+            "label": "Signature White",
+            "name": "signature_white",
+            "prefix": "",
+            "type": "image",
+            "instructions": "An image of your signature in white text",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -59,6 +77,25 @@
             "maxlength": "",
             "readonly": 0,
             "disabled": 0
+        },
+        {
+            "key": "field_54fb7d75a64ee",
+            "label": "Extended Bio",
+            "name": "extended_bio",
+            "prefix": "",
+            "type": "wysiwyg",
+            "instructions": "Tell us a little more about yourself than you put in the biography above.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "basic",
+            "media_upload": 0
         }
     ],
     "location": [
@@ -76,5 +113,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1425452030
+    "modified": 1425767862
 }

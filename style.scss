@@ -48,6 +48,7 @@ $avatar-sidebar-category-color: #c5c1be;
 $mobile-filtering-bar-height:40px;
 
 $header-footer-background: #303b47;
+$category-header-background: #96918f;
 $hr-color: #dbd8d5;
 
 @media screen and (min-width:641px) {
@@ -101,12 +102,26 @@ hr.small {
 hr.tiny {
   width:100px;
 }
+hr.tiny.left {
+  margin-left:0;
+}
 .hidden {
   display:none;
 }
 
 @media screen and (min-width:641px) {
   .mobile-only {
+    display:none;
+  }
+  .desktop-only {
+    display:block;
+  }
+}
+@media screen and (max-width:640px) {
+  .mobile-only {
+    display:block;
+  }
+  .desktop-only {
     display:none;
   }
 }
@@ -125,6 +140,9 @@ a.symbol:before {
 @import 'stylesheets/footer.scss';
 @import 'stylesheets/loader.scss';
 @import 'stylesheets/category.scss';
+body.author {
+  @import 'stylesheets/author-page.scss';
+}
 
 .black {
   color:#333;

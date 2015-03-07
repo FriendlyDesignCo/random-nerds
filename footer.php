@@ -190,6 +190,13 @@ $(".fittext").textfill({maxFontPixels: 100});
       <?php include('js/load-more-posts.php'); ?>
       <?php include('js/responsive-iframes.php'); ?>
 
+      <?php /* Authors need to set the category on the articles to colorize */ ?>
+      if ($("body").hasClass('author')) {
+        $("span.colorize-categories a").each(function(){
+          $(this).addClass('category-'+$(this).html().toLowerCase());
+        });
+      }
+
       $("#main-menu").removeAttr('style');
     });
   </script>

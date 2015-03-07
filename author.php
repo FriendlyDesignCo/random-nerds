@@ -1,0 +1,61 @@
+<?php get_header(); ?>
+<?php $authorID = get_the_author_meta('ID'); ?>
+
+<div class="author-header page-header">
+  <div class="author-image"><div class="image" style="background-image:url('<?php the_field('profile_picture', 'user_'.$authorID); ?>')"></div><div class="author-border-overlay"></div></div>
+  <div class="author-info">
+    <div class="author-signature">
+      <img src="<?php the_field('signature_white', 'user_'.$authorID); ?>">
+    </div>
+    <?php if (strlen($twitter = get_field('twitter_username', 'user_'.$authorID)) > 0): ?>
+      <hr class="tiny left"><br>
+      <a href="https://www.twitter.com/<?php echo $twitter; ?>" class="twitter-link">@<?php echo $twitter; ?></a>
+    <?php endif; ?>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column-left">
+    <?php the_field('extended_bio', 'user_'.$authorID); ?>
+    <p><img src="<?php the_field('signature', 'user_'.$authorID); ?>"></p>
+  </div>
+  <div class="column-right">
+
+    <h5>Articles by <?php the_author(); ?></h5>
+
+    <?php while (have_posts()): the_post();
+    $categories = get_the_category();
+    $categoryNames = array(); $categorySlugs = array(); $categoryLinks = array();
+    foreach ($categories as $category) {
+      $categoryNames[] = $category->cat_name;
+      $categorySlugs[] = 'category-'.$category->slug;
+      $categoryLinks[] = '<a href="' . get_category_link($category->cat_ID) . '">' . $category->cat_name . '</a>';
+    }
+    ?>
+
+      <article>
+        <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+        <div class="article-info">
+          <span># <a href="<?php the_permalink(); ?>" class="grey"><?php the_ID(); ?></a> in <span class="colorize-categories"><?php the_category(', '); ?></span></span><br>
+          <span>Submitted To</span> <span class="tags"><?php the_tags('', ', '); ?></span>
+        </div>
+        <?php if ($i < count($posts)-1): ?>
+          <div class="divider-row"><hr class="divider"></div>
+        <?php endif; ?>
+      </article>
+    <?php $i++; endwhile; ?>
+
+    <?php if (get_next_posts_link() !== null): ?>
+      <div class="comment-divider more-posts-link add-divider-row">
+        <hr>
+        <div class="plus"><?php next_posts_link('<span>+</span>'); ?></div>
+        <?php echo str_replace('<a', '<a class="load-more"', get_next_posts_link('Load More')); ?>
+        <div class="loader blue hidden">Loading...</div>
+      </div>
+    <?php endif; ?>
+    <div id="end-of-posts-marker"></div>
+  </div>
+  <div class="clearfix"></div>
+</div>
+
+<?php get_footer(); ?>

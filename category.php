@@ -8,9 +8,9 @@ foreach ($categories as $category) {
   $categoryLinks[] = '<a href="' . get_category_link($category->cat_ID) . '">' . $category->cat_name . '</a>';
 }
 ?>
-  <div class="category-header">
+  <div class="category-header page-header">
   </div>
-  
+
   <article class="<?php if (!is_single()): ?>filterable<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?>">
     <div class="article">
       <div class="category-info">

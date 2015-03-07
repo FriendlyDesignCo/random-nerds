@@ -53,4 +53,6 @@ $i = 0; ?>
       </div>
     <?php endif; ?>
 
+    <div id="end-of-posts-marker"></div>
+
 <?php get_footer(); ?>
