@@ -414,8 +414,16 @@
     }
 
     /* Post Featured Image */
+    a h2 {
+      color:#000;
+    }
     .dark-mode a h2 {
       color:#fff;
+    }
+
+    .no-header-image {
+      background-color:$avatar-sidebar-link-color;
+      a h2 { color:#fff;}
     }
 
     .article-header-image {
