@@ -330,6 +330,9 @@
       text-align:center;
     }
     .author-info {
+      a {
+        color:$blue;
+      }
       .author-image {
         width:150px;
         height:150px;
