@@ -47,7 +47,7 @@
     <section id="content" class="sidebar-visible">
       <section id="article-sidebar">
           <div class="article featured">
-            <h2><?php echo ot_get_option('sidebar_top_comment'); ?></h2>
+            <h2 class="random-angle-<?php echo rand(5,15); ?>"><?php echo ot_get_option('sidebar_top_comment'); ?></h2>
           </div>
 
           <div id="sidebar-posts">
@@ -88,7 +88,9 @@
             <div class="post" data-post-id="<?php the_ID(); ?>">
               <a href="<?php the_permalink(); ?>">
                 <div class="article <?php if ($hidden): ?>hidden<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?>">
-                  <div class="cover"><?php the_field('post_subtitle'); ?></div>
+                  <div class="cover">
+                    <div><div class="random-angle-<?php echo rand(5,15); ?>"><?php the_field('post_subtitle'); ?></div></div>
+                  </div>
                   <h3 class="category"><?php echo implode(', ', $categoryNames);?></h3>
                   <h2><?php the_title(); ?></h2>
                 </div>
