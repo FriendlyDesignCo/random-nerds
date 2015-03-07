@@ -187,6 +187,8 @@ $(".fittext").textfill({maxFontPixels: 100});
       });
       updateIgnoredCategories(false, false);
 
+      <?php include('js/load-more-posts.php'); ?>
+
       $("#main-menu").removeAttr('style');
     });
   </script>

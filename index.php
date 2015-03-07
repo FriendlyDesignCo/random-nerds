@@ -43,4 +43,14 @@ $i = 0; ?>
         </div>
       </article>
     <?php $i++; endwhile; ?>
+
+    <?php if (get_next_posts_link() !== null): ?>
+      <div class="comment-divider more-posts-link">
+        <hr>
+        <div class="plus"><?php next_posts_link('<span>+</span>'); ?></div>
+        <?php echo str_replace('<a', '<a class="load-more"', get_next_posts_link('Load More')); ?>
+        <div class="loader blue hidden">Loading...</div>
+      </div>
+    <?php endif; ?>
+
 <?php get_footer(); ?>

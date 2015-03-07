@@ -9,6 +9,12 @@
   -webkit-animation: load7 1.8s infinite ease-in-out;
   animation: load7 1.8s infinite ease-in-out;
 }
+.loader.blue:before,
+.loader.blue:after,
+.loader.blue {
+  -webkit-animation: load7-blue 1.8s infinite ease-in-out;
+  animation: load7-blue 1.8s infinite ease-in-out;
+}
 .loader {
   margin: 0 auto;
   font-size: 10px;
@@ -17,11 +23,19 @@
   -webkit-animation-delay: 0.16s;
   animation-delay: 0.16s;
 }
+.loader.blue {
+  -webkit-animation-delay: 0.16s;
+  animation-delay: 0.16s;
+}
 .loader:before {
   left: -3.5em;
 }
 .loader:after {
   left: 3.5em;
+  -webkit-animation-delay: 0.32s;
+  animation-delay: 0.32s;
+}
+.loader.blue:after {
   -webkit-animation-delay: 0.32s;
   animation-delay: 0.32s;
 }
@@ -49,5 +63,26 @@
   }
   40% {
     box-shadow: 0 2.5em 0 0 #FFF;
+  }
+}
+
+@-webkit-keyframes load7-blue {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em #6291b4;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0 #6291b4;
+  }
+}
+@keyframes load7-blue {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 2.5em 0 -1.3em #6291b4;
+  }
+  40% {
+    box-shadow: 0 2.5em 0 0 #6291b4;
   }
 }
