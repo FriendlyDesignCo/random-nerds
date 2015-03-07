@@ -347,6 +347,10 @@
         background-size:cover;
         float:left;
         margin-right:30px;
+        @include transition(border-color, 0.5s, ease-in-out);
+      }
+      a:hover .author-image {
+        border:8px solid $blue;
       }
       .author-details {
         @media screen and (min-width:641px) {
