@@ -11,7 +11,7 @@ foreach ($categories as $category) {
     <?php $thumbnail = false; if (has_post_thumbnail()) { $thumbObject = wp_get_attachment_image_src(get_post_thumbnail_id(), 'single-post-thumbnail'); $thumbnail = $thumbObject[0]; } ?>
     <div class="article-header-image <?php the_field('color_mode', get_the_ID()); ?> page-header" style="background-image:url('<?php echo $thumbnail; ?>');height:600px;">
       <div class="cover">
-        <h2 class="fittext"><span><?php the_title(); ?></span></h2>
+        <a href="<?php the_permalink(); ?>"><h2 class="fittext"><span><?php the_title(); ?></span></h2></a>
         <a href="/" id="logo"><img src="<?php bloginfo('template_url'); ?>/images/signature-logo.png" title="Random Nerds"></a>
       </div>
     </div>

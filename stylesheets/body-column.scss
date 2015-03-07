@@ -404,9 +404,10 @@
     }
 
     /* Post Featured Image */
-    .dark-mode {
+    .dark-mode a h2 {
       color:#fff;
     }
+
     .article-header-image {
       background-size:cover;
       height:600px;
@@ -424,6 +425,13 @@
         background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0) 100%); /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
         min-height:600px;
+
+        a h2 {
+          @include transition(opacity, 0.5s, ease-in-out);
+        }
+        a:hover h2 {
+          opacity:0.75;
+        }
       }
 
       #logo {
