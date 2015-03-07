@@ -188,6 +188,7 @@ $(".fittext").textfill({maxFontPixels: 100});
       updateIgnoredCategories(false, false);
 
       <?php include('js/load-more-posts.php'); ?>
+      <?php include('js/responsive-iframes.php'); ?>
 
       $("#main-menu").removeAttr('style');
     });
