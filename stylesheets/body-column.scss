@@ -378,9 +378,11 @@
         right:40px;
         text-align:right;
         width:100%;
-        img {
-          max-width:50%;
-        }
+        max-width:362px;
+        @include transition(opacity, 0.5s, ease-in-out);
+      }
+      #logo:hover {
+        opacity:0.75;
       }
 
       h2 {
