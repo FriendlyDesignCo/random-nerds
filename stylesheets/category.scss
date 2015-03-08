@@ -3,5 +3,18 @@
     background-color:$category-header-background;
     height:275px;
     width:100%;
+
+    h1 {
+      color:#fff;
+      font-size:52px;
+      font-family:'Playfair Display', serif;
+      line-height:275px;
+      padding-left:16%;
+
+      span {
+        text-transform:lowercase;
+        border-bottom:5px double #000;
+      }
+    }
   }
 }
