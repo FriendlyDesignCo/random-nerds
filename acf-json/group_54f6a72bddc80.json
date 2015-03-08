@@ -8,7 +8,7 @@
             "name": "profile_picture",
             "prefix": "",
             "type": "image",
-            "instructions": "",
+            "instructions": "Square profile picture",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -113,5 +113,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1425767862
+    "modified": 1425771535
 }

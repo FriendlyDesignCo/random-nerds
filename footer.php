@@ -22,6 +22,7 @@
   <?php wp_footer(); ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="<?php echo bloginfo('template_url'); ?>/js/jquery.cookie.js"></script>
+  <script src="<?php echo bloginfo('template_url'); ?>/js/jquery.resize.js"></script>
 
   <script type="text/javascript">
   var sidebarLoadingMoreContent = false;
@@ -38,6 +39,34 @@ $(".fittext").textfill({maxFontPixels: 100});
       $(window).resize(function(){
         $(".fittext").textfill({maxFontPixels: 100});
       });
+
+      <?php /* Authors need to set the category on the articles to colorize, and profile image nonsense */ ?>
+      if ($("body").hasClass('author')) {
+        $("span.colorize-categories a").each(function(){
+          $(this).addClass('category-'+$(this).html().toLowerCase());
+        });
+        var authorImage = $("#author-image");
+        $("<div class='author-shadow'></div>").insertBefore($(".author-image"));
+
+        var resizeAuthorImageShadow = function(){
+          var contentBody = $("#content-body");
+          $(".author-shadow").width(authorImage.width()).height(authorImage.height());
+          if (contentBody.width() <= 1024) {
+            $(".author-header").removeClass('large');
+            contentBody.removeClass('large');
+            $(".author-shadow").css('left',authorImage.offset().left-contentBody.offset().left-10);
+          } else {
+            $(".author-header").addClass('large');
+            contentBody.addClass('large');
+            $(".author-shadow").css({'left':''});
+          }
+        };
+        $('#content-body').resize(resizeAuthorImageShadow);
+        resizeAuthorImageShadow();
+      }
+
+      <?php /* Sidebar Collapse Button */ ?>
+
       $("#collapse-sidebar").click(function(event){
         event.preventDefault();
         $(this).toggleClass('closed');
@@ -68,9 +97,7 @@ $(".fittext").textfill({maxFontPixels: 100});
             $("body").addClass('past-header');
             pastHeader = true;
           }
-        }
-        else
-        {
+        } else {
           if (pastHeader) {
             $("body").removeClass('past-header');
             pastHeader = false;
@@ -189,13 +216,6 @@ $(".fittext").textfill({maxFontPixels: 100});
 
       <?php include('js/load-more-posts.php'); ?>
       <?php include('js/responsive-iframes.php'); ?>
-
-      <?php /* Authors need to set the category on the articles to colorize */ ?>
-      if ($("body").hasClass('author')) {
-        $("span.colorize-categories a").each(function(){
-          $(this).addClass('category-'+$(this).html().toLowerCase());
-        });
-      }
 
       $("#main-menu").removeAttr('style');
     });

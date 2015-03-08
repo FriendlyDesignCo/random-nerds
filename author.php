@@ -2,7 +2,7 @@
 <?php $authorID = get_the_author_meta('ID'); ?>
 
 <div class="author-header page-header">
-  <div class="author-image"><div class="image" style="background-image:url('<?php the_field('profile_picture', 'user_'.$authorID); ?>')"></div><div class="author-border-overlay"></div></div>
+  <img id="author-image" class="author-image" src="<?php the_field('profile_picture', 'user_'.$authorID); ?>">
   <div class="author-info">
     <div class="author-signature">
       <img src="<?php the_field('signature_white', 'user_'.$authorID); ?>">
@@ -12,6 +12,7 @@
       <a href="https://www.twitter.com/<?php echo $twitter; ?>" class="twitter-link">@<?php echo $twitter; ?></a>
     <?php endif; ?>
   </div>
+  <div class="author-image-cover"></div>
 </div>
 
 <div class="row">

@@ -1,58 +1,76 @@
+.author-header.large {
+  height:340px;
+}
 .author-header {
   font-family:'Playfair Display', serif;
   background-color:$category-header-background;
-  height:340px;
-  @media screen and (max-width:640px) {
-    height:240px;
-  }
+  height:240px;
   width:100%;
   position:relative;
   overflow:display;
+  @include transition(height, 0.5s, ease-out);
 
-  .author-image {
+  .author-signature img {
+    max-width:70%;
+  }
+
+  .author-shadow {
+    border:10px solid #454f5a;
+    border-radius:100%;
+    position:absolute;
+    z-index:1;
+    bottom:0;
+    margin-bottom:-30px;
+    margin-left:0;
+  }
+  &.large .author-shadow {
+    border:20px solid #454f5a;
     width:300px;
     height:300px;
-    top:60px;
-    left:100px;
-    @media screen and (max-width:640px) {
-      width:225px;
-      height:225px;
-      top:35px;
-      left:50px;
-    }
-
+    left:80px;
+    margin-bottom:-40px;
+    margin-left:0;
+  }
+  .author-image {
+    width:30%;
+    height:auto;
+    left:5%;
     border-radius:100%;
-    border:20px solid #454f5a;
     position:absolute;
+    bottom:0;
+    margin-bottom:-20px;
+    z-index:6;
+  }
+  &.large .author-image {
+    width:300px;
+    height:300px;
+    left:100px;
+  }
 
-    > div.image {
-      width:100%;
-      height:100%;
-      margin:0;
-      background-size:cover;
-      border-radius:100%;
-      z-index:6;
-      position:relative;
-    }
-    > div.author-border-overlay {
-      width:100%;
-      height:60px;
-      position:absolute;
-      bottom:0;
-      background-color:#fff;
-      margin-bottom:-20px;
-      z-index:5;
-    }
+  .author-image-cover {
+    height:60px;
+    width:100%;
+    background-color:#fff;
+    position:absolute;
+    left:0;
+    bottom:0;
+    margin-bottom:-60px;
+    z-index:3;
   }
 
   .author-info {
-    padding-left:500px;
-    padding-top:115px;
+    padding-left: 40%;
+    padding-top: 55px;
+    @include transition(all, 0.5s, ease-out);
 
     a {
       color:#fff;
       font-size:32px;
     }
+  }
+  &.large .author-info {
+    padding-left:500px;
+    padding-top:115px;
   }
 }
 
@@ -63,13 +81,24 @@
 .column-left {
   padding-left:100px;
   padding-right:50px;
+  float:none;
+  width:100%;
+  box-sizing:border-box;
+  @include transition(all, 0.5s, ease-out);
+}
+#content-body.large .column-left {
   float:left;
   width:500px;
-  box-sizing:border-box;
 }
 .column-right {
   box-sizing:border-box;
   overflow:hidden;
+  @media screen and (max-width:640px) {
+    margin-top:30px;
+    width:95%;
+    box-sizing:content-box;
+    padding-left:5%;
+  }
 
   h5 {
     color:#ccc;
