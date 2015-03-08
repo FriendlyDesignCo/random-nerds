@@ -52,7 +52,7 @@
 
           <div id="sidebar-posts">
             <div class="loading-overlay">
-              <div class="loading-text">Refiltering Posts <div class="loader"></div></div>
+              <div class="loading-text sidebar-loading-message"><span>Refiltering Posts</span> <div class="loader"></div></div>
             </div>
         <?php
         if (isset($_COOKIE['ignoredCategories']))

@@ -15,8 +15,8 @@
 
   </section>
 
-  <div class="mobile-only" id="filtering">
-    Refiltering Posts <div class="loader"></div>
+  <div class="mobile-only sidebar-loading-message" id="filtering">
+    <span>Refiltering Posts</span> <div class="loader"></div>
   </div>
 
   <?php wp_footer(); ?>
@@ -206,6 +206,18 @@ $(".fittext").textfill({maxFontPixels: 100});
         if ($.inArray(category, ignoredCategories) != -1) {
           ignoredCategories.splice($.inArray(category, ignoredCategories), 1);
         } else {
+          if (ignoredCategories.length == 3) {
+            // Don't allow users to turn off all of the categories
+            $(".sidebar-loading-message > span").html("You can't filter it all away!<br><br><br>I'm afraid I can't let you do that, Dave");
+            $("body").addClass('filtering');
+            setTimeout(function(){
+              $("body").removeClass('filtering');
+            }, 1500);
+            setTimeout(function(){
+              $(".sidebar-loading-message > span").html("Refiltering posts");
+            }, 2000);
+            return;
+          }
           ignoredCategories.push(category);
         }
         $(this).toggleClass('disabled');
