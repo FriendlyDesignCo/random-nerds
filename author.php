@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<?php $authorID = get_the_author_meta('ID'); ?>
+<?php $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author)); $authorID = $curauth->ID; ?>
 
 <div class="author-header page-header">
   <img id="author-image" class="author-image" src="<?php the_field('profile_picture', 'user_'.$authorID); ?>">
@@ -22,7 +22,7 @@
   </div>
   <div class="column-right">
 
-    <h5>Articles by <?php the_author(); ?></h5>
+    <h5>Articles by <?php echo $curauth->display_name; ?></h5>
 
     <?php while (have_posts()): the_post();
     $categories = get_the_category();
