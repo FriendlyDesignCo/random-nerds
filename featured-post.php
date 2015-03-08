@@ -26,7 +26,7 @@ foreach ($categories as $category) {
       <?php endif; ?>
       <hr class="small">
       <div class="article-body">
-        <?php the_content('<div class="read-more"><span>Read More</span> <div class="arrow">&#8594;</div><div class="clearfix"></div></div>'); ?>
+        <?php the_content('<div class="read-more"><span>Read More</span> <div class="arrow"><i class="fa fa-chevron-right"></i></div><div class="clearfix"></div></div>'); ?>
       </div>
       <?php if (!is_home()): ?>
         <div class="author-signature">
