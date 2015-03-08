@@ -2,6 +2,10 @@
 .author-info {
   a {
     color:$blue;
+    @include transition(color, 0.5s, ease-in-out);
+  }
+  a:hover {
+    color:$blue-hover;
   }
   .author-image {
     width:150px;
