@@ -27,7 +27,7 @@ $i = 0; ?>
           <div class="category-info">
             # <a href="<?php the_permalink(); ?>" class="grey"><?php the_ID(); ?></a> in <?php the_category(', '); ?>
           </div>
-          <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+          <h2><a href="<?php the_permalink(); ?>" class="article-title"><?php the_title(); ?></a></h2>
           <hr class="small">
           <div class="meta-row text-center pad-bottom">
             <span class="light-grey">By:</span> <a class="author-link" href="<?php echo get_author_posts_url(get_the_author_ID()); ?>"><?php the_author(); ?></a>
