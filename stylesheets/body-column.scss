@@ -272,7 +272,7 @@
           width: 25px;
           height: 25px;
           line-height: 25px;
-          @include transition(margin-right, 0.5s, ease-in-out);
+          @include transition(all, 0.5s, ease-in-out);
         }
       }
       a:hover {
@@ -414,14 +414,34 @@
   article.category-tech .read-more a:hover span {
     color:$tech-type-color;
   }
+  article.category-tech .read-more a:hover .arrow {
+    background-color:$tech-type-color;
+    border-color:$tech-type-color;
+    color:#fff;
+  }
   article.category-pop-culture .read-more a:hover span {
     color:$pop-culture-color;
+  }
+  article.category-pop-culture .read-more a:hover .arrow {
+    background-color:$pop-culture-color;
+    border-color:$pop-culture-color;
+    color:#fff;
   }
   article.category-politics .read-more a:hover span {
     color:$politics-color;
   }
+  article.category-politics .read-more a:hover .arrow {
+    background-color:$politics-color;
+    border-color:$politics-color;
+    color:#fff;
+  }
   article.category-gaming .read-more a:hover span {
     color:$gaming-color;
+  }
+  article.category-gaming .read-more a:hover .arrow {
+    background-color:$gaming-color;
+    border-color:$gaming-color;
+    color:#fff;
   }
 
   .comment-divider {
