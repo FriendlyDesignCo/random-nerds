@@ -101,3 +101,13 @@ function removeExtraScripts() {
     wp_dequeue_style('front-css-yuzo_related_post');
 }
 add_action( 'wp_print_styles', 'removeExtraScripts' );
+
+// Subscribe to MailChimp updates
+function contactFormMailchimpSubscribe($form)
+{
+  if (isset($_POST['subscribe'][0]))
+  {
+    
+  }
+}
+add_action('wpcf7_mail_sent', 'contactFormMailchimpSubscribe');
