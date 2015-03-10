@@ -101,3 +101,20 @@ function removeExtraScripts() {
     wp_dequeue_style('front-css-yuzo_related_post');
 }
 add_action( 'wp_print_styles', 'removeExtraScripts' );
+
+function removeViewsColumnFromPosts($columns)
+{
+  global $current_user;
+  if (!in_array('administrator', $current_user->roles) && !in_array('editor', $current_user->roles))
+  {
+    if (isset($columns['yuzo_post_views']))
+      unset($columns['yuzo_post_views']);
+  }
+  return $columns;
+}
+// ...seriously, WP?
+function removeViewsColumnFromPostsFilter()
+{
+  add_filter('manage_posts_columns', 'removeViewsColumnFromPosts');
+}
+add_action( 'admin_init' , 'removeViewsColumnFromPostsFilter' );
