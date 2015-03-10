@@ -17,7 +17,7 @@ foreach ($categories as $category) {
   <article class="<?php if (!is_single()): ?>filterable<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?>">
     <div class="article">
       <div class="category-info">
-        # <a href="<?php the_permalink(); ?>" class="grey"><?php the_ID(); ?></a> in <?php the_category(', '); ?>
+        # <a href="<?php the_permalink(); ?>" class="grey"><?php the_field('post_id'); ?></a> in <?php the_category(', '); ?>
       </div>
       <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
       <hr class="small">

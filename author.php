@@ -37,7 +37,7 @@
       <article>
         <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
         <div class="article-info">
-          <span># <a href="<?php the_permalink(); ?>" class="grey"><?php the_ID(); ?></a> in <span class="colorize-categories"><?php the_category(', '); ?></span></span><br>
+          <span># <a href="<?php the_permalink(); ?>" class="grey"><?php the_field('post_id'); ?></a> in <span class="colorize-categories"><?php the_category(', '); ?></span></span><br>
           <span>Submitted To</span> <span class="tags"><?php the_tags('', ', '); ?></span>
         </div>
         <?php if ($i < count($posts)-1): ?>
