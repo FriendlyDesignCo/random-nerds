@@ -73,12 +73,11 @@
     "instruction_placement": "label",
     "hide_on_screen": [
         "permalink",
-        "the_content",
         "discussion",
         "comments",
         "slug",
         "featured_image",
         "tags"
     ],
-    "modified": 1425428804
+    "modified": 1425972654
 }

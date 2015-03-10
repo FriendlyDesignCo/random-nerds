@@ -79,7 +79,7 @@
             <?php /* STATUS UPDATE */ ?>
             <div class="post" data-post-id="<?php the_ID(); ?>">
               <div class="status-update filterable <?php if ($hidden): ?>hidden<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?> <?php the_field('avatar'); ?> avatar-<?php the_field('display_side'); ?>">
-                <h2>"<?php the_title(); ?>"</h2>
+                <h2><?php the_content(); ?></h2>
                 <img class="avatar" src="<?php echo bloginfo('template_url'); ?>/images/<?php echo str_replace('avatar-','avatar-sidebar-',get_field('avatar')); ?>.png">
               </div>
             </div>
