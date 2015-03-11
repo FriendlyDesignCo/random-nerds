@@ -150,6 +150,7 @@ body.past-header {
   li a {
     color:#fff;
     font-family: 'Playfair Display', serif;
+    -webkit-font-smoothing: subpixel-antialiased;
     font-size:46px;
     font-weight:bold;
     line-height:1.7em;

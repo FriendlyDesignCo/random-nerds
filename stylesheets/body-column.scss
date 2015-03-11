@@ -101,10 +101,12 @@
         font-size:32px;
         font-family: 'Playfair Display', serif;
         line-height:32px;
+        -webkit-font-smoothing: subpixel-antialiased;
       }
     }
     h1,h2,h3,h4 {
       font-family: 'Playfair Display', serif;
+      -webkit-font-smoothing: subpixel-antialiased;
     }
     h1 {
       font-weight:bold;
@@ -200,6 +202,7 @@
 
     h2 {
       font-family: 'Playfair Display', serif;
+      -webkit-font-smoothing: subpixel-antialiased;
       font-size:40px;
       padding-top:10px;
       padding-bottom:10px;
