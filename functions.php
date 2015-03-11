@@ -1,5 +1,14 @@
 <?php
 
+if (!function_exists('randomNerdsInit'))
+{
+  function randomNerdsInit()
+  {
+    add_post_type_support('post', 'excerpt');
+  }
+}
+add_action('init', 'randomNerdsInit');
+
 if (!function_exists('randomNerdsSetup'))
 {
   function randomNerdsSetup()

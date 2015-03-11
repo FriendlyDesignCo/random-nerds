@@ -34,7 +34,7 @@ $i = 0; ?>
           </div>
 
           <div class="article-body">
-            <?php the_content('<div class="read-more hidden"><span>Read More</span> <div class="arrow">&#8594;</div><div class="clearfix"></div></div>'); ?>
+            <?php the_excerpt('<div class="read-more hidden"><span>Read More</span> <div class="arrow">&#8594;</div><div class="clearfix"></div></div>'); ?>
           </div>
 
           <?php if ($i < ($wp_query->found_posts)): ?>

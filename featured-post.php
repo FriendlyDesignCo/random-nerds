@@ -26,7 +26,12 @@ foreach ($categories as $category) {
       <?php endif; ?>
       <hr class="small">
       <div class="article-body">
-        <?php the_content('<div class="read-more"><span>Read More</span> <div class="arrow"><i class="fa fa-chevron-right"></i></div><div class="clearfix"></div></div>'); ?>
+        <?php if (is_single()): ?>
+          <?php the_content(); ?>
+        <?php else: ?>
+          <?php the_excerpt(); ?>
+          <div class="read-more"><a href="<?php the_permalink(); ?>"><span>Read More</span> <div class="arrow"><i class="fa fa-chevron-right"></i></div><div class="clearfix"></div></a></div>
+        <?php endif; ?>
       </div>
       <?php if (!is_home()): ?>
         <div class="author-signature">
