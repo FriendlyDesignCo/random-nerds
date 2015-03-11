@@ -71,7 +71,7 @@
   .article:hover .cover {
     display:block;
     opacity:1;
-    @include transition(opacity, 0.8s, ease);
+    @include transition(opacity, 0.4s, ease);
   }
 
   .article:hover h3, .article:not(.featured):hover h2 {
