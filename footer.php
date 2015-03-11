@@ -139,7 +139,7 @@ $(".fittext").textfill({maxFontPixels: 100});
         }
       }
 
-      <?php /* Inifinite Scroll */ ?>
+      <?php /* Infinite Scroll */ ?>
       $.fn.whenScrolledToBottom = function (cback_fxn, offset) {
         this.on('scroll',this,function(ev){
          if(!sidebarLoadingMoreContent && ev.data.scrollTop() >= ev.data[0].scrollHeight - ev.data.height() - offset){
@@ -205,24 +205,10 @@ $(".fittext").textfill({maxFontPixels: 100});
         event.preventDefault();
         $(".sidebar-loading-message > span").html(refilteringTexts[Math.floor(Math.random()*refilteringTexts.length)]);
         var category = $(this).data('category');
-        if ($.inArray(category, ignoredCategories) != -1) {
-          ignoredCategories.splice($.inArray(category, ignoredCategories), 1);
-        } else {
-          if (ignoredCategories.length == 3) {
-            // Don't allow users to turn off all of the categories
-            $(".sidebar-loading-message > span").html("You can't filter it all away!<br><br><br>I'm afraid I can't let you do that, Dave");
-            $("body").addClass('filtering');
-            setTimeout(function(){
-              $("body").removeClass('filtering');
-            }, 1500);
-            setTimeout(function(){
-              $(".sidebar-loading-message > span").html("Refiltering posts");
-            }, 2000);
-            return;
-          }
-          ignoredCategories.push(category);
-        }
-        $(this).toggleClass('disabled');
+        ignoredCategories = categories;
+        ignoredCategories.splice($.inArray(category, ignoredCategories), 1);
+        $("#avatar-select a.avatar-icon").addClass('disabled');
+        $(this).removeClass('disabled');
         $.cookie('ignoredCategories',ignoredCategories,{path:'/',expires:365});
         updateIgnoredCategories(true, true);
       });
