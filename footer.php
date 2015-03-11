@@ -27,6 +27,7 @@
   <script type="text/javascript">
   var sidebarLoadingMoreContent = false;
   var ignoredCategories; var categories = ['gaming','politics','pop-culture','tech'];
+  var refilteringTexts = ['Refiltering posts','Reticulating splines','Dynotherms connecting','Refactoring pixelations','Powering atomic batteries'];
   var headerBottom = 100; var pastHeader = false;
   (function(m){m.fn.textfill=function(r){function f(){a.debug&&"undefined"!=typeof console&&"undefined"!=typeof console.debug&&console.debug.apply(console,arguments)}function s(){"undefined"!=typeof console&&"undefined"!=typeof console.warn&&console.warn.apply(console,arguments)}function p(a,b,e,k,n,g){function d(a,b){var c=" / ";a>b?c=" > ":a==b&&(c=" = ");return c}f("[TextFill] "+a+" { font-size: "+b.css("font-size")+",Height: "+b.height()+"px "+d(b.height(),e)+e+"px,Width: "+b.width()+d(b.width(),
 k)+k+",minFontPixels: "+n+"px, maxFontPixels: "+g+"px }")}function q(a,b,e,k,f,g,d,h){for(p(a,b,f,g,d,h);d<h-1;){var l=Math.floor((d+h)/2);b.css("font-size",l);if(e.call(b)<=k){if(d=l,e.call(b)==k)break}else h=l;p(a,b,f,g,d,h)}b.css("font-size",h);e.call(b)<=k&&(d=h,p(a+"* ",b,f,g,d,h));return d}var a=m.extend({debug:!1,maxFontPixels:40,minFontPixels:4,innerTag:"span",widthOnly:!1,success:null,callback:null,fail:null,complete:null,explicitWidth:null,explicitHeight:null,changeLineHeight:!1},r);f("[TextFill] Start Debug");
@@ -202,6 +203,7 @@ $(".fittext").textfill({maxFontPixels: 100});
 
       $("#avatar-select").on('click','a.apply-filter',function(event){
         event.preventDefault();
+        $(".sidebar-loading-message > span").html(refilteringTexts[Math.floor(Math.random()*refilteringTexts.length)]);
         var category = $(this).data('category');
         if ($.inArray(category, ignoredCategories) != -1) {
           ignoredCategories.splice($.inArray(category, ignoredCategories), 1);
