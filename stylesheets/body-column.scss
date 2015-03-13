@@ -270,6 +270,28 @@
       font-family: 'Lora', serif;
       font-size:14px;
 
+      .categories {
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      .date {
+        color:#000;
+      }
+
+      ul {
+        @media screen and (min-width:1024px) {
+          li {
+            display: inline;
+            padding: 10px;
+          }
+        }
+        @media screen and (max-width:1023px) {
+          li {
+            margin-bottom:5px;
+          }
+        }
+      }
+
       .light-grey {
         font-family: 'Montserrat', sans-serif;
         color:$light-grey;
@@ -455,7 +477,7 @@
   }
 
   .article.featured {
-    .meta-row {
+    .meta-row:first-child {
       padding-top:25px;
     }
   }
