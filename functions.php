@@ -133,8 +133,11 @@ function contactFormMailchimpSubscribe($form)
 {
   if (isset($_POST['subscribe'][0]))
   {
-    
+    require_once(__DIR__.'/extra-config.php');
+    require_once(__DIR__.'/mailchimp-api/src/Mailchimp.php');
+
+    $mc = new Mailchimp(MAILCHIMP_API_KEY);
+    $mc->lists->subscribe(MAILCHIMP_LIST_ID, array('email' => $_POST['your-email']));
   }
 }
 add_action('wpcf7_mail_sent', 'contactFormMailchimpSubscribe');
-
