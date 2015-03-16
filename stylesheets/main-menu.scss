@@ -222,3 +222,39 @@ body.past-header {
 #main-menu.onscreen {
   margin-right:0;
 }
+
+
+#main-menu #mailchimp-subscribe {
+  margin-top:40px;
+  p {
+    font-family: 'Lora', sans-serif;
+    line-height: 1.3em;
+    margin-bottom: 0.3em;
+  }
+  input {
+    padding:10px;
+    width:215px;
+    height:37px;
+    font-size:20px;
+    box-sizing:border-box;
+    float:left;
+    font-family:'Lora', sans-serif;
+    @include transition(width, 0.3s, ease-in-out);
+  }
+  a {
+    display:inline-block;
+    height:37px;
+    width:45px;
+    background-color:$link-color;
+    color:#fff;
+    text-align:center;
+    line-height:37px;
+    float:left;
+    box-sizing:border-box;
+    @include transition(all, 0.3s, ease-in-out);
+
+    &:hover {
+      background-color:$link-hover-color;
+    }
+  }
+}

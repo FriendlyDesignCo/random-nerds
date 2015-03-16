@@ -276,6 +276,22 @@ $(".fittext").textfill({maxFontPixels: 100});
       <?php include('js/load-more-posts.php'); ?>
       <?php include('js/responsive-iframes.php'); ?>
 
+      <?php /* Mailchimp Subscription Form */ ?>
+      $("#mailchimp-subscribe a").click(function(event){
+        event.preventDefault();
+        $(this).parents("form").find('.submit').click();
+      });
+      $("#mailchimp-subscribe").submit(function(event){
+        event.preventDefault();
+        $(this).find('input').animate({'width':0});
+        $.post('/', $(this).serialize(), function(data){
+          $("#mailchimp-subscribe").html("<p>Thanks for subscribing!</p>");
+        }).error(function(){
+          $("#mailchimp-subscribe").append($("<p>Something went wrong, try again!</p>"));
+          $("#mailchimp-subscribe input").animate({'width':215});
+        });
+      });
+
       $("#main-menu").removeAttr('style');
     });
   </script>

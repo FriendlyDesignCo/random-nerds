@@ -39,6 +39,12 @@
       <hr>
       <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
       <hr>
+      <form method="POST" id="mailchimp-subscribe">
+        <p>Want to get articles delivered straight to you?</p>
+        <input type="submit" class="submit" style="display:none;">
+        <input type="email" placeholder="Your Email" name="mailchimp_email_subscribe" required="required"><a href="#"><i class="fa fa-envelope"></i></a>
+        <div class="clearfix"></div>
+      </form>
       <?php if (is_active_sidebar('sidebar_menu_social')): ?>
         <?php dynamic_sidebar('sidebar_menu_social'); ?>
       <?php endif; ?>
