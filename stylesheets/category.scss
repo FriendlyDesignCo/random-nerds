@@ -25,8 +25,12 @@ body.page #content-body {
     background:$category-header-background;
     width:100%;
     min-height:200px;
+    @media screen and (min-width:1500px) {
+      min-height:250px;
+    }
     position:relative;
 
+    @include transition(all, 0.3s, ease-in-out);
     h2 {
       font-family:'Playfair Display', serif;
       -webkit-font-smoothing: subpixel-antialiased;
