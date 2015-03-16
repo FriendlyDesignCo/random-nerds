@@ -61,6 +61,12 @@ $(".fittext").textfill({maxFontPixels: 100});
         $(".fittext").textfill({maxFontPixels: 100});
       });
 
+      // Form submission
+      $("a.send-form").click(function(event){
+        event.preventDefault();
+        $(this).parents('form').submit();
+      });
+
       <?php /* Authors need to set the category on the articles to colorize, and profile image nonsense */ ?>
       if ($("body").hasClass('author')) {
         $("span.colorize-categories a").each(function(){

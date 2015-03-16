@@ -1,0 +1,96 @@
+.page-content-box {
+  form {
+    margin-top:40px;
+    margin-bottom:40px;
+
+    &.sent {
+      p {
+        display:none;
+      }
+      div.wpcf7-mail-sent-ok {
+        padding:20px;
+        border:2px solid $link-color;
+      }
+    }
+
+    label {
+      font-size:46px;
+      @media screen and (max-width:640px) {
+        font-size:32px;
+      }
+      font-family: 'Playfair Display', serif;
+      -webkit-font-smoothing: subpixel-antialiased;
+      margin-bottom:5px;
+      color:#666;
+
+      .wpcf7-list-item-label {
+        font-size:22px;
+        font-family: 'Lora',sans-serif;
+      }
+    }
+    input, textarea {
+      font-family:'Lora',sans-serif;
+      font-size:22px;
+      padding:10px;
+      color:#666;
+      margin-top:10px;
+      max-width:100%;
+    }
+    textarea {
+      width:100%;
+    }
+    select {
+      font-family:'Lora',sans-serif;
+      font-size:22px;
+      padding:10px;
+      color:#666;
+      margin-top:10px;
+    }
+
+    a.button {
+      width:160px;
+      height:60px;
+      color:#fff;
+      background-color:$link-color;
+      display:block;
+      margin:0 auto;
+      font-family:'Montserrat', ssans-serif;
+      font-size:24px;
+      text-transform:uppercase;
+      line-height:60px;
+      text-align:center;
+      @include transition(all, 0.5s, ease-in-out);
+      position:relative;
+
+      > span:not(.circle) {
+        padding-right:30px;
+      }
+
+      &:hover {
+        background-color:$link-hover-color;
+        .circle {
+          margin-right:-3px;
+        }
+      }
+
+      .circle {
+        font-size:12px;
+        border:1px solid #fff;
+        border-radius:100%;
+        width:24px;
+        height:24px;
+        display:block;
+        position:absolute;
+        bottom:10px;
+        right:15px;
+        margin-bottom:7px;
+        @include transition(all, 0.5s, ease-in-out);
+        i {
+          display:block;
+          position:relative;
+          top:6px;
+        }
+      }
+    }
+  }
+}
