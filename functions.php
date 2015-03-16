@@ -79,12 +79,12 @@ function cptui_register_my_cpts() {
 		"capability_type" => "post",
 		"map_meta_cap" => true,
 		"hierarchical" => false,
-		"rewrite" => array( "slug" => "footer-message", "with_front" => true ),
-		"query_var" => true,
-				"menu_icon" => "dashicons-download",					);
+    'taxonomies'   => array( 'category'),
+		"rewrite"      => array( "slug" => "footer-message", "with_front" => true ),
+		"query_var"    => true,
+				"menu_icon" => "dashicons-download",
+  );
 	register_post_type( "footer-message", $args );
-
-// End of cptui_register_my_cpts()
 }
 
 // Exclude status posts from the main query
