@@ -1,11 +1,11 @@
 
 .author-info {
   a {
-    color:$blue;
+    color:$link-color;
     @include transition(color, 0.5s, ease-in-out);
   }
   a:hover {
-    color:$blue-hover;
+    color:$link-hover-color;
   }
   .author-image {
     width:150px;
