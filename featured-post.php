@@ -42,6 +42,7 @@ foreach ($categories as $category) {
         <div class="author-signature">
           <img src="<?php the_field('signature', 'user_'.get_the_author_meta('ID')); ?>">
         </div>
+        <?php get_template_part('sharing-and-tipping'); ?>
         <?php get_template_part('author-info'); ?>
       <?php else: ?>
         <div class="divider-row"><hr class="divider"></div>

@@ -79,12 +79,14 @@
 #avatar-select.none-selected .avatar-icon:hover .border {
   opacity:1;
 }
+#avatar-select.sidebar-hidden {
+  padding-top:67px;
+}
 #collapse-sidebar {
   width:$avatar-sidebar-width;
   height:67px;
   display:block;
   font-weight:bolder;
-  background-color:$footer-background;
   font-size: 22px;
   @include transition(all, 0.5s, ease-in-out);
   animation-delay:0.4s;

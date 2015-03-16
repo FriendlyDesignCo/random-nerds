@@ -23,6 +23,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="<?php echo bloginfo('template_url'); ?>/js/jquery.cookie.js"></script>
   <script src="<?php echo bloginfo('template_url'); ?>/js/jquery.resize.js"></script>
+  <?php if (is_single()): ?>
+    <script src="https://checkout.stripe.com/checkout.js"></script>
+  <?php endif; ?>
 
   <script type="text/javascript">
   var sidebarLoadingMoreContent = false;
@@ -114,6 +117,7 @@ $(".fittext").textfill({maxFontPixels: 100});
         event.preventDefault();
         if ($('#content').hasClass('closed')) {
           // Open it up
+          $.cookie('sidebar-state','open',{expires:7, path:'/'});
           $("#content").removeClass('closed');
           $("#collapse-sidebar").animate({left:$("#article-sidebar").width()}, {duration:300,queue:false,done:function(){$(this).toggleClass('closed');}});
           $("#article-sidebar").animate({'margin-left':0},{duration:300,queue:false});
@@ -126,6 +130,7 @@ $(".fittext").textfill({maxFontPixels: 100});
           },300);
         } else {
           // Close it down
+          $.cookie('sidebar-state','closed',{expires:7, path:'/'});
           $("#article-sidebar").animate({'margin-left':-1*$("#article-sidebar").width()}, {duration: 300, queue: false}, function(){
           });
           $("#content-body").animate({'margin-left':0}, {duration:300, queue:false});
@@ -293,6 +298,9 @@ $(".fittext").textfill({maxFontPixels: 100});
 
       $("#avatar-select").on('click','a.apply-filter',function(event){
         event.preventDefault();
+        if ($("#collapse-sidebar").hasClass('closed')) {
+          $("#collapse-sidebar").click();
+        }
         $(".sidebar-loading-message > span").html(refilteringTexts[Math.floor(Math.random()*refilteringTexts.length)]);
         var category = $(this).find('.avatar-icon').data('category');
 
@@ -344,6 +352,55 @@ $(".fittext").textfill({maxFontPixels: 100});
       });
 
       $("#main-menu").removeAttr('style');
+
+      <?php /* Tipping */ ?>
+      if ($("body").hasClass('single')) {
+        var stripeHandler = StripeCheckout.configure({
+          key: <?php include_once('extra-config.php'); ?>'<?php echo STRIPE_PUBLISHABLE_KEY; ?>',
+          token: function(token) {
+            $("#love-it h3").fadeOut();
+            $("#tip-form input[name=token]").val(token.id);
+            $("#tip-form input[name=email]").val(token.email);
+            $("#tip-form").find('input, select, a').slideUp();
+            $("#love-it .loader").slideDown();
+            $.post($("#tip-form").attr('action'), $("#tip-form").serialize(), function(data){
+              $("#tip-form").html(data);
+            }).done(function(){
+              $("#love-it .loader").slideUp();
+            }).error(function(data){
+              $("#love-it .loader").slideUp();
+              $("#tip-form").find('input, select, a').slideDown();
+              $("#tip-form").append($("<p class='error'>Sorry, your card was declined - please try again</p>"));
+            });
+          }
+        });
+      }
+      $("#tip-form #tip-button").click(function(event){
+        event.preventDefault();
+        stripeHandler.open({
+          name: 'RandomNerds',
+          description: '<?php global $stripeDescription; echo $stripeDescription; ?>',
+          amount: $("#tip-form select option:selected").val(),
+          panelLabel: 'Tip {{amount}}'
+        })
+      });
+      $("#tip-form").on('click', '#one-click-subscribe', function(event){
+        event.preventDefault();
+        $.post('/',{'mailchimp_email_subscribe':$(this).data('email')}, function(data){
+          $("#one-click-subscribe").fadeOut(300, function(){
+            $("#tip-form").html("<h3>Sweet. Done. Thank you.</h3>").hide().fadeIn();;
+          });
+        });
+      });
+      $("#tip-form select").change(function(){
+        if ($("#tip-form select option:selected").val() > 9000*100) {
+          $("#over-9000").fadeIn();
+        } else {
+          if ($("#over-9000").is(':visible')) {
+            $("#over-9000").fadeOut();
+          }
+        }
+      });
     });
   </script>
 

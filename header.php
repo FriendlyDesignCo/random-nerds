@@ -17,7 +17,7 @@
   </head>
   <body <?php body_class(); ?>>
     <?php if (isset($_COOKIE['ignoredCategories'])) $ignoredCategories = json_decode(stripslashes($_COOKIE['ignoredCategories']), true); else $ignoredCategories = array(); ?>
-    <div id="avatar-select" <?php if (count($ignoredCategories) == 0): ?>class="none-selected"<?php endif; ?>>
+    <div id="avatar-select" class="<?php if (count($ignoredCategories) == 0): ?>none-selected<?php endif; ?> <?php if (isset($_COOKIE['sidebar-state']) && stristr($_COOKIE['sidebar-state'], 'closed')): ?>sidebar-hidden<?php else: ?>sidebar-visible<?php endif; ?>">
       <ul>
         <li><a href="/" id="sidebar-home-link"><img src="<?php echo bloginfo('template_url'); ?>/images/small_signature.png"></a></li>
         <li><a href="#" class="apply-filter"><div class="avatar-icon icon-politics <?php if (in_array('politics',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="politics"><div class="hover"></div><div class="border"></div></div>Politics</a></li>
@@ -50,8 +50,8 @@
       <?php endif; ?>
     </div>
 
-    <a href="#" id="collapse-sidebar"><i class="fa fa-chevron-left"></i></a>
-    <section id="content" class="sidebar-visible">
+    <a href="#" id="collapse-sidebar" class="<?php if (isset($_COOKIE['sidebar-state'])): ?><?php echo stripslashes(str_replace('"','',$_COOKIE['sidebar-state'])); ?><?php endif; ?>"><i class="fa fa-chevron-left"></i></a>
+    <section id="content" class="<?php if (isset($_COOKIE['sidebar-state']) && stristr($_COOKIE['sidebar-state'], 'closed')): ?>closed sidebar-hidden<?php else: ?>sidebar-visible<?php endif; ?>">
       <?php include('article-sidebar.php'); ?>
       <section id="content-body">
 
