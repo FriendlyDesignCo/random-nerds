@@ -19,7 +19,7 @@
     <?php if (isset($_COOKIE['ignoredCategories'])) $ignoredCategories = json_decode(stripslashes($_COOKIE['ignoredCategories']), true); else $ignoredCategories = array(); ?>
     <div id="avatar-select" <?php if (count($ignoredCategories) == 0): ?>class="none-selected"<?php endif; ?>>
       <ul>
-        <li><a href="#" id="collapse-sidebar"><i class="fa fa-chevron-left"></i></a></li>
+        <li><a href="/" id="sidebar-home-link"><img src="<?php echo bloginfo('template_url'); ?>/images/small_signature.png"></a></li>
         <li><a href="#" class="apply-filter"><div class="avatar-icon icon-politics <?php if (in_array('politics',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="politics"><div class="hover"></div><div class="border"></div></div>Politics</a></li>
         <li><a href="#" class="apply-filter"><div class="avatar-icon icon-gaming <?php if (in_array('gaming',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="gaming"><div class="hover"></div><div class="border"></div></div>Gaming</a></li>
         <li><a href="#" class="apply-filter"><div class="avatar-icon icon-tech <?php if (in_array('tech',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="tech"><div class="hover"></div><div class="border"></div></div>Tech</a></li>
@@ -50,6 +50,7 @@
       <?php endif; ?>
     </div>
 
+    <a href="#" id="collapse-sidebar"><i class="fa fa-chevron-left"></i></a>
     <section id="content" class="sidebar-visible">
       <?php include('article-sidebar.php'); ?>
       <section id="content-body">

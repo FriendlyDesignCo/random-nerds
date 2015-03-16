@@ -109,9 +109,38 @@ $(".fittext").textfill({maxFontPixels: 100});
       checkBodyColumnWidth();
 
       <?php /* Sidebar Collapse Button */ ?>
-
+      $("#collapse-sidebar").css('left',$("#article-sidebar").offset().left+$("#article-sidebar").width()-$("#collapse-sidebar").width());
       $("#collapse-sidebar").click(function(event){
         event.preventDefault();
+        if ($('#content').hasClass('closed')) {
+          // Open it up
+          $("#content").removeClass('closed');
+          $("#collapse-sidebar").animate({left:$("#article-sidebar").width()}, {duration:300,queue:false,done:function(){$(this).toggleClass('closed');}});
+          $("#article-sidebar").animate({'margin-left':0},{duration:300,queue:false});
+          $("#content-body").animate({'margin-left':$("#article-sidebar").width()},{duration:300,queue:false});
+          setTimeout(function(){
+            var newHeight = 0;
+            if ($("body").hasClass("admin-bar"))
+              newHeight += 32;
+            $("#avatar-select").animate({'padding-top':newHeight}, {duration:300, queue:false});
+          },300);
+        } else {
+          // Close it down
+          $("#article-sidebar").animate({'margin-left':-1*$("#article-sidebar").width()}, {duration: 300, queue: false}, function(){
+          });
+          $("#content-body").animate({'margin-left':0}, {duration:300, queue:false});
+          $("#collapse-sidebar").animate({left:0}, {duration:300,queue:false}).toggleClass('closed');
+          var newHeight = $("#collapse-sidebar").height();
+          if ($("body").hasClass("admin-bar"))
+            newHeight += 32;
+          $("#avatar-select").animate({'padding-top':newHeight}, {duration:300, queue:false});
+          $("#content").addClass('closed');
+          setTimeout(function(){
+            $("#article-sidebar .article.featured").removeAttr('style');
+            $("#article-sidebar .article.featured h2").removeAttr('style');
+          },300);
+        }
+        return;
         $(this).toggleClass('closed');
         $("#content").toggleClass('sidebar-hidden');
         $("#content").toggleClass('sidebar-visible');

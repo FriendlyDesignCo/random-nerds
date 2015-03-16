@@ -38,12 +38,19 @@
       font-size:30px;
       padding-bottom:10px;
       overflow:display;
+      @include transition(opacity, 0.1s, ease-in-out);
       a {
         color:$link-color;
         @include transition(all, 0.3s, ease-in-out);
         &:hover {
           color:$link-hover-color;
         }
+      }
+    }
+    &.collapsed {
+      height:68px;
+      h2 {
+        opacity:0;
       }
     }
   }

@@ -19,6 +19,10 @@
     font-size:11px;
     text-transform:uppercase;
   }
+
+  #sidebar-home-link img {
+    max-width:100%;
+  }
 }
 .admin-bar #avatar-select {
   padding-top:32px;
@@ -76,31 +80,35 @@
   opacity:1;
 }
 #collapse-sidebar {
-  width:30px;
-  height:30px;
+  width:$avatar-sidebar-width;
+  height:67px;
   display:block;
   font-weight:bolder;
-  background-color:#efebe4;
-  border-radius:100%;
-  border:1px solid #c1bebc;
+  background-color:$footer-background;
   font-size: 22px;
   @include transition(all, 0.5s, ease-in-out);
   animation-delay:0.4s;
   -webkit-animation-delay:0.4s;
+  position:fixed;
+  top:0;
+  right:0;
+  z-index:50;
+  text-align:center;
+
+  i {
+    line-height:67px;
+    color:#c1bebc;
+  }
 }
-#collapse-sidebar.closed {
+body.admin-bar #collapse-sidebar {
+  top:32px;
+}
+#collapse-sidebar.closed i {
   -webkit-transform: rotate(-180deg);
   -moz-transform: rotate(-180deg);
   -ms-transform: rotate(-180deg);
   -o-transform: rotate(-180deg);
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
-}
-#collapse-sidebar i {
-  color:#c1bebc;
-  width:100%;
-  line-height:34px;
-  margin-left:-4px;
-  margin-top:-1px;
 }
 .icon-politics {
   background-position: -5px -344px;
