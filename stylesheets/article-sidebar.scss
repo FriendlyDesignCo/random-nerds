@@ -112,7 +112,7 @@
     padding-top:30px;
     padding-left:20px;
     padding-right:20px;
-    padding-bottom:150px;
+    min-height:120px;
     position:relative;
     border-bottom:1px solid $line-color;
     h2 {
@@ -124,24 +124,52 @@
       position:absolute;
       bottom:0;
     }
-  }
-  .status-update.avatar-left img {
-    left:10px;
-  }
-  .status-update.avatar-right img {
-    right:10px;
+    a {
+      text-decoration:underline;
+    }
+
+    &.category-tech, &.category-pop-culture {
+      h2 {
+        width:57%;
+        float:right;
+      }
+      img {
+        left:0;
+      }
+    }
+    &.category-politics, &.category-gaming {
+      h2 {
+        width:57%;
+        float:left;
+      }
+      img {
+        right:0;
+      }
+    }
   }
   .status-update.avatar-politics {
     color:$politics-color;
+    a {
+      color:$politics-color;
+    }
   }
   .status-update.avatar-tech {
     color:$tech-type-color;
+    a {
+      color:$tech-type-color;
+    }
   }
   .status-update.avatar-pop-culture {
     color:$pop-culture-color;
+    a {
+      color:$pop-culture-color;
+    }
   }
   .status-update.avatar-gaming {
     color:$gaming-color;
+    a {
+      color:$gaming-color;
+    }
   }
 
   .load-more-sidebar-pages {

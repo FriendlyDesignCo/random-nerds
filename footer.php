@@ -137,7 +137,7 @@ $(".fittext").textfill({maxFontPixels: 100});
       <?php endif; ?>
 
       <?php /* Related Posts Leveling */ ?>
-      if ($(window).width() > 640) {
+      if ($("#content-body").width() > 640) {
         if ($("#related-posts").length > 0) {
           var lowest = 0;
           $("#related-posts span.yuzo_text").each(function(){
