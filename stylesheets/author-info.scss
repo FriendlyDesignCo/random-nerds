@@ -1,4 +1,23 @@
-
+&:not(.mobile-width) .author-info {
+  .author-image {
+    float:left;
+  }
+  .relatedthumb {
+    width: 50%;
+    float: left;
+  }
+}
+&.mobile-width .author-info {
+  .author-image {
+    margin:0 auto;
+  }
+  h4 {
+    text-align:center;
+  }
+  .relatedthumb {
+    width:100%;
+  }
+}
 .author-info {
   a {
     color:$link-color;
@@ -19,7 +38,7 @@
     border-radius:100%;
     border:8px solid $avatar-sidebar-background;
     background-size:cover;
-    float:left;
+
     margin-right:30px;
     @include transition(border-color, 0.5s, ease-in-out);
   }
@@ -62,15 +81,9 @@
   }
 
   .relatedthumb {
-    width: 50%;
-    float: left;
     padding-top:20px;
     padding-right:30px;
     box-sizing:border-box;
-
-    @media screen and (max-width:640px) {
-      width:100%;
-    }
 
     a {
       font-size:27px;

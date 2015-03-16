@@ -65,6 +65,19 @@ $(".fittext").textfill({maxFontPixels: 100});
         $('#content-body').resize(resizeAuthorImageShadow);
         resizeAuthorImageShadow();
       }
+      var checkBodyColumnWidth = function(){
+        var contentBody = $("#content-body");
+        if (contentBody.hasClass('mobile-width') && contentBody.width() > 640) {
+          contentBody.removeClass('mobile-width');
+          contentBody.find('article').removeClass('mobile-width');
+        }
+        if (!contentBody.hasClass('mobile-width') && contentBody.width() <= 640) {
+          contentBody.addClass('mobile-width');
+          contentBody.find('article').addClass('mobile-width');
+        }
+      }
+      $("#content-body").resize(checkBodyColumnWidth);
+      checkBodyColumnWidth();
 
       <?php /* Sidebar Collapse Button */ ?>
 
