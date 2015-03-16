@@ -127,3 +127,14 @@ function removeViewsColumnFromPostsFilter()
   add_filter('manage_posts_columns', 'removeViewsColumnFromPosts');
 }
 add_action( 'admin_init' , 'removeViewsColumnFromPostsFilter' );
+
+// Subscribe to MailChimp updates
+function contactFormMailchimpSubscribe($form)
+{
+  if (isset($_POST['subscribe'][0]))
+  {
+    
+  }
+}
+add_action('wpcf7_mail_sent', 'contactFormMailchimpSubscribe');
+
