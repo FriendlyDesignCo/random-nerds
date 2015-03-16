@@ -43,11 +43,13 @@ $(".fittext").textfill({maxFontPixels: 100});
           if (pageHeader.width() < 875) {
             pageHeader.addClass('skinny');
             pageHeader.removeClass('fat');
+            $(".page-header img.skinny-only").animate({left:0},300);
           }
           else
           {
             pageHeader.addClass('fat');
             pageHeader.removeClass('skinny');
+            $(".page-header img.fat-only").animate({left:0},300);
           }
           $(".fittext").textfill({maxFontPixels: 100});
         };

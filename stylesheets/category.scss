@@ -29,8 +29,11 @@ body.page #content-body {
       min-height:250px;
     }
     position:relative;
-
     @include transition(all, 0.3s, ease-in-out);
+
+    img {
+      @include transition(all, 0.3s, ease-in-out);
+    }
     h2 {
       font-family:'Playfair Display', serif;
       -webkit-font-smoothing: subpixel-antialiased;
