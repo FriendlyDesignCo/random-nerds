@@ -5,14 +5,13 @@
   <img id="author-image" class="author-image" src="<?php the_field('profile_picture', 'user_'.$authorID); ?>">
   <div class="author-info">
     <div class="author-signature">
-      <img src="<?php the_field('signature_white', 'user_'.$authorID); ?>">
+      <img src="<?php the_field('signature', 'user_'.$authorID); ?>">
     </div>
     <?php if (strlen($twitter = get_field('twitter_username', 'user_'.$authorID)) > 0): ?>
       <hr class="tiny left"><br>
       <a href="https://www.twitter.com/<?php echo $twitter; ?>" class="twitter-link">@<?php echo $twitter; ?></a>
     <?php endif; ?>
   </div>
-  <div class="author-image-cover"></div>
 </div>
 
 <div class="row">

@@ -4,7 +4,6 @@
 .author-header {
   font-family:'Playfair Display', serif;
   -webkit-font-smoothing: subpixel-antialiased;
-  background-color:$category-header-background;
   height:240px;
   width:100%;
   position:relative;
@@ -25,7 +24,7 @@
     margin-left:0;
   }
   &.large .author-shadow {
-    border:20px solid #454f5a;
+    border:20px solid #e5e0d8;
     width:300px;
     height:300px;
     left:80px;
@@ -46,17 +45,6 @@
     width:300px;
     height:300px;
     left:100px;
-  }
-
-  .author-image-cover {
-    height:60px;
-    width:100%;
-    background-color:#fff;
-    position:absolute;
-    left:0;
-    bottom:0;
-    margin-bottom:-60px;
-    z-index:3;
   }
 
   .author-info {
@@ -106,6 +94,7 @@
 .column-right {
   box-sizing:border-box;
   overflow:hidden;
+  padding-right:10%;
 
   h5 {
     color:#ccc;
@@ -132,7 +121,7 @@ article {
     -webkit-font-smoothing: subpixel-antialiased;
     font-size:27px;
     a {
-      color:$blue;
+      color:#666;
     }
     padding-bottom:15px;
   }
@@ -143,6 +132,7 @@ article {
     line-height:20px;
     span {
       text-transform:uppercase;
+      font-size:18px;
     }
     span.tags {
       font-family: 'Lora', serif;

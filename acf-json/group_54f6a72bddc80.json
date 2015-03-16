@@ -39,24 +39,6 @@
             "library": "all"
         },
         {
-            "key": "field_54fb79cb8171d",
-            "label": "Signature White",
-            "name": "signature_white",
-            "prefix": "",
-            "type": "image",
-            "instructions": "An image of your signature in white text",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "preview_size": "thumbnail",
-            "library": "all"
-        },
-        {
             "key": "field_54f6abee71dbb",
             "label": "Twitter Username",
             "name": "twitter_username",
@@ -113,5 +95,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1425771535
+    "modified": 1426488959
 }
