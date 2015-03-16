@@ -33,12 +33,19 @@
     color:#fff;
     padding-top:30px;
     padding-bottom:30px;
-  }
-  .article.featured h2 {
-    font-family: 'Covered By Your Grace', cursive;
-    font-size:30px;
-    padding-bottom:10px;
-    overflow:display;
+    h2 {
+      font-family: 'Covered By Your Grace', cursive;
+      font-size:30px;
+      padding-bottom:10px;
+      overflow:display;
+      a {
+        color:$link-color;
+        @include transition(all, 0.3s, ease-in-out);
+        &:hover {
+          color:$link-hover-color;
+        }
+      }
+    }
   }
 
   .article .cover {
