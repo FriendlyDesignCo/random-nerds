@@ -34,6 +34,7 @@ k)+k+",minFontPixels: "+n+"px, maxFontPixels: "+g+"px }")}function q(a,b,e,k,f,g
 this.each(function(){var c=m(a.innerTag+":visible:first",this),b=a.explicitHeight||m(this).height(),e=a.explicitWidth||m(this).width(),k=c.css("font-size"),n=parseFloat(c.css("line-height"))/parseFloat(k);f("[TextFill] Inner text: "+c.text());f("[TextFill] All options: ",a);f("[TextFill] Maximum sizes: { Height: "+b+"px, Width: "+e+"px }");var g=a.minFontPixels,d=0>=a.maxFontPixels?b:a.maxFontPixels,h=void 0;a.widthOnly||(h=q("Height",c,m.fn.height,b,b,e,g,d));var l=void 0,l=q("Width",c,m.fn.width,
 e,b,e,g,d);a.widthOnly?(c.css({"font-size":l,"white-space":"nowrap"}),a.changeLineHeight&&c.parent().css("line-height",n*l+"px")):(g=Math.min(h,l),c.css("font-size",g),a.changeLineHeight&&c.parent().css("line-height",n*g+"px"));f("[TextFill] Finished { Old font-size: "+k+", New font-size: "+c.css("font-size")+" }");c.width()>e||c.height()>b&&!a.widthOnly?(c.css("font-size",k),a.fail&&a.fail(this),f("[TextFill] Failure { Current Width: "+c.width()+", Maximum Width: "+e+", Current Height: "+c.height()+
 ", Maximum Height: "+b+" }")):a.success?a.success(this):a.callback&&(s("callback is deprecated, use success, instead"),a.callback(this))});a.complete&&a.complete(this);f("[TextFill] End Debug");return this}})(window.jQuery);
+  ;(function(e){e.fn.visible=function(t,n,r){var i=e(this).eq(0),s=i.get(0),o=e(window),u=o.scrollTop(),a=u+o.height(),f=o.scrollLeft(),l=f+o.width(),c=i.offset().top,h=c+i.height(),p=i.offset().left,d=p+i.width(),v=t===true?h:c,m=t===true?c:h,g=t===true?d:p,y=t===true?p:d,b=n===true?s.offsetWidth*s.offsetHeight:true,r=r?r:"both";if(r==="both")return!!b&&m<=a&&v>=u&&y<=l&&g>=f;else if(r==="vertical")return!!b&&m<=a&&v>=u;else if(r==="horizontal")return!!b&&y<=l&&g>=f}})(jQuery);
 $(".fittext").textfill({maxFontPixels: 100});
     $(function(){
       <?php /* Page header */ ?>
@@ -215,6 +216,25 @@ $(".fittext").textfill({maxFontPixels: 100});
         loadMoreSidebarPosts();
       });
       $fixed.whenScrolledToBottom(loadMoreSidebarPosts, 0);
+
+      <?php /* Animated pull quotes */ ?>
+      $.fn.blockQuoteBecomesVisible = function (cback_fxn, offset) {
+        var $blockQuote = this;
+        $(window).bind('scroll.blockquote-'+$blockQuote.offset().top,function(ev){
+         if($blockQuote.offset().top <= $(window).scrollTop()+$(window).height()-offset){
+           $(window).unbind('scroll.blockquote-'+$blockQuote.offset().top);
+           return cback_fxn.apply($blockQuote, arguments);
+         }
+       });
+      };
+      $("article blockquote").each(function(){
+        if (!$(this).visible()){
+          $(this).find('p').css({top:50,opacity:0,position:'relative'},1000);
+          $(this).blockQuoteBecomesVisible(function(){
+            $(this).find('p').animate({top:0,opacity:1},300);
+          }, 200);
+        }
+      });
 
       <?php /* Filtering */ ?>
       $.cookie.json = true;
