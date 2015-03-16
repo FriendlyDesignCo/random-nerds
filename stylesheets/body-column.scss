@@ -321,7 +321,7 @@
       margin-top:20px;
       text-align:center;
       a {
-        color:#333;
+        color:$link-color;
         font-family: 'Montserrat', sans-serif;
         text-transform:uppercase;
         font-size:24px;
@@ -333,7 +333,7 @@
           @include transition(color, 0.5s, ease-in-out);
         }
         .arrow {
-          border:1px solid #333;
+          border:1px solid $link-color;
           border-radius:100%;
           font-weight:100;
           float:right;
@@ -351,8 +351,12 @@
         }
       }
       a:hover {
+        color:$link-hover-color;
         .arrow {
           margin-right:-3px;
+          border:1px solid $link-hover-color;
+          background-color:$link-hover-color;
+          color:#fff;
         }
       }
     }
@@ -487,56 +491,24 @@
   }
 
   article.category-tech {
-    .read-more a:hover span, .article-title:hover {
-      color:$tech-type-color;
-    }
-    .read-more a:hover .arrow {
-      background-color:$tech-type-color;
-      border-color:$tech-type-color;
-      color:#fff;
-    }
     .category-info a:before {
       background-color:$tech-type-color;
     }
   }
 
   article.category-pop-culture {
-    .read-more a:hover span, .article-title:hover {
-      color:$pop-culture-color;
-    }
-    .read-more a:hover .arrow {
-      background-color:$pop-culture-color;
-      border-color:$pop-culture-color;
-      color:#fff;
-    }
     .category-info a:before {
       background-color:$pop-culture-color;
     }
   }
 
   article.category-politics {
-    .read-more a:hover span, .article-title:hover {
-      color:$politics-color;
-    }
-    .read-more a:hover .arrow {
-      background-color:$politics-color;
-      border-color:$politics-color;
-      color:#fff;
-    }
     .category-info a:before {
       background-color:$politics-color;
     }
   }
 
   article.category-gaming {
-    .read-more a:hover span, .article-title:hover {
-      color:$gaming-color;
-    }
-    .read-more a:hover .arrow {
-      background-color:$gaming-color;
-      border-color:$gaming-color;
-      color:#fff;
-    }
     .category-info a:before {
       background-color:$gaming-color;
     }
