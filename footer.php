@@ -36,6 +36,26 @@ e,b,e,g,d);a.widthOnly?(c.css({"font-size":l,"white-space":"nowrap"}),a.changeLi
 ", Maximum Height: "+b+" }")):a.success?a.success(this):a.callback&&(s("callback is deprecated, use success, instead"),a.callback(this))});a.complete&&a.complete(this);f("[TextFill] End Debug");return this}})(window.jQuery);
 $(".fittext").textfill({maxFontPixels: 100});
     $(function(){
+      <?php /* Page header */ ?>
+      if ($("body").hasClass('page')) {
+        var pageHeaderBreakpointSet = function(){
+          var pageHeader = $(".page-header");
+          if (pageHeader.width() < 875) {
+            pageHeader.addClass('skinny');
+            pageHeader.removeClass('fat');
+          }
+          else
+          {
+            pageHeader.addClass('fat');
+            pageHeader.removeClass('skinny');
+          }
+          $(".fittext").textfill({maxFontPixels: 100});
+        };
+        $(".page-header").resize(pageHeaderBreakpointSet);
+        pageHeaderBreakpointSet();
+      }
+
+      // Text size filling
       $(".fittext").textfill({maxFontPixels: 100});
       $(window).resize(function(){
         $(".fittext").textfill({maxFontPixels: 100});

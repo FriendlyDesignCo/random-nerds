@@ -1,9 +1,7 @@
 <?php get_header(); ?>
 
 <?php while (have_posts()): the_post(); ?>
-  <div class="category-header page-header">
-    <h1><?php the_title(); ?></h1>
-  </div>
+  <?php include('page-header.php'); ?>
   <div class="page-content-box authors-page">
     <?php while (have_rows('authors')): the_row(); $author = get_sub_field('user'); ?>
       <a href="<?php echo get_author_posts_url($author['ID']); ?>" class="author">
