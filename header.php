@@ -16,14 +16,14 @@
     <?php wp_head(); ?>
   </head>
   <body <?php body_class(); ?>>
-    <div id="avatar-select">
+    <?php if (isset($_COOKIE['ignoredCategories'])) $ignoredCategories = json_decode(stripslashes($_COOKIE['ignoredCategories']), true); else $ignoredCategories = array(); ?>
+    <div id="avatar-select" <?php if (count($ignoredCategories) == 0): ?>class="none-selected"<?php endif; ?>>
       <ul>
-        <?php if (isset($_COOKIE['ignoredCategories'])) $ignoredCategories = json_decode(stripslashes($_COOKIE['ignoredCategories']), true); else $ignoredCategories = array(); ?>
         <li><a href="#" id="collapse-sidebar"><i class="fa fa-chevron-left"></i></a></li>
-        <li><a href="#" class="apply-filter avatar-icon icon-politics <?php if (in_array('politics',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="politics">Politics</a></li>
-        <li><a href="#" class="apply-filter avatar-icon icon-gaming <?php if (in_array('gaming',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="gaming">Gaming</a></li>
-        <li><a href="#" class="apply-filter avatar-icon icon-tech <?php if (in_array('tech',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="tech">Tech</a></li>
-        <li><a href="#" class="apply-filter avatar-icon icon-pop-culture <?php if (in_array('pop-culture',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="pop-culture">Pop Culture</a></li>
+        <li><a href="#" class="apply-filter"><div class="avatar-icon icon-politics <?php if (in_array('politics',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="politics"><div class="hover"></div><div class="border"></div></div>Politics</a></li>
+        <li><a href="#" class="apply-filter"><div class="avatar-icon icon-gaming <?php if (in_array('gaming',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="gaming"><div class="hover"></div><div class="border"></div></div>Gaming</a></li>
+        <li><a href="#" class="apply-filter"><div class="avatar-icon icon-tech <?php if (in_array('tech',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="tech"><div class="hover"></div><div class="border"></div></div>Tech</a></li>
+        <li><a href="#" class="apply-filter"><div class="avatar-icon icon-pop-culture <?php if (in_array('pop-culture',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="pop-culture"><div class="hover"></div><div class="border"></div></div>Pop Culture</a></li>
       </ul>
     </div>
 
@@ -69,7 +69,10 @@
           $categoryNames[] = $category->cat_name;
           $categorySlugs[] = 'category-'.$category->slug;
           if (!in_array($category->slug, $ignoredCategories))
-            $hidden = false;
+          {
+            if ($category->slug !== 'featured')
+              $hidden = false;
+          }
         }
 
 
@@ -87,7 +90,7 @@
             <?php /* REGULAR POST */ ?>
             <div class="post" data-post-id="<?php the_ID(); ?>">
               <a href="<?php the_permalink(); ?>">
-                <div class="article <?php if ($hidden): ?>hidden<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?>">
+                <div class="article filterable <?php if ($hidden): ?>hidden<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?>">
                   <div class="cover">
                     <div><div class="random-angle-<?php echo rand(5,15); ?>"><?php the_field('post_subtitle'); ?></div></div>
                   </div>

@@ -204,11 +204,31 @@ $(".fittext").textfill({maxFontPixels: 100});
       $("#avatar-select").on('click','a.apply-filter',function(event){
         event.preventDefault();
         $(".sidebar-loading-message > span").html(refilteringTexts[Math.floor(Math.random()*refilteringTexts.length)]);
-        var category = $(this).data('category');
-        ignoredCategories = categories;
-        ignoredCategories.splice($.inArray(category, ignoredCategories), 1);
-        $("#avatar-select a.avatar-icon").addClass('disabled');
-        $(this).removeClass('disabled');
+        var category = $(this).find('.avatar-icon').data('category');
+
+        if ($("#avatar-select").hasClass('none-selected')) {
+          ignoredCategories = categories.slice(0);
+          ignoredCategories.splice($.inArray(category, ignoredCategories), 1);
+          $("#avatar-select").removeClass('none-selected');
+          $("#avatar-select").find('.avatar-icon').addClass('disabled');
+          $(this).find('.avatar-icon').removeClass('disabled');
+        } else {
+          // If there is a category selected, and it's this one...
+          if ($.inArray($(this).find('.avatar-icon').data('category'), ignoredCategories) == -1) {
+            console.log("Un-disabling everything");
+            ignoredCategories = [];
+            $("#avatar-select").find('.avatar-icon.disabled').removeClass('disabled');
+          } else {
+            ignoredCategories = categories.slice(0);
+            ignoredCategories.splice($.inArray(category, ignoredCategories), 1);
+            $("#avatar-select").find('.avatar-icon').addClass('disabled');
+            $(this).find('.avatar-icon').removeClass('disabled');
+          }
+        }
+
+        if (ignoredCategories.length == 0)
+          $("#avatar-select").addClass('none-selected');
+
         $.cookie('ignoredCategories',ignoredCategories,{path:'/',expires:365});
         updateIgnoredCategories(true, true);
       });
