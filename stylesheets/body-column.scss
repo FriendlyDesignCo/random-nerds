@@ -519,8 +519,8 @@
     hr {
       padding: 0;
       border: none;
-      border-top: 1px solid #6291b4;
-      border-bottom: 1px solid #6291b4;
+      border-top: 1px solid $link-color;
+      border-bottom: 1px solid $link-color;
       height: 4px;
       text-align: center;
       margin-top:80px;
@@ -537,9 +537,9 @@
 
       a {
         margin:0 auto;
-        border:1px solid #6291b4;
+        border:1px solid $link-color;
         border-radius:100%;
-        color:#6291b4;
+        color:$link-color;
         display:block;
         width:32px;
         height:32px;
@@ -550,7 +550,7 @@
         @include transition(all, 0.5s, ease-in-out);
       }
       a:hover, a.comments-loaded {
-        background-color:#6291b4;
+        background-color:$link-hover-color;
         color:#fff;
       }
     }
@@ -558,10 +558,14 @@
     a.load-comments, a.load-more {
       margin-top:25px;
       display:block;
-      color:#6291b4;
+      color:$link-color;
       font-size:20px;
       font-family:'Montserrat',sans-serif;
       text-transform:uppercase;
+      @include transition(all, 0.5s, ease-in-out);
+      &:hover {
+        color:$link-hover-color;
+      }
     }
   }
   #disqus_thread {
