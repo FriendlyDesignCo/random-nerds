@@ -38,8 +38,8 @@
 }
 .avatar-icon {
   display:block;
-  width:48px;
-  height:48px;
+  width:46px;
+  height:46px;
   margin:0 auto;
   background-image:url('images/avatar-sprites.png');
   background-repeat:no-repeat;
@@ -113,52 +113,52 @@ body.admin-bar #collapse-sidebar {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
 }
 .icon-politics {
-  background-position: -5px -344px;
+  background-position: -5px -342px;
 
   &.disabled {
-    background-position:-5px -232px;
+    background-position:-5px -230px;
   }
   &.disabled .hover {
-    background-position:-5px -288px;
+    background-position:-5px -286px;
   }
   &:not(.disabled) .hover {
-    background-position:-5px -400px;
+    background-position:-5px -398px;
   }
 }
 .icon-gaming {
   background-position:-5px -118px;
   &.disabled {
-    background-position:-5px -5px;
+    background-position:-5px 0;
   }
   &.disabled .hover {
     background-position:-5px -61px;
   }
   &:not(.disabled) .hover {
-    background-position:-6px -173px;
-  }
-}
-.icon-pop-culture {
-  background-position:-5px -570px;
-  &.disabled {
-    background-position:-5px -458px;
-  }
-  &.disabled .hover {
-    background-position:-5px -515px;
-  }
-  &:not(.disabled) .hover {
-    background-position:-5px -626px;
+    background-position:-5px -174px;
   }
 }
 .icon-tech {
-  background-position:-5px -797px;
+  background-position:-5px -789px;
   &.disabled {
-    background-position:-5px -685px;
+    background-position:-5px -677px;
   }
   &.disabled .hover {
-    background-position:-5px -741px;
+    background-position:-5px -734px;
   }
   &:not(.disabled) .hover {
-    background-position:-5px -853px;
+    background-position:-5px -845px;
+  }
+}
+.icon-pop-culture {
+  background-position:-5px -566px;
+  &.disabled {
+    background-position:-5px -454px;
+  }
+  &.disabled .hover {
+    background-position:-5px -511px;
+  }
+  &:not(.disabled) .hover {
+    background-position:-6px -622px;
   }
 }
 
