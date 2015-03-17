@@ -25,6 +25,8 @@
   <script src="<?php echo bloginfo('template_url'); ?>/js/jquery.resize.js"></script>
   <?php if (is_single()): ?>
     <script src="https://checkout.stripe.com/checkout.js"></script>
+    <script type="text/javascript">var confetti;</script>
+    <script src="<?php echo bloginfo('template_url'); ?>/js/confetti.js"></script>
   <?php endif; ?>
 
   <script type="text/javascript">
@@ -399,6 +401,18 @@ $(".fittext").textfill({maxFontPixels: 100});
           if ($("#over-9000").is(':visible')) {
             $("#over-9000").fadeOut();
           }
+        }
+        if ($("#tip-form select option:selected").val() > 500 && $("#tip-form select option:selected").val() < 9000*100) {
+          $("body").append($("<canvas id='confetti' style='position:fixed;top:0;height:'+$(window).height()+';width:'+window.width()+'></canvas>"));
+          speed = $("#tip-form select option:selected").val() / 100;
+          window.duration = speed/100;
+          confetti = getConfettiContext();
+          confetti = new confetti.Context('confetti');
+          confetti.start();
+          setInterval(function(){
+            window.confetti.stop(); confetti = null;
+            $("canvas#confetti").remove();
+          }, 5000);
         }
       });
     });
