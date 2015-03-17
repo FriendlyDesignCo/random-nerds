@@ -402,7 +402,7 @@ $(".fittext").textfill({maxFontPixels: 100});
             $("#over-9000").fadeOut();
           }
         }
-        if ($("#tip-form select option:selected").val() > 500 && $("#tip-form select option:selected").val() < 9000*100) {
+        if ($("#tip-form select option:selected").val() > 499 && $("#tip-form select option:selected").val() < 9000*100) {
           $("body").append($("<canvas id='confetti' style='position:fixed;top:0;height:'+$(window).height()+';width:'+window.width()+'></canvas>"));
           speed = $("#tip-form select option:selected").val() / 100;
           window.duration = speed/100;
