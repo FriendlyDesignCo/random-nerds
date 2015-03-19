@@ -9,7 +9,7 @@ footer {
   margin-top:60px;
 
   @media screen and (max-width:640px) {
-    margin-bottom:72px;
+    margin-bottom:$mobile-footer-height;
   }
 
   .footer-content {

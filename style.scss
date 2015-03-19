@@ -54,6 +54,8 @@ $header-footer-background: #303b47;
 $category-header-background: #96918f;
 $hr-color: #dbd8d5;
 
+$mobile-footer-height: 55px;
+
 @media screen and (min-width:641px) {
   body {
     padding-left:$avatar-sidebar-width
