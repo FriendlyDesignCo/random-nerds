@@ -32,9 +32,6 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </div>
-    <div id="home-signature">
-      <a href="/"><img src="<?php echo bloginfo('template_url'); ?>/images/small_signature.png" title="Return to Random Nerds Homepage"></a>
-    </div>
     <div id="main-menu" style="display:none;">
       <hr>
       <?php wp_nav_menu(array('theme_location' => 'primary')); ?>

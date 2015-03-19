@@ -1,28 +1,4 @@
-#home-signature {
-  position:fixed;
-  top:80px;
-  right:35px;
-  @media (max-width:1024px) {
-    top:60px;
-    right:25px;
-  }
-  width:32px;
-  z-index:19;
-  opacity:0;
-  @include transition(opacity, 0.3s, ease-in-out);
-  img {
-    max-width:100%;
-  }
-}
-
 body.past-header {
-  #home-signature {
-    opacity:1;
-  }
-  #home-signature.menu-open {
-    opacity:0;
-  }
-
   #menu-open {
     .icon-bar {
       background-color:#e5e0d8;
