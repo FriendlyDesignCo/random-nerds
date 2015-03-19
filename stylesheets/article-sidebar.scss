@@ -35,9 +35,11 @@
     padding-bottom:30px;
     h2 {
       font-family: 'Covered By Your Grace', cursive;
-      font-size:30px;
+      line-height:110%;
+      font-size:26px;
       padding-bottom:10px;
       overflow:display;
+      -webkit-font-smoothing: antialiased;
       @include transition(opacity, 0.1s, ease-in-out);
       a {
         color:$link-color;
