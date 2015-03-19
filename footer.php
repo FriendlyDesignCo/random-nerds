@@ -417,8 +417,8 @@ $(".fittext").textfill({maxFontPixels: 100});
 
       <?php /* Hide menu on clicking elsewhere */ ?>
       $(document).on('click',function(event){
-        console.log($(event.target).attr('id'));
-        if (!$(event.target).closest('#main-menu').length && $(event.target).attr('id') !== 'menu-open') {
+        console.log($(event.target).attr('id') + $(event.target).attr('class'));
+        if (!$(event.target).closest('#main-menu').length && $(event.target).attr('id') !== 'menu-open' && !$(event.target).hasClass('icon-bar')) {
           if ($("#menu-open").hasClass('open')) {
             $("#menu-open").toggleClass('open');
             $("#main-menu").toggleClass('onscreen');
