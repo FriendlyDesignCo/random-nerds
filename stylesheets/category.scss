@@ -11,6 +11,11 @@
       line-height:275px;
       padding-left:16%;
 
+      @media screen and (max-width:640px) {
+        padding-left:0;
+        text-align:center;
+      }
+
       span {
         text-transform:lowercase;
         border-bottom:5px double #000;
