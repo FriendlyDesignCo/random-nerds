@@ -20,10 +20,10 @@
     <div id="avatar-select" class="<?php if (count($ignoredCategories) == 0): ?>none-selected<?php endif; ?> <?php if (isset($_COOKIE['sidebar-state']) && stristr($_COOKIE['sidebar-state'], 'closed')): ?>sidebar-hidden<?php else: ?>sidebar-visible<?php endif; ?>">
       <ul>
         <li><a href="/" id="sidebar-home-link"><img src="<?php echo bloginfo('template_url'); ?>/images/small_signature.png"></a></li>
-        <li><a href="#" class="apply-filter"><div class="avatar-icon icon-politics <?php if (in_array('politics',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="politics"><div class="hover"></div><div class="border"></div></div>Politics</a></li>
-        <li><a href="#" class="apply-filter"><div class="avatar-icon icon-gaming <?php if (in_array('gaming',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="gaming"><div class="hover"></div><div class="border"></div></div>Gaming</a></li>
-        <li><a href="#" class="apply-filter"><div class="avatar-icon icon-tech <?php if (in_array('tech',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="tech"><div class="hover"></div><div class="border"></div></div>Tech</a></li>
-        <li><a href="#" class="apply-filter"><div class="avatar-icon icon-pop-culture <?php if (in_array('pop-culture',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="pop-culture"><div class="hover"></div><div class="border"></div></div>Pop Culture</a></li>
+        <li><a href="#" class="apply-filter"><div class="avatar-icon icon-politics <?php if (in_array('politics',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="politics"><img class="mobile-only close-button" src="<?php echo bloginfo('template_url'); ?>/images/mobile_avatar_x.png"><div class="hover"></div><div class="border"></div></div>Politics</a></li>
+        <li><a href="#" class="apply-filter"><div class="avatar-icon icon-gaming <?php if (in_array('gaming',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="gaming"><img class="mobile-only close-button" src="<?php echo bloginfo('template_url'); ?>/images/mobile_avatar_x.png"><div class="hover"></div><div class="border"></div></div>Gaming</a></li>
+        <li><a href="#" class="apply-filter"><div class="avatar-icon icon-tech <?php if (in_array('tech',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="tech"><img class="mobile-only close-button" src="<?php echo bloginfo('template_url'); ?>/images/mobile_avatar_x.png"><div class="hover"></div><div class="border"></div></div>Tech</a></li>
+        <li><a href="#" class="apply-filter"><div class="avatar-icon icon-pop-culture <?php if (in_array('pop-culture',$ignoredCategories)): ?>disabled<?php endif; ?>" data-category="pop-culture"><img class="mobile-only close-button" src="<?php echo bloginfo('template_url'); ?>/images/mobile_avatar_x.png"><div class="hover"></div><div class="border"></div></div>Pop Culture</a></li>
       </ul>
     </div>
 
