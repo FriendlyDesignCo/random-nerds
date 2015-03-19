@@ -109,6 +109,12 @@
     margin-top:0;
     margin-bottom:40px;
   }
+
+  @media screen and (max-width:640px) {
+    hr {
+      margin-left: -20px;
+    }
+  }
 }
 
 #content-body p {
