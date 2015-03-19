@@ -101,6 +101,9 @@
     line-height:67px;
     color:#c1bebc;
   }
+  @media screen and (max-width:640px) {
+    display:none;
+  }
 }
 body.admin-bar #collapse-sidebar {
   top:32px;
