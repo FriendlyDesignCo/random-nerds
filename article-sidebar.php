@@ -49,6 +49,9 @@
             </div>
             <h3 class="category"><?php echo implode(', ', $categoryNames);?></h3>
             <h2><?php the_title(); ?></h2>
+            <?php if (get_field('content_icon') !== '' && get_field('content_icon') !== 'none' && !is_null(get_field('content_icon'))): ?>
+              <div class="content-icon"><i class="fa fa-<?php the_field('content_icon'); ?>"></i></div>
+            <?php endif; ?>
           </div>
         </a>
       </div>

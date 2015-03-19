@@ -18,6 +18,24 @@
     line-height:1.2em;
     border-bottom:1px solid $line-color;
     position:relative;
+
+    .content-icon {
+      position:absolute;
+      right:10px;
+      top:50%;
+      transform: translateY(-50%);
+      color:$avatar-sidebar-category-color;
+      border:1px solid $avatar-sidebar-category-color;
+      border-radius:100%;
+      width:30px;
+      height:26px;
+      text-align:center;
+      padding-top:4px;
+    }
+
+    h2 {
+      padding-right: 35px;
+    }
   }
   .article.featured {
     background-color:$header-footer-background;
