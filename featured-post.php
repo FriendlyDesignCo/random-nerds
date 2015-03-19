@@ -24,7 +24,7 @@ foreach ($categories as $category) {
         <div class="meta-row text-center">
           <ul>
             <li><span class="light-grey">Posted</span> <span class="date"><?php the_date('M j, Y'); ?></span></li>
-            <li><span class="light-grey">Filed In</span> <span class="categories"><?php the_category(', '); ?></span></li>
+            <li><span class="light-grey">Filed In</span> <span class="categories upper"><?php the_category(', '); ?></span></li>
             <li><span class="light-grey">Submitted To</span> <span class="categories"><?php the_tags('', ', '); ?></span></li>
           </ul>
         </div>
