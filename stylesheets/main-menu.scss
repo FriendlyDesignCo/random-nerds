@@ -202,6 +202,8 @@ body.past-header {
     float:left;
     font-family:'Lora', sans-serif;
     @include transition(width, 0.3s, ease-in-out);
+    -webkit-appearance: none;
+    border-radius:0;
   }
   a {
     display:inline-block;
