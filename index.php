@@ -25,7 +25,7 @@ $i = 0; ?>
       <article class="<?php if (!is_single()): ?>filterable<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?>">
         <div class="article">
           <div class="category-info">
-            # <a href="<?php the_permalink(); ?>" class="grey"><?php the_field('post_id'); ?></a> in <?php the_category(', '); ?>
+            In <?php the_category(', '); ?>
           </div>
           <h2><a href="<?php the_permalink(); ?>" class="article-title"><?php the_title(); ?></a></h2>
           <hr class="small">
