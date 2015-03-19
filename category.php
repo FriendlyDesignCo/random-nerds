@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="category-header page-header">
-  <h1>All <span class="category-name"><?php single_cat_title(); ?></span> posts</h1>
+  <h1 class="mobile-fittext"><span>All <span class="category-name"><?php single_cat_title(); ?></span> posts</span></h1>
 </div>
 
 <?php while (have_posts()): the_post();

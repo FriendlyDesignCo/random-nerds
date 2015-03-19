@@ -10,13 +10,16 @@
       -webkit-font-smoothing: subpixel-antialiased;
       line-height:275px;
       padding-left:16%;
+      max-width:100%;
+      white-space: nowrap;
 
       @media screen and (max-width:640px) {
-        padding-left:0;
+        padding-left:20px;
+        padding-right:20px;
         text-align:center;
       }
 
-      span {
+      .category-name {
         text-transform:lowercase;
         border-bottom:5px double #000;
       }
