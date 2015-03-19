@@ -28,9 +28,11 @@
       border:1px solid $avatar-sidebar-category-color;
       border-radius:100%;
       width:30px;
-      height:26px;
-      text-align:center;
-      padding-top:4px;
+      height:30px;
+      text-align: center;
+      padding-top: 4px;
+      padding-left: 3px;
+      box-sizing: border-box;
     }
 
     h2 {

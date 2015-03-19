@@ -161,7 +161,6 @@ $(".fittext").textfill({maxFontPixels: 100});
       $("#menu-open, #menu-close").click(function(){
         $(this).toggleClass('open');
         $("#main-menu").toggleClass('onscreen');
-        $("#home-signature").toggleClass('menu-open');
       });
 
       <?php /* Scroll for header */ ?>
@@ -344,9 +343,9 @@ $(".fittext").textfill({maxFontPixels: 100});
       });
       $("#mailchimp-subscribe").submit(function(event){
         event.preventDefault();
-        $(this).find('input').animate({'width':0});
+        $(this).find('input').animate({'width':0}, 300, function(){ $(this).hide(); });
         $.post('/', $(this).serialize(), function(data){
-          $("#mailchimp-subscribe").html("<p>Thanks for subscribing!</p>");
+          $("#mailchimp-subscribe").html("<p><i class='fa fa-thumbs-up'></i> Thanks for subscribing! <i class='fa fa-thumbs-up'></i></p>");
         }).error(function(){
           $("#mailchimp-subscribe").append($("<p>Something went wrong, try again!</p>"));
           $("#mailchimp-subscribe input").animate({'width':215});
@@ -413,6 +412,17 @@ $(".fittext").textfill({maxFontPixels: 100});
             window.confetti.stop(); confetti = null;
             $("canvas#confetti").remove();
           }, 5000);
+        }
+      });
+
+      <?php /* Hide menu on clicking elsewhere */ ?>
+      $(document).on('click',function(event){
+        console.log($(event.target).attr('id'));
+        if (!$(event.target).closest('#main-menu').length && $(event.target).attr('id') !== 'menu-open') {
+          if ($("#menu-open").hasClass('open')) {
+            $("#menu-open").toggleClass('open');
+            $("#main-menu").toggleClass('onscreen');
+          }
         }
       });
     });
