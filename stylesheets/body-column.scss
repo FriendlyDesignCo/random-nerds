@@ -458,6 +458,9 @@
         width:100%;
         max-width:362px;
         @include transition(opacity, 0.5s, ease-in-out);
+        img {
+          padding-left:10px;
+        }
       }
       #logo:hover {
         opacity:0.75;
