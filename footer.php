@@ -118,7 +118,10 @@ $(".fittext").textfill({maxFontPixels: 100});
       checkBodyColumnWidth();
 
       <?php /* Sidebar Collapse Button */ ?>
-      $("#collapse-sidebar").css('left',$("#article-sidebar").offset().left+$("#article-sidebar").width()-$("#collapse-sidebar").width());
+      var sidePosition = $("#article-sidebar").offset().left+$("#article-sidebar").width()-$("#collapse-sidebar").width();
+      if (sidePosition < 0)
+        sidePosition = 2;
+      $("#collapse-sidebar").css('left',sidePosition);
       $("#collapse-sidebar").click(function(event){
         event.preventDefault();
         if ($('#content').hasClass('closed')) {
