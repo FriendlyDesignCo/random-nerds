@@ -4,12 +4,10 @@
 <div class="author-header page-header">
   <img id="author-image" class="author-image" src="<?php the_field('profile_picture', 'user_'.$authorID); ?>">
   <div class="author-info">
-    <div class="author-signature">
-      <img src="<?php the_field('signature', 'user_'.$authorID); ?>">
-    </div>
+    <h1><?php echo $curauth->display_name; ?></h1>
     <?php if (strlen($twitter = get_field('twitter_username', 'user_'.$authorID)) > 0): ?>
-      <hr class="tiny left"><br>
       <a href="https://www.twitter.com/<?php echo $twitter; ?>" class="twitter-link">@<?php echo $twitter; ?></a>
+      <hr class="tiny left"><br>
     <?php endif; ?>
   </div>
 </div>
@@ -21,7 +19,7 @@
   </div>
   <div class="column-right">
 
-    <h5>Articles by <?php echo $curauth->display_name; ?></h5>
+    <h5>Articles by <?php echo the_author_meta('first_name', $curauth->ID); ?></h5>
 
     <?php while (have_posts()): the_post();
     $categories = get_the_category();
@@ -36,7 +34,7 @@
       <article>
         <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
         <div class="article-info">
-          <span># <a href="<?php the_permalink(); ?>" class="grey"><?php the_field('post_id'); ?></a> in <span class="colorize-categories"><?php the_category(', '); ?></span></span><br>
+          <span>in <span class="colorize-categories"><?php the_category(', '); ?></span></span><br>
           <span>Submitted To</span> <span class="tags"><?php the_tags('', ', '); ?></span>
         </div>
         <?php if ($i < count($posts)-1): ?>
