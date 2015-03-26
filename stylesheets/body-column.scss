@@ -582,6 +582,9 @@
 
 .page-content-box {
   width:70%;
+  @media (max-width:1024px) {
+    width:90%;
+  }
   margin:0 auto;
   padding-top:60px;
 }
