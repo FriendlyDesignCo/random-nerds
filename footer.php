@@ -452,11 +452,12 @@ $(".fittext").textfill({maxFontPixels: 100});
                   tooltip.css( 'max-width', $( window ).width() / 2 );
               else
                   tooltip.css( 'max-width', 340 );
-                  width = 340;
+              width = 340;
+              if ($(window).width() < width)
+                width = $(window).width()-40;
 
               var pos_left = -170-target.outerWidth()/2+5,
                   pos_top  = 0 - tooltip.outerHeight() - 20;
-                  console.log(pos_left);
 
               if( target.offset().left + pos_left < 0 ) {
                   pos_left = 0 + target.outerWidth() / 2 - 20;
@@ -466,12 +467,12 @@ $(".fittext").textfill({maxFontPixels: 100});
               else
                   tooltip.removeClass( 'left' );
 
-              if( pos_left + target.offset().left + 370 > $( window ).width() ) {
+              if( pos_left + target.offset().left + 370 > $( window ).width() && !tooltip.hasClass('left') ) {
                 if (target.offset().left-width < 0) {
                   width = target.offset().left-10;
-                }
                   pos_left = -width;
                   tooltip.addClass( 'right' );
+                }
               }
               else
                   tooltip.removeClass( 'right' );
