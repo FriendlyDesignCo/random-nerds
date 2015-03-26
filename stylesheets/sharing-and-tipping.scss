@@ -53,6 +53,58 @@
 
   #tip-form {
     padding:20px;
+
+    .value-select {
+      display: inline-block;
+      background: #fff;
+      height: 50px;
+      box-sizing: border-box;
+      position: relative;
+      top: 3px;
+      border: 1px solid #ccc;
+      line-height: 50px;
+      margin-right: -6px;
+      padding-left: 15px;
+      padding-right: 15px;
+      color: #399;
+      font-family: 'Covered By Your Grace', cursive;
+      font-size: 28px;
+      text-align: center;
+      cursor:pointer;
+      width:95px;
+
+      .value-options {
+        position: absolute;
+        background: #fff;
+        width: 95px;
+        left: -1px;
+        margin-top: -2px;
+        border: 1px solid #ccc;
+        z-index:80;
+        padding-top:10px;
+        @include transition(all, 0.5s, ease-in-out);
+
+        li {
+          line-height: 40px;
+          &:hover {
+            @include transition(all, 0.25s, ease-in-out);
+            background:#399;
+            color:#fff;
+          }
+        }
+      }
+
+      i {
+        font-size:15px;
+        color:#ccc;
+        position: relative;
+        top: -4px;
+        @include transition(color, 0.25s, ease-in-out);
+      }
+      &:hover i {
+        color:#000;
+      }
+    }
   }
 
   p.error {

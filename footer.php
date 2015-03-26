@@ -376,7 +376,7 @@ $(".fittext").textfill({maxFontPixels: 100});
         stripeHandler.open({
           name: 'RandomNerds',
           description: '<?php global $stripeDescription; echo $stripeDescription; ?>',
-          amount: $("#tip-form select option:selected").val(),
+          amount: $("#tip-form input[name=tip_value]").val(),
           panelLabel: 'Tip {{amount}}'
         })
       });
@@ -388,15 +388,30 @@ $(".fittext").textfill({maxFontPixels: 100});
           });
         });
       });
-      $("#tip-form select").change(function(){
-        if ($("#tip-form select option:selected").val() > 9000*100) {
+      $("#tip-form .value-select").click(function(event){
+        if ($(event.target).hasClass('value-select') || $(event.target).parent().hasClass('value-select')) {
+          var options = $(this).find('.value-options');
+          if (options.is(':visible'))
+            options.slideUp();
+          else
+            options.slideDown();
+        }
+        if ($(event.target).data('value')) {
+          var value = $(event.target).data('value');
+          $("#tip-form input[name=tip_value]").val(value*100).trigger('change');
+          $("#tip-form .value-select > span").html(value);
+          $("#tip-form .value-options").slideUp();
+        }
+      });
+      $("#tip-form input[name=tip_value]").change(function(){
+        if ($(this).val() > 9000*100) {
           $("#over-9000").fadeIn();
         } else {
           if ($("#over-9000").is(':visible')) {
             $("#over-9000").fadeOut();
           }
         }
-        if ($("#tip-form select option:selected").val() > 499 && $("#tip-form select option:selected").val() < 9000*100) {
+        if ($(this).val() > 499 && $(this).val() < 9000*100) {
           $("body").append($("<canvas id='confetti' style='position:fixed;top:0;height:'+$(window).height()+';width:'+window.width()+'></canvas>"));
           speed = $("#tip-form select option:selected").val() / 100;
           window.duration = speed/100;
@@ -412,7 +427,6 @@ $(".fittext").textfill({maxFontPixels: 100});
 
       <?php /* Hide menu on clicking elsewhere */ ?>
       $(document).on('click',function(event){
-        console.log($(event.target).attr('id') + $(event.target).attr('class'));
         if (!$(event.target).closest('#main-menu').length && $(event.target).attr('id') !== 'menu-open' && !$(event.target).hasClass('icon-bar')) {
           if ($("#menu-open").hasClass('open')) {
             $("#menu-open").toggleClass('open');

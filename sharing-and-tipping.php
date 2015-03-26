@@ -16,11 +16,14 @@
     <input type="hidden" name="author" value="<?php the_author(); ?>">
     <input type="hidden" name="email">
     <input type="hidden" name="token">
-    <select name="tip_value">
-      <?php foreach (array(1,2,3,5,10,20,50,100,9001) as $value): ?>
-        <option value="<?php echo $value*100; ?>">$<?php echo $value; ?></option>
-      <?php endforeach; ?>
-    </select>
+    <input type="hidden" name="tip_value" value="100">
+    <div class="value-select">
+      $<span class="amount">1</span>
+      <i class="fa fa-caret-down"></i>
+      <div class="value-options hidden">
+        <ul><?php foreach (array(1,2,3,5,10,20,50,100,9001) as $value): ?><li data-value="<?php echo $value; ?>">$<?php echo $value; ?></li><?php endforeach; ?></ul>
+      </div>
+    </div>
     <?php global $stripeDescription; $stripeDescription = 'Tip ' . get_the_author(); ?>
     <a href="#" id="tip-button" class="button" style="color:#fff;">Support Now
       <span class="circle"><i class="fa fa-arrow-right"></i></span>
