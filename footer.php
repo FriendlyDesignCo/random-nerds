@@ -30,6 +30,7 @@
   <?php endif; ?>
 
   <script type="text/javascript">
+  var confetti;
   var sidebarLoadingMoreContent = false;
   var ignoredCategories; var categories = ['gaming','politics','pop-culture','tech'];
   var refilteringTexts = ['Refiltering posts','Reticulating splines','Dynotherms connecting','Refactoring pixelations','Powering atomic batteries'];
@@ -412,14 +413,14 @@ $(".fittext").textfill({maxFontPixels: 100});
           }
         }
         if ($(this).val() > 499 && $(this).val() < 9000*100) {
-          $("body").append($("<canvas id='confetti' style='position:fixed;top:0;height:'+$(window).height()+';width:'+window.width()+'></canvas>"));
-          speed = $("#tip-form select option:selected").val() / 100;
-          window.duration = speed/100;
+          $("body").append($("<canvas id='confetti' style='position:fixed;top:0;z-index:5;height:'+$(window).height()+';width:'+window.width()+'></canvas>"));
+          window.confettiPaperCount = $("#tip-form input[name=tip_value]").val();
+          window.speed = 100;
           confetti = getConfettiContext();
           confetti = new confetti.Context('confetti');
           confetti.start();
-          setInterval(function(){
-            window.confetti.stop(); confetti = null;
+          setTimeout(function(){
+            confetti.stop(); confetti = null;
             $("canvas#confetti").remove();
           }, 5000);
         }

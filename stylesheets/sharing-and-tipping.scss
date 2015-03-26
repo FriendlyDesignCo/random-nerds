@@ -50,6 +50,8 @@
   margin-top:30px;
   background-color:#f7f6f3;
   padding:30px;
+  position:relative;
+  z-index:11;
 
   #tip-form {
     padding:20px;
@@ -83,6 +85,7 @@
         z-index:80;
         padding-top:10px;
         @include transition(all, 0.5s, ease-in-out);
+        overflow:hidden;
 
         li {
           line-height: 40px;
