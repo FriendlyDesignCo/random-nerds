@@ -33,8 +33,8 @@ body.page #content-body, body.error404 #content-body {
     background:$category-header-background;
     width:100%;
     min-height:200px;
-    @media screen and (min-width:1500px) {
-      min-height:250px;
+    @media screen and (min-width:720px) {
+      min-height:300px;
     }
     position:relative;
     @include transition(all, 0.3s, ease-in-out);
@@ -46,6 +46,11 @@ body.page #content-body, body.error404 #content-body {
       font-family:'Playfair Display', serif;
       -webkit-font-smoothing: subpixel-antialiased;
       color:#fff;
+    }
+
+    .wrap {
+      width:70%;
+      margin:0 auto;
     }
 
     &.fat {
@@ -61,13 +66,13 @@ body.page #content-body, body.error404 #content-body {
       h2 {
         font-size:100px;
         line-height:normal;
-        width:50%;
+        font-weight:bold;
         height:200px;
-        display:block;
-        position:relative;
-        top:50%;
-        left:50%;
+        text-align:right;
         line-height:200px;
+        @media screen and (min-width:720px) {
+          line-height:300px;
+        }
       }
     }
 
