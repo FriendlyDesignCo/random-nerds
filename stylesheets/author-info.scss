@@ -21,7 +21,7 @@
 .author-info {
   a {
     color:$link-color;
-    @include transition(color, 0.5s, ease-in-out);
+    @include transition(color, 0.25s, ease-in-out);
   }
   a:hover {
     color:$link-hover-color;
@@ -40,7 +40,7 @@
     background-size:cover;
 
     margin-right:30px;
-    @include transition(border-color, 0.5s, ease-in-out);
+    @include transition(border-color, 0.25s, ease-in-out);
   }
   a:hover .author-image {
     border:8px solid $blue;

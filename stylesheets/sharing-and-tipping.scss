@@ -8,9 +8,9 @@
     color:#3b5998 !important;
     &:hover {
       color:#fff !important;
-      @include transition(all, 0.5s, ease-out);
+      @include transition(all, 0.25s, ease-out);
       i.fa-inverse {
-        @include transition(all, 0.5s, ease-out);
+        @include transition(all, 0.25s, ease-out);
         color:#3b5998;
       }
     }
@@ -19,9 +19,9 @@
     color:#44acee !important;
     &:hover {
       color:#fff !important;
-      @include transition(all, 0.5s, ease-out);
+      @include transition(all, 0.25s, ease-out);
       i.fa-inverse {
-        @include transition(all, 0.5s, ease-out);
+        @include transition(all, 0.25s, ease-out);
         color:#44acee;
       }
     }
@@ -29,9 +29,9 @@
   a.reddit {
     &:hover {
       color:#fff !important;
-      @include transition(all, 0.5s, ease-out);
+      @include transition(all, 0.25s, ease-out);
       i.fa-inverse {
-        @include transition(all, 0.5s, ease-out);
+        @include transition(all, 0.25s, ease-out);
         color:$link-hover-color;
       }
     }
@@ -75,7 +75,7 @@
     font-size:18px;
     box-sizing:border-box;
     position:relative;
-    @include transition(background-color, 0.3s, ease-in-out);
+    @include transition(background-color, 0.25s, ease-in-out);
 
     &:hover {
       background-color:$link-hover-color;
