@@ -43,6 +43,12 @@ function aside($attributes, $content)
 }
 add_shortcode('aside', 'aside');
 
+function citeTooltip($attributes, $content)
+{
+  return '<cite rel="tooltip" title="' . htmlentities($content) . '">#</cite>';
+}
+add_shortcode('cite', 'citeTooltip');
+
 /* Advanced Custom Fields PRO */
 add_filter('acf/settings/path', 'my_acf_settings_path');
 function my_acf_settings_path( $path ) {
