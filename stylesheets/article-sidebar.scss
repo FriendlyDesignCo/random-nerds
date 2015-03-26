@@ -31,8 +31,9 @@
       height:30px;
       text-align: center;
       padding-top: 4px;
-      padding-left: 3px;
+      padding-left: 0;
       box-sizing: border-box;
+      @include transition(all, 0.3s, ease-in-out);
     }
 
     h2 {
@@ -103,6 +104,12 @@
   .article:hover h3, .article:not(.featured):hover h2 {
     color:#fff;
     opacity:0.15;
+  }
+  .article:hover .content-icon {
+    color:#fff;
+    opacity:0.15;
+    border:1px solid #fff;
+    @include transition(all, 0.1s, ease-in-out);
   }
   .article.category-politics:hover {
     background-color:$politics-color;
