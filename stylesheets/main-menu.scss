@@ -1,3 +1,15 @@
+#mobile-home {
+  @media screen and (min-width:641px) {
+    display:none;
+  }
+  position:fixed;
+  top:25px;
+  left:25px;
+  img {
+    max-width:30px;
+  }
+}
+
 body.past-header {
   #menu-open {
     .icon-bar {
@@ -208,7 +220,7 @@ body.past-header {
     @include transition(width, 0.3s, ease-in-out);
     -webkit-appearance: none;
     border-radius:0;
-    -webkit-appearance: none; 
+    -webkit-appearance: none;
   }
   a {
     display:inline-block;
