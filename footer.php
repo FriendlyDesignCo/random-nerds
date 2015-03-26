@@ -47,7 +47,7 @@ $(".fittext").textfill({maxFontPixels: 100});
     }
     $(function(){
       <?php /* Page header */ ?>
-      if ($("body").hasClass('page')) {
+      if ($("body").hasClass('page') || $("body").hasClass('error404')) {
         var pageHeaderBreakpointSet = function(){
           var pageHeader = $(".page-header");
           if (pageHeader.width() < 875) {
@@ -420,6 +420,13 @@ $(".fittext").textfill({maxFontPixels: 100});
           }
         }
       });
+
+      <?php /* 404 */ ?>
+      if ($("body").hasClass('error404')) {
+        $.get('http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag=fail&rating=pg', function(data){
+          $(".giphy").append('<img src=' + data.data.image_url + '>');
+        });
+      }
     });
   </script>
 

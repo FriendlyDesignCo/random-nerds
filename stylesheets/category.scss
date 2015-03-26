@@ -28,7 +28,7 @@
 }
 
 
-body.page #content-body {
+body.page #content-body, body.error404 #content-body {
   .page-header {
     background:$category-header-background;
     width:100%;
@@ -88,6 +88,35 @@ body.page #content-body {
         font-size:20px;
         text-align:center;
         width:100%;
+      }
+    }
+  }
+}
+
+
+body.error404 {
+  .giphy {
+    text-align:center;
+    img {
+      max-width:100%;
+      margin-bottom:20px;
+    }
+  }
+}
+
+body:not(.sub-1000) {
+  .random-articles {
+    .randomarticle {
+      float:left;
+      width:45%;
+      padding-right:5%;
+
+      a h3 {
+        color:#666;
+        font-family: 'Playfair Display', serif;
+        -webkit-font-smoothing: subpixel-antialiased;
+        font-size: 27px;
+        padding-bottom: 15px;
       }
     }
   }
