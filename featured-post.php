@@ -50,12 +50,15 @@ foreach ($categories as $category) {
     </div>
   </article>
   <?php if (is_single()): ?>
-    <div class="comment-divider">
-      <hr>
-      <div class="plus"><a href="#comments" data-identifier="post_<?php the_ID(); ?>" class="comment-async"><span>+</span></a></div>
-      <a href="#comments" class="load-comments comment-async" data-identifier="post_<?php the_ID(); ?>">Load Comments (<span class="disqus-comment-count" data-disqus-identifier="post_<?php the_ID(); ?>">0</span>)</a>
-    </div>
-
-    <a name="comments"></a>
     <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname = '<?php echo ot_get_option('disqus_shortname'); ?>';
+      var disqus_identifier = 'post_<?php the_ID(); ?>';
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
   <?php endif; ?>

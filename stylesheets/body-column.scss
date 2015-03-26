@@ -570,7 +570,11 @@
     }
   }
   #disqus_thread {
-    width:90%;
+    width:70%;
+    @media (max-width:1024px) {
+      width:90%;
+    }
+    max-width:1000px;
     margin:0 auto;
     margin-top:60px;
   }

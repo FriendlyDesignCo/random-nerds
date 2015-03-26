@@ -179,23 +179,6 @@ $(".fittext").textfill({maxFontPixels: 100});
         }
       });
 
-      <?php /* Async Disqus */ ?>
-      <?php if (is_single()): ?>
-      $(".comment-async").click(function(event){
-        event.preventDefault();
-        var disqus_shortname = '<?php echo ot_get_option('disqus_shortname'); ?>';
-        var disqus_identifier = $(this).data('identifier');
-        $.ajax({
-          type: "GET",
-          url: "http://" + disqus_shortname + ".disqus.com/embed.js",
-          dataType: "script",
-          cache: true
-        });
-        $("div.plus a").addClass('comments-loaded');
-        $("a.load-comments").slideUp();
-      });
-      <?php endif; ?>
-
       <?php /* Related Posts Leveling */ ?>
       if ($("#content-body").width() > 640) {
         if ($("#related-posts").length > 0) {
