@@ -1,4 +1,4 @@
-footer {
+footer, body #content-body footer {
   min-height:260px;
   background:$footer-background;
   color:#fff;
@@ -29,6 +29,7 @@ footer {
       margin-bottom:15px;
     }
     p {
+      font-family: 'Montserrat', sans-serif;
       font-size:14px;
       line-height:19px;
       text-align:justify;
