@@ -151,3 +151,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['mailchimp_email_subscr
   $mc->lists->subscribe(MAILCHIMP_LIST_ID, array('email' => $_POST['mailchimp_email_subscribe']));
   exit();
 }
+
+add_filter('the_excerpt', 'do_shortcode');
