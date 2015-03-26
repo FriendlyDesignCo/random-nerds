@@ -1,10 +1,10 @@
 <?php $authorID = get_the_author_meta('ID'); ?>
-<div class="divider-row"><hr class="divider"></div>
+<div class="divider-row"><hr class="divider compact-bottom"></div>
 
 <div class="author-info">
   <a class="author-image-link" href="<?php echo get_author_posts_url($authorID); ?>"><div class="author-image" style="background-image:url('<?php the_field('profile_picture', 'user_'.$authorID); ?>')"></div></a>
   <div class="author-details">
-    <h4>By <a href="<?php echo get_author_posts_url($authorID); ?>"><?php the_author(); ?></a> <?php if (strlen($twitter = get_field('twitter_username', 'user_'.$authorID)) > 0): ?>(<a href="https://www.twitter.com/<?php echo $twitter; ?>">@<?php echo $twitter; ?></a>)<?php endif; ?></h4>
+    <h4><a href="<?php echo get_author_posts_url($authorID); ?>"><?php the_author(); ?></a> <?php if (strlen($twitter = get_field('twitter_username', 'user_'.$authorID)) > 0): ?>(<a href="https://www.twitter.com/<?php echo $twitter; ?>">@<?php echo $twitter; ?></a>)<?php endif; ?></h4>
     <p class="bio"><?php the_author_meta('description'); ?></p>
     <h5>Articles by <?php the_author(); ?></h5>
 
@@ -32,7 +32,7 @@
   </div>
   <div class="clearfix"></div>
 
-  <div class="divider-row"><hr class="divider"></div>
+  <div class="divider-row"><hr class="divider compact-top"></div>
 
   <div id="related-posts">
     <?php
