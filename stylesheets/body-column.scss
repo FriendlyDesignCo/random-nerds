@@ -617,3 +617,13 @@
     }
   }
 }
+
+
+#content-body.sub-1000 {
+  blockquote {
+    margin-left:0;
+    &.right {
+      margin-right:0;
+    }
+  }
+}
