@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 <?php $curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author)); $authorID = $curauth->ID; ?>
-
-<div class="author-header page-header">
+<div class="page-header"></div>
+<div class="author-header">
   <img id="author-image" class="author-image" src="<?php the_field('profile_picture', 'user_'.$authorID); ?>">
   <div class="author-info">
     <h1><?php echo $curauth->display_name; ?></h1>
