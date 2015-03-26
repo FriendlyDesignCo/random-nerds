@@ -261,19 +261,48 @@
       }
     }
 
+    .submitted-to {
+      margin-top:40px;
+      .light-grey {
+        font-family: 'Montserrat', sans-serif;
+        color:#a8a19d;
+        font-size:16px;
+        text-transform:uppercase;
+      }
+    }
+
     .meta-row {
       font-family: 'Lora', serif;
       font-size:14px;
 
       .categories {
         font-family: 'Montserrat', sans-serif;
+        font-size:16px;
         &.upper {
           text-transform:uppercase;
+        }
+        a {
+          color:#6291b4;
+        }
+        a.category-politics {
+          color:$politics-color;
+        }
+        a.category-gaming {
+          color:$gaming-color;
+        }
+        a.category-pop-culture {
+          color:$pop-culture-color;
+        }
+        a.category-tech {
+          color:$tech-type-color;
         }
       }
 
       .date {
-        color:#000;
+        font-family: 'Lora', serif;
+        color:#666666;
+        font-size:16px;
+        font-style:italic;
       }
 
       ul {
@@ -292,12 +321,16 @@
 
       .light-grey {
         font-family: 'Montserrat', sans-serif;
-        color:$light-grey;
+        color:#a8a19d;
+        font-size:16px;
         text-transform:uppercase;
       }
 
       .author-link {
-        color:#000;
+        color:#666666;
+        font-family: 'Lora', serif;
+        font-style:italic;
+        font-size:22px;
         @include transition(color, 0.25s, ease-in-out);
       }
     }

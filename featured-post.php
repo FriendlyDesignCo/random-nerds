@@ -18,14 +18,17 @@ foreach ($categories as $category) {
     <div class="article featured">
       <div class="meta-row text-center">
         <span class="light-grey">By</span> <a class="author-link" href="<?php echo get_author_posts_url(get_the_author_ID()); ?>"><?php the_author(); ?></a>
+        <p><span class="date"><?php the_date('M j, Y'); ?></span></p>
       </div>
       <?php if (!is_home()): ?>
         <hr class="small">
         <div class="meta-row text-center">
           <ul>
-            <li><span class="light-grey">Posted</span> <span class="date"><?php the_date('M j, Y'); ?></span></li>
-            <li><span class="light-grey">Filed In</span> <span class="categories upper"><?php the_category(', '); ?></span></li>
-            <li><span class="light-grey">Submitted To</span> <span class="categories"><?php the_tags('', ', '); ?></span></li>
+            <li><span class="light-grey">Filed In</span> <span class="categories upper"><?php ob_start();
+            the_category(', ');
+            $categories = ob_get_contents();
+            ob_end_clean();
+            echo preg_replace('/\/category\/(.*?)\/"/','/category/\\1" class="category-\\1"', $categories); ?></span></li>
           </ul>
         </div>
       <?php endif; ?>
@@ -39,6 +42,9 @@ foreach ($categories as $category) {
         <?php endif; ?>
       </div>
       <?php if (!is_home()): ?>
+        <?php if (count(wp_get_post_tags(get_the_ID())) > 0): ?>
+          <p class="submitted-to"><span class="light-grey">Submitted To</span> <span class="categories"><?php the_tags('', ', '); ?></span></p>
+        <?php endif; ?>
         <div class="author-signature">
           <img src="<?php the_field('signature', 'user_'.get_the_author_meta('ID')); ?>">
         </div>
