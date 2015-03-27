@@ -18,7 +18,7 @@ foreach ($categories as $category) {
     <div class="article featured">
       <div class="meta-row text-center">
         <span class="light-grey">By</span> <a class="author-link" href="<?php echo get_author_posts_url(get_the_author_ID()); ?>"><?php the_author(); ?></a>
-        <p><span class="date"><?php the_date('M j, Y'); ?></span></p>
+        <?php if (!is_home()): ?><p><span class="date"><?php the_date('M j, Y'); ?></span></p><?php endif; ?>
       </div>
       <?php if (!is_home()): ?>
         <hr class="small">
