@@ -16,7 +16,10 @@ $i = 0; ?>
     <?php while (have_posts()): the_post();
     $categories = get_the_category();
     $categoryNames = array(); $categorySlugs = array(); $categoryLinks = array();
+    $neutralColor = true; $categoryCount = 0;
     foreach ($categories as $category) {
+      if ($cagegory->ID !== 6)
+        $categoryCount++;
       $categoryNames[] = $category->cat_name;
       $categorySlugs[] = 'category-'.$category->slug;
       $categoryLinks[] = '<a href="' . get_category_link($category->cat_ID) . '">' . $category->cat_name . '</a>';
@@ -27,7 +30,7 @@ $i = 0; ?>
           <div class="category-info">
             In <?php the_category(', '); ?>
           </div>
-          <h2><a href="<?php the_permalink(); ?>" class="article-title"><?php the_title(); ?></a></h2>
+          <h2><a href="<?php the_permalink(); ?>" class="article-title <?php if ($categoryCount > 1): ?>neutral<?php endif; ?>"><?php the_title(); ?></a></h2>
           <hr class="small">
           <div class="meta-row text-center pad-bottom">
             <span class="light-grey">By:</span> <a class="author-link" href="<?php echo get_author_posts_url(get_the_author_ID()); ?>"><?php the_author(); ?></a>

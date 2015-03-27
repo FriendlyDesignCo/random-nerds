@@ -52,7 +52,7 @@
   @include transition(margin-left, 0.5s, ease-in-out);
   overflow-x:hidden;
 
-  article a, article.category-politics .article.featured a.author-link:hover {
+  article a, article a.author-link:hover {
     color: #399;
   }
   article .article-body p {
@@ -230,7 +230,8 @@
       color:#333;
       @include transition(all, 0.25s, ease-in-out);
     }
-    h2 a.article-title:hover {
+    h2 a.article-title.neutral:hover {
+      color:#399;
     }
 
     .category-info {
@@ -592,11 +593,17 @@
     .category-info a:before {
       background-color:$tech-type-color;
     }
+    a.article-title:hover {
+      color:$tech-type-color;
+    }
   }
 
   article.category-pop-culture {
     .category-info a:before {
       background-color:$pop-culture-color;
+    }
+    a.article-title:hover {
+      color:$pop-culture-color;
     }
   }
 
@@ -604,11 +611,17 @@
     .category-info a:before {
       background-color:$politics-color;
     }
+    a.article-title:hover {
+      color:$politics-color;
+    }
   }
 
   article.category-gaming {
     .category-info a:before {
       background-color:$gaming-color;
+    }
+    a.article-title:hover {
+      color:$gaming-color;
     }
   }
 
