@@ -22,13 +22,13 @@ $i = 0; ?>
         $categoryCount++;
       $categoryNames[] = $category->cat_name;
       $categorySlugs[] = 'category-'.$category->slug;
-      $categoryLinks[] = '<a href="' . get_category_link($category->cat_ID) . '">' . $category->cat_name . '</a>';
+      $categoryLinks[] = '<a href="' . get_category_link($category->cat_ID) . '" class="category-' . $category->slug . '">' . $category->cat_name . '</a>';
     }
     ?>
       <article class="<?php if (!is_single()): ?>filterable<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?>">
         <div class="article">
-          <div class="category-info">
-            In <?php the_category(', '); ?>
+          <div class="category-info colorize-categories">
+            In <?php echo implode(', ', $categoryLinks); ?>
           </div>
           <h2><a href="<?php the_permalink(); ?>" class="article-title <?php if ($categoryCount > 1): ?>neutral<?php endif; ?>"><?php the_title(); ?></a></h2>
           <hr class="small">
