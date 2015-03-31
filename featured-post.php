@@ -12,7 +12,7 @@ foreach ($categories as $category) {
     <div class="article-header-image <?php the_field('color_mode', get_the_ID()); ?> page-header <?php if ($thumbnail === false): ?>no-header-image<?php endif; ?>" style="<?php if ($thumbnail !== false): ?>background-image:url('<?php echo $thumbnail; ?>');<?php endif; ?>height:600px;">
       <div class="cover">
         <a href="<?php the_permalink(); ?>"><h2 class="fittext"><span><?php the_title(); ?></span></h2></a>
-        <a href="/" id="logo"><img src="<?php bloginfo('template_url'); ?>/images/signature-logo.png" title="Random Nerds"></a>
+        <a href="/" id="logo"><img src="<?php bloginfo('template_url'); ?>/images/signature-logo.svg" title="Random Nerds"></a>
       </div>
     </div>
     <div class="article featured">
