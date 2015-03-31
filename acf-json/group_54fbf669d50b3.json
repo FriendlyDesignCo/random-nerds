@@ -67,11 +67,10 @@
         "slug",
         "author",
         "format",
-        "page_attributes",
         "featured_image",
         "categories",
         "tags",
         "send-trackbacks"
     ],
-    "modified": 1425798863
+    "modified": 1427836664
 }
