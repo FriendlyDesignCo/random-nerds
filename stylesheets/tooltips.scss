@@ -13,26 +13,7 @@ cite {
   font-weight: bold;
   font-family:'Montserrat';
   color: #fff;
-}
-article.politics-gaming {
-  cite {
-    background:$politics-color;
-  }
-}
-article.category-gaming {
-  cite {
-    background:$gaming-color;
-  }
-}
-article.category-tech {
-  cite {
-    background:$tech-color;
-  }
-}
-article.category-pop-culture {
-  cite {
-    background:$pop-culture-color;
-  }
+  background:#399;
 }
 
 #tooltip
@@ -44,6 +25,7 @@ article.category-pop-culture {
     z-index: 100;
     padding: 15px;
     font-family:'Lora', serif;
+    font-size:12px;
 }
 
     #tooltip:after /* triangle decoration */
