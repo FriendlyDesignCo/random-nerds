@@ -572,13 +572,12 @@
         right:40px;
         text-align:right;
         width:100%;
-        max-width:362px;
+        max-width:235px;
         @include transition(opacity, 0.25s, ease-in-out);
         img {
           padding-left:10px;
         }
         @media screen and (max-width:720px) {
-          max-width:75%;
           img {
             max-width:100%;
           }
