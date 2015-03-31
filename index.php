@@ -33,7 +33,7 @@ $i = 0; ?>
           <h2><a href="<?php the_permalink(); ?>" class="article-title <?php if ($categoryCount > 1): ?>neutral<?php endif; ?>"><?php the_title(); ?></a></h2>
           <hr class="small">
           <div class="meta-row text-center pad-bottom">
-            <span class="light-grey">By:</span> <a class="author-link" href="<?php echo get_author_posts_url(get_the_author_ID()); ?>"><?php the_author(); ?></a>
+            <span class="light-grey">By</span> <a class="author-link" href="<?php echo get_author_posts_url(get_the_author_ID()); ?>"><?php the_author(); ?></a>
           </div>
 
           <div class="article-body">
