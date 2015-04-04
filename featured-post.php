@@ -9,7 +9,7 @@ foreach ($categories as $category) {
  ?>
   <article class="<?php echo implode(' ', $categorySlugs); ?> first-article">
     <?php $thumbnail = false; if (has_post_thumbnail()) { $thumbObject = wp_get_attachment_image_src(get_post_thumbnail_id(), 'single-post-thumbnail'); $thumbnail = $thumbObject[0]; } ?>
-    <div class="article-header-image <?php the_field('color_mode', get_the_ID()); ?> page-header <?php if ($thumbnail === false): ?>no-header-image<?php endif; ?>" style="<?php if ($thumbnail !== false): ?>background-image:url('<?php echo $thumbnail; ?>');<?php endif; ?>height:600px;">
+    <div class="article-header-image <?php the_field('color_mode', get_the_ID()); ?> page-header <?php if ($thumbnail === false): ?>no-header-image<?php endif; ?>" style="<?php if ($thumbnail !== false): ?>background-image:url('<?php echo $thumbnail; ?>');<?php endif; ?>">
       <div class="cover">
         <a href="<?php the_permalink(); ?>"><h2 class="fittext"><span><?php the_title(); ?></span></h2></a>
         <a href="/" id="logo"><img src="<?php bloginfo('template_url'); ?>/images/signature-logo.svg" title="Random Nerds"></a>
@@ -32,7 +32,7 @@ foreach ($categories as $category) {
           </ul>
         </div>
       <?php endif; ?>
-      <hr class="small">
+      <hr class="small desktop-only">
       <div class="article-body">
         <?php if (is_single()): ?>
           <?php the_content(); ?>
@@ -51,7 +51,7 @@ foreach ($categories as $category) {
         <?php get_template_part('sharing-and-tipping'); ?>
         <?php get_template_part('author-info'); ?>
       <?php else: ?>
-        <div class="divider-row"><hr class="divider"></div>
+        <div class="divider-row"><hr class="divider desktop-only"><hr class="tiny left mobile-only"></div>
       <?php endif; ?>
     </div>
   </article>

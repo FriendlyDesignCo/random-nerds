@@ -598,6 +598,21 @@
           font-weight:bold;
         }
       }
+
+      @media screen and (max-width:640px) {
+        height:290px;
+        .cover {
+          min-height:250px;
+        }
+        h2 {
+          width:90%;
+          padding-top:70px;
+          height:160px;
+          font-size:20px;
+          box-sizing:border-box;
+          display:block;
+        }
+      }
     }
 
   }
@@ -605,6 +620,59 @@
   .article.featured {
     .meta-row:first-child {
       padding-top:25px;
+    }
+  }
+
+  @media screen and (max-width:640px) {
+    .meta-row.text-center {
+      text-align:left;
+    }
+
+    article {
+      p {
+        font-size:16px;
+      }
+      h2 {
+        font-size:20px;
+        text-align:left;
+      }
+      .category-info {
+        text-align:left;
+      }
+      .pad-bottom {
+        padding-bottom:20px;
+      }
+      .subtitle {
+        color:#399;
+        font-family: 'Covered By Your Grace', cursive;
+        line-height:1.2em;
+        font-size:20px;
+        padding-bottom:5px;
+      }
+      .meta-row {
+        .light-grey {
+          font-size:11px;
+        }
+        .author-link {
+          font-size:16px;
+        }
+      }
+      .read-more {
+        margin:0;
+        border-top:0;
+        border-bottom:0;
+        width:180px;
+        a {
+          padding-left:0;
+          font-size:20px;
+          .arrow {
+            width:21px;
+            height:21px;
+            line-height:21px;
+            font-size:12px;
+          }
+        }
+      }
     }
   }
 

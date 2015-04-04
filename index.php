@@ -31,17 +31,18 @@ $i = 0; ?>
             In <?php echo implode(', ', $categoryLinks); ?>
           </div>
           <h2><a href="<?php the_permalink(); ?>" class="article-title <?php if ($categoryCount > 1): ?>neutral<?php endif; ?>"><?php the_title(); ?></a></h2>
-          <hr class="small">
+          <hr class="small desktop-only">
+          <p class="subtitle mobile-only"><?php the_field('post_subtitle'); ?></p>
           <div class="meta-row text-center pad-bottom">
             <span class="light-grey">By</span> <a class="author-link" href="<?php echo get_author_posts_url(get_the_author_ID()); ?>"><?php the_author(); ?></a>
           </div>
 
-          <div class="article-body">
+          <div class="article-body desktop-only">
             <?php the_excerpt('<div class="read-more hidden"><span>Read More</span> <div class="arrow">&#8594;</div><div class="clearfix"></div></div>'); ?>
           </div>
 
           <?php if ($i < ($wp_query->found_posts)): ?>
-            <div class="divider-row"><hr class="divider <?php if ($i == 0): ?>signature<?php endif; ?>"></div>
+            <div class="divider-row"><hr class="divider desktop-only <?php if ($i == 0): ?>signature<?php endif; ?>"><hr class="tiny left mobile-only"></div>
           <?php endif; ?>
         </div>
       </article>
