@@ -83,7 +83,7 @@ $(".fittext").textfill({maxFontPixels: 100});
       <?php /* Authors need to set the category on the articles to colorize, and profile image nonsense */ ?>
       if ($("body").hasClass('author')) {
         $("span.colorize-categories a").each(function(){
-          $(this).addClass('category-'+$(this).html().toLowerCase());
+          $(this).addClass('category-'+$(this).html().toLowerCase().replace(' ','-'));
         });
       }
       var checkBodyColumnWidth = function(){
