@@ -11,8 +11,10 @@ Template Name: Writers
       <a href="<?php echo get_author_posts_url($author['ID']); ?>" class="author">
         <div class="author-box">
           <div class="image"><img src="<?php the_field('profile_picture', 'user_'.$author['ID']); ?>"></div>
-          <hr class="tiny">
+
           <img src="<?php the_field('signature', 'user_'.$author['ID']); ?>" class="signature">
+          <hr class="tiny">
+          <p class="job-title"><?php the_field('job_title', 'user_'.$author['ID']); ?></p>
         </div>
       </a>
     <?php endwhile; ?>

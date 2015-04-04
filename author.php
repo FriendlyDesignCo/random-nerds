@@ -5,6 +5,7 @@
   <img id="author-image" class="author-image" src="<?php the_field('profile_picture', 'user_'.$authorID); ?>">
   <div class="author-info">
     <h1 class="fittext" data-max-size="75"><span><?php echo $curauth->display_name; ?></span></h1>
+    <p class="job-title"><?php the_field('job_title', 'user_'.$authorID); ?></p>
     <?php if (strlen($twitter = get_field('twitter_username', 'user_'.$authorID)) > 0): ?>
       <a href="https://www.twitter.com/<?php echo $twitter; ?>" class="twitter-link">@<?php echo $twitter; ?></a>
       <hr class="tiny left"><br>

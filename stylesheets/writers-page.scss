@@ -1,0 +1,41 @@
+.authors-page {
+  @media screen and (max-width:640px) {
+    width:90%;
+  }
+  a.author {
+    @media screen and (max-width:640px) {
+      width:50%;
+    }
+    float:left;
+    text-align:center;
+    display:block;
+    .image img {
+      max-width:100%;
+      width:180px;
+      height:auto;
+      border:15px solid $avatar-sidebar-background;
+      border-radius:100%;
+      margin-bottom:10px;
+      @include transition(all, 0.25s, ease-out);
+      box-sizing: border-box;
+    }
+    .signature {
+      width:65%;
+      margin:0 auto;
+      margin-top:10px;
+    }
+    hr {
+      border-color:#ccc;
+    }
+    .job-title {
+      color:#666;
+      font-size:16px;
+      font-style:italic;
+    }
+  }
+  .author:hover {
+    .image img {
+      border:15px solid $header-footer-background;
+    }
+  }
+}
