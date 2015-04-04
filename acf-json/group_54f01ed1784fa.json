@@ -82,6 +82,31 @@
             "placeholder": "",
             "disabled": 0,
             "readonly": 0
+        },
+        {
+            "key": "field_551f71eb6ed4c",
+            "label": "Primary Category",
+            "name": "primary_category",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "politics": "Politics",
+                "gaming": "Gaming",
+                "tech": "Tech",
+                "pop-culture": "Pop Culture"
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "",
+            "layout": "horizontal"
         }
     ],
     "location": [
@@ -99,5 +124,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1426798252
+    "modified": 1428124184
 }
