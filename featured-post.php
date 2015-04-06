@@ -11,11 +11,12 @@ foreach ($categories as $category) {
     <?php $thumbnail = false; if (has_post_thumbnail()) { $thumbObject = wp_get_attachment_image_src(get_post_thumbnail_id(), 'single-post-thumbnail'); $thumbnail = $thumbObject[0]; } ?>
     <div class="article-header-image <?php the_field('color_mode', get_the_ID()); ?> page-header <?php if ($thumbnail === false): ?>no-header-image<?php endif; ?>" style="<?php if ($thumbnail !== false): ?>background-image:url('<?php echo $thumbnail; ?>');<?php endif; ?>">
       <div class="cover">
-        <a href="<?php the_permalink(); ?>"><h2 class="fittext"><span><?php the_title(); ?></span></h2></a>
+        <?php if (is_home()): ?><a href="<?php the_permalink(); ?>"><h2 class="fittext"><span><?php the_title(); ?></span></h2></a><?php endif; ?>
         <a href="/" id="logo"><img src="<?php bloginfo('template_url'); ?>/images/signature-logo.svg" title="Random Nerds"></a>
       </div>
     </div>
     <div class="article featured">
+      <h1 class="article-title text-center"><?php the_title(); ?></h1>
       <div class="meta-row text-center">
         <span class="light-grey">By</span> <a class="author-link" href="<?php echo get_author_posts_url(get_the_author_ID()); ?>"><?php the_author(); ?></a>
         <?php if (!is_home()): ?><p><span class="date"><?php the_date('M j, Y'); ?></span></p><?php endif; ?>

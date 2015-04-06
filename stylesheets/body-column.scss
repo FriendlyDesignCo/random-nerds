@@ -206,6 +206,15 @@
   }
 
   article {
+    h1.article-title {
+      color:#666;
+      font-family: 'Playfair Display', serif;
+      -webkit-font-smoothing: subpixel-antialiased;
+      font-size:80px;
+      font-weight:bold;
+      margin-top:40px;
+      margin-bottom:40px;
+    }
     h5 {
       color:#ccc;
       font-family:'Montserrat', sans-serif;
@@ -560,6 +569,7 @@
     }
 
     .article-header-image {
+      background-color:#303946;
       background-size:cover;
       height:600px;
       background-position:right bottom;

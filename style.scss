@@ -181,6 +181,9 @@ a.symbol:before {
 body.author {
   @import 'stylesheets/author-page.scss';
 }
+body.single {
+  @import 'stylesheets/single-post.scss';
+}
 
 .black {
   color:#333;
