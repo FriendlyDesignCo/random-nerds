@@ -32,6 +32,28 @@
             "placeholder": "",
             "disabled": 0,
             "readonly": 0
+        },
+        {
+            "key": "field_552232c95117a",
+            "label": "Avatar Position",
+            "name": "avatar_position",
+            "prefix": "",
+            "type": "radio",
+            "instructions": "left : Left\r\nright : Right",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "": ""
+            },
+            "other_choice": 0,
+            "save_other_choice": 0,
+            "default_value": "left",
+            "layout": "vertical"
         }
     ],
     "location": [
@@ -57,5 +79,5 @@
         "featured_image",
         "tags"
     ],
-    "modified": 1426471394
+    "modified": 1428304614
 }
