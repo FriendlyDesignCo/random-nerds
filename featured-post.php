@@ -25,7 +25,7 @@ foreach ($categories as $category) {
       <div class="page-header"></div>
     <?php endif; ?>
     <div class="article featured">
-      <h1 class="article-title text-center"><?php the_title(); ?></h1>
+      <?php if (!is_home()): ?><h1 class="article-title text-center"><?php the_title(); ?></h1><?php endif; ?>
       <div class="meta-row text-center">
         <span class="light-grey">By</span> <a class="author-link" href="<?php echo get_author_posts_url(get_the_author_ID()); ?>"><?php the_author(); ?></a>
         <?php if (!is_home()): ?><p><span class="date"><?php the_date('M j, Y'); ?></span></p><?php endif; ?>
