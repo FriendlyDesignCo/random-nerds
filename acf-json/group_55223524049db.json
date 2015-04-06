@@ -1,9 +1,9 @@
 {
-    "key": "group_54f64cd422791",
-    "title": "Status Avatar",
+    "key": "group_55223524049db",
+    "title": "Status Avatar (Footer Messages)",
     "fields": [
         {
-            "key": "field_54f64cd9c1dbe",
+            "key": "field_5522352408db8",
             "label": "Avatar",
             "name": "avatar",
             "prefix": "",
@@ -34,7 +34,7 @@
             "readonly": 0
         },
         {
-            "key": "field_552232c95117a",
+            "key": "field_5522352408dd8",
             "label": "Avatar Position",
             "name": "avatar_position",
             "prefix": "",
@@ -60,9 +60,9 @@
     "location": [
         [
             {
-                "param": "post_format",
+                "param": "post_type",
                 "operator": "==",
-                "value": "status"
+                "value": "footer-message"
             }
         ]
     ],
@@ -78,7 +78,8 @@
         "comments",
         "slug",
         "featured_image",
+        "categories",
         "tags"
     ],
-    "modified": 1428305178
+    "modified": 1428305244
 }
