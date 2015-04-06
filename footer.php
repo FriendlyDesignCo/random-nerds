@@ -257,6 +257,14 @@ $(".fittext").textfill({maxFontPixels: 100});
 
       <?php /* Search Anywhere */ ?>
       $("#search-anywhere input[type=text]").attr('autocomplete','off');
+      $("#search-button").click(function(e){
+        e.preventDefault();
+        var searchInput = $("#search-anywhere input[type=text]").first();
+        $("#search-anywhere:hidden").fadeIn(400, function(){
+          searchInput.focus();
+          searchInput[0].setSelectionRange(searchInput.val().length*2, searchInput.val().length*2);
+        });
+      });
       $(document).on('keypress', function(e) {
         var tag = e.target.tagName.toLowerCase();
         var key = e.which;

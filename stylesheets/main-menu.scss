@@ -125,7 +125,7 @@ body.past-header {
 
   padding-left:50px;
   padding-right:40px;
-  padding-top:70px;
+  padding-top:35px;
   box-sizing:border-box;
 
   background-color:$main-menu-background;
@@ -238,5 +238,13 @@ body.past-header {
     &:hover {
       background-color:$link-hover-color;
     }
+  }
+}
+
+#main-menu #search-button {
+  color:#fff;
+  font-size:26px;
+  &:hover {
+    opacity:0.5;
   }
 }

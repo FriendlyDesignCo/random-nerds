@@ -36,6 +36,7 @@
       <a href="/"><img src="<?php echo bloginfo('template_url'); ?>/images/small_signature.png"></a>
     </div>
     <div id="main-menu" style="display:none;">
+      <a id="search-button"><i class="fa fa-search"></i></a>
       <hr>
       <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
       <hr>
