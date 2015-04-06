@@ -24,11 +24,14 @@ foreach ($categories as $category) {
         <hr class="small">
         <div class="meta-row text-center">
           <ul>
-            <li><span class="light-grey">Filed In</span> <span class="categories upper"><?php ob_start();
-            the_category(', ');
-            $categories = ob_get_contents();
-            ob_end_clean();
-            echo preg_replace('/\/category\/(.*?)\/"/','/category/\\1" class="category-\\1"', $categories); ?></span></li>
+            <li><span class="light-grey">Filed In</span> <span class="categories upper">
+              <?php $categoryLinks = array();
+              foreach (get_ordered_categories() as $category)
+              {
+                $categoryLinks[] = '<a href="' . get_category_link($category->term_id) . '" class="category-' . $category->slug . '" rel="category tag">' . $category->name . '</a>';
+              }
+              echo implode(', ', $categoryLinks);
+              ?></span></li>
           </ul>
         </div>
       <?php endif; ?>

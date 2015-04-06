@@ -159,3 +159,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['mailchimp_email_subscr
 }
 
 add_filter('the_excerpt', 'do_shortcode');
+
+function getDefaultCategoryOrder()
+{
+  $order = array('features','politics','gaming','tech','pop-culture');
+  if (strlen(get_field('primary_category')) > 0)
+  {
+    unset($order[array_search(get_field('primary_category'), $order)]);
+    array_unshift($order, get_field('primary_category'));
+  }
+  return $order;
+}
+
+function get_ordered_categories()
+{
+  $order = getDefaultCategoryOrder();
+  $categories = get_the_category();
+  usort($categories, 'orderedCategorySort');
+  return $categories;
+}
+
+function orderedCategorySort($a, $b)
+{
+  $order = getDefaultCategoryOrder();
+  return array_search($a->slug, $order) - array_search($b->slug, $order);
+}
