@@ -8,15 +8,19 @@ foreach ($categories as $category) {
 }
  ?>
   <article class="<?php echo implode(' ', $categorySlugs); ?> primary-<?php the_field('primary_category'); ?> first-article">
-    <?php $thumbnail = false; if (has_post_thumbnail()) { $thumbObject = wp_get_attachment_image_src(get_post_thumbnail_id(), 'single-post-thumbnail'); $thumbnail = $thumbObject[0]; } ?>
-    <?php if (get_field('color_mode') === 'ghost-mode' && is_home()): ?><a href="<?php the_permalink(); ?>"><?php endif; ?>
-    <div class="article-header-image <?php the_field('color_mode', get_the_ID()); ?> page-header <?php if ($thumbnail === false): ?>no-header-image<?php endif; ?>" style="<?php if ($thumbnail !== false): ?>background-image:url('<?php echo $thumbnail; ?>');<?php endif; ?>">
-      <div class="cover">
-        <?php if (is_home() && get_field('color_mode') !== 'ghost-mode'): ?><a href="<?php the_permalink(); ?>"><h2 class="fittext"><span><?php the_title(); ?></span></h2></a><?php endif; ?>
-        <?php if (get_field('color_mode') !== 'ghost-mode'): ?><a href="/" id="logo"><img src="<?php bloginfo('template_url'); ?>/images/signature-logo<?php if (get_field('color_mode') == 'light-mode'): ?>-dark<?php endif; ?>.svg" title="Random Nerds"></a><?php endif; ?>
+    <?php if (has_post_thumbnail() || is_home()): ?>
+      <?php $thumbnail = false; if (has_post_thumbnail()) { $thumbObject = wp_get_attachment_image_src(get_post_thumbnail_id(), 'single-post-thumbnail'); $thumbnail = $thumbObject[0]; } ?>
+      <?php if (get_field('color_mode') === 'ghost-mode' && is_home()): ?><a href="<?php the_permalink(); ?>"><?php endif; ?>
+      <div class="article-header-image <?php the_field('color_mode', get_the_ID()); ?> page-header <?php if ($thumbnail === false): ?>no-header-image<?php endif; ?>" style="<?php if ($thumbnail !== false): ?>background-image:url('<?php echo $thumbnail; ?>');<?php endif; ?>">
+        <div class="cover">
+          <?php if (is_home() && get_field('color_mode') !== 'ghost-mode'): ?><a href="<?php the_permalink(); ?>"><h2 class="fittext"><span><?php the_title(); ?></span></h2></a><?php endif; ?>
+          <?php if (get_field('color_mode') !== 'ghost-mode'): ?><a href="/" id="logo"><img src="<?php bloginfo('template_url'); ?>/images/signature-logo<?php if (get_field('color_mode') == 'light-mode'): ?>-dark<?php endif; ?>.svg" title="Random Nerds"></a><?php endif; ?>
+        </div>
       </div>
-    </div>
-    <?php if (get_field('color_mode') === 'ghost-mode' && is_home()): ?></a><?php endif; ?>
+      <?php if (get_field('color_mode') === 'ghost-mode' && is_home()): ?></a><?php endif; ?>
+    <?php else: ?>
+      <div class="page-header"></div>
+    <?php endif; ?>
     <div class="article featured">
       <h1 class="article-title text-center"><?php the_title(); ?></h1>
       <div class="meta-row text-center">
