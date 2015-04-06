@@ -176,13 +176,12 @@ p + p {
 }
 
 article {
-  h3 {
+  a h3 {
+    @include transition(all, 0.25s, ease-in-out);
     font-family:'Playfair Display', serif;
     -webkit-font-smoothing: subpixel-antialiased;
     font-size:27px;
-    a {
-      color:#666;
-    }
+    color:#333;
     padding-bottom:15px;
   }
 
@@ -274,6 +273,14 @@ article {
     }
     a.category-gaming {
       color:$gaming-color;
+    }
+  }
+}
+
+@each $category, $c-color, $c-type in $categories {
+  article.primary-#{$category} {
+    a:hover h3 {
+      color:$c-color;
     }
   }
 }
