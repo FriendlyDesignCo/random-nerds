@@ -93,6 +93,25 @@
     }
     img {
       max-width:100%;
+
+      &.alignright {
+        float:right;
+        padding-left:10px;
+        padding-bottom:10px;
+      }
+      &.aligncenter {
+        display:block;
+        margin:0 auto;
+        padding-top:10px;
+        padding-bottom:10px;
+        padding-top:10px;
+      }
+      &.alignleft {
+        float:left;
+        padding-right:10px;
+        padding-bottom:10px;
+        padding-top:10px;
+      }
     }
     blockquote {
       color:#588aaf;
