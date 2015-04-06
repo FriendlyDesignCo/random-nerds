@@ -256,7 +256,7 @@ $(".fittext").textfill({maxFontPixels: 100});
       });
 
       <?php /* Search Anywhere */ ?>
-      $("#search-anywhere input[type=text]").attr('autocomplete','off');
+      $("#search-anywhere input[type=text]").attr('autocomplete','off').val('');
       $("#search-button").click(function(e){
         e.preventDefault();
         var searchInput = $("#search-anywhere input[type=text]").first();
