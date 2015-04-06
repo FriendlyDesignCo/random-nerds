@@ -2,7 +2,7 @@
 
       if ($footerQuery->have_posts()): ?>
         <?php while ($footerQuery->have_posts()): $footerQuery->the_post(); ?>
-          <footer class="<?php foreach (wp_get_post_categories(get_the_ID()) as $categoryID): $category = get_category($categoryID); ?>category-<?php echo $category->slug; ?><?php endforeach; ?>">
+          <footer class="<?php foreach (wp_get_post_categories(get_the_ID()) as $categoryID): $category = get_category($categoryID); ?>category-<?php echo $category->slug; ?><?php endforeach; ?> <?php the_field('avatar_position'); ?>">
             <div class="footer-content">
               <h3><?php the_title(); ?>:</h3>
               <hr class="tiny">
