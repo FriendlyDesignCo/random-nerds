@@ -12,12 +12,7 @@
         <?php endwhile; ?>
       <?php endif; ?>
     </section> <!-- END content-body -->
-
   </section>
-
-  <div class="mobile-only sidebar-loading-message" id="filtering">
-    <span>Refiltering Posts</span> <div class="loader"></div>
-  </div>
 
   <div id="search-anywhere" class="hidden">
     <p>Search at any time, just start typing. Return submits. ESC exits.</p>
