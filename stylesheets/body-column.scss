@@ -206,6 +206,11 @@
   }
 
   article {
+    .article-header {
+      position:relative;
+      background-color: #303946;
+    }
+
     h1.article-title {
       color:#666;
       font-family: 'Playfair Display', serif;
@@ -568,8 +573,21 @@
       a h2 { color:#fff;}
     }
 
+    .loading {
+      text-align:center;
+      position:absolute;
+      top:50%;
+      transform:translateY(-50%);
+      color:#fff;
+      font-family:'Montserrat', sans-serif;
+      opacity:0.5;
+      font-size:20px;
+      z-index:5;
+      width:100%;
+    }
+
     .article-header-image {
-      background-color:#303946;
+      z-index:6;
       background-size:cover;
       height:600px;
       background-position:right bottom;
