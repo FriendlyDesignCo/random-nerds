@@ -19,6 +19,11 @@
     <span>Refiltering Posts</span> <div class="loader"></div>
   </div>
 
+  <div id="search-anywhere" class="hidden">
+    <p>Search at any time, just start typing. Return submits. ESC exits.</p>
+    <?php get_search_form(); ?>
+  </div>
+
   <?php wp_footer(); ?>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
   <script src="<?php echo bloginfo('template_url'); ?>/js/jquery.cookie.js"></script>
@@ -247,6 +252,30 @@ $(".fittext").textfill({maxFontPixels: 100});
           $(this).blockQuoteBecomesVisible(function(){
             $(this).find('p').animate({top:0,opacity:1},300);
           }, 200);
+        }
+      });
+
+      <?php /* Search Anywhere */ ?>
+      $("#search-anywhere input[type=text]").attr('autocomplete','off');
+      $(document).on('keypress', function(e) {
+        var tag = e.target.tagName.toLowerCase();
+        var key = e.which;
+        var isLetter = (key >= 65 && key <= 90) || (key >= 97 && key <= 122);
+        if (isLetter && tag != 'input' && tag != 'textarea') {
+          e.preventDefault();
+          var searchInput = $("#search-anywhere input[type=text]").first();
+          searchInput.val(searchInput.val() + String.fromCharCode(e.which));
+          $("#search-anywhere:hidden").fadeIn(400, function(){
+            searchInput.focus();
+            searchInput[0].setSelectionRange(searchInput.val().length*2, searchInput.val().length*2);
+          });
+        }
+      });
+      $(document).keyup(function(e){
+        if (e.keyCode == 27 && $("#search-anywhere:visible").length > 0)
+        {
+          $("#search-anywhere").fadeOut();
+          $("#search-anywhere input[type=text]").val('');
         }
       });
 

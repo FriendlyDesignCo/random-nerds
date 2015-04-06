@@ -1,0 +1,50 @@
+#search-anywhere {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 50;
+  background-color: rgba(48,59,71, 0.95);
+
+  p {
+    font-family:'Montserrat',sans-serif;
+    font-size:14px;
+    color:#fff;
+    opacity:0.5;
+    position:absolute;
+    top:30px;
+    left:30px;
+  }
+
+  label {
+    display:none;
+  }
+
+  input#s {
+    border: none;
+    background: transparent;
+    font-size: 120px;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-weight: bold;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+    width:100%;
+    margin-left:10px;
+    margin-right:10px;
+    margin-top:50px;
+
+    &:focus {
+      outline:0;
+    }
+  }
+
+  input[type=submit] {
+    display:none;
+  }
+}
+
+body.admin-bar #search-anywhere {
+  top:32px;
+}
