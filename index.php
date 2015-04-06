@@ -22,7 +22,10 @@ $i = 0; ?>
         $categoryCount++;
       $categoryNames[] = $category->cat_name;
       $categorySlugs[] = 'category-'.$category->slug;
-      $categoryLinks[] = '<a href="' . get_category_link($category->cat_ID) . '" class="category-' . $category->slug . '">' . $category->cat_name . '</a>';
+    }
+    foreach (get_ordered_categories() as $category)
+    {
+      $categoryLinks[] = '<a href="' . get_category_link($category->term_id) . '" class="category-' . $category->slug . '" rel="category tag">' . $category->name . '</a>';
     }
     ?>
       <article class="<?php if (!is_single()): ?>filterable<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?>">
