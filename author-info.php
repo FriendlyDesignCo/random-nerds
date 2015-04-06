@@ -25,7 +25,7 @@
     if ($authorQuery->have_posts()): ?>
       <ul class="author-articles">
         <?php while ($authorQuery->have_posts()): $authorQuery->the_post(); ?>
-          <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+          <li><a href="<?php the_permalink(); ?>" class="primary-<?php the_field('primary_category'); ?>"><?php the_title(); ?></a></li>
         <?php endwhile; ?>
       </ul>
     <?php endif; ?>

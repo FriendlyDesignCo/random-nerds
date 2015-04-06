@@ -680,27 +680,54 @@
     padding-bottom:40px;
   }
 
-  article.category-tech {
-    a.article-title:hover {
-      color:$tech-type-color;
-    }
-  }
+  @each $category, $c-color, $c-type in $categories {
+    article.primary-#{$category} {
+      a.article-title:hover {
+        color:$c-color;
+      }
+      p a {
+        color:#{$c-color};
+        &:before {
+          background-color:#{$c-color};
+        }
+      }
+      cite {
+        background:#{$c-color};
+      }
+      blockquote {
+        color:#{$c-color};
+      }
 
-  article.category-pop-culture {
-    a.article-title:hover {
-      color:$pop-culture-color;
-    }
-  }
+      /* Tipping */
+      #love-it #tip-form .value-select {
+        color:#{$c-color};
+        .value-options li:hover {
+          color:#fff;
+          background-color:#{$c-color};
+        }
+      }
+      #love-it .button {
+        background-color:#{$c-color};
+        &:hover {
+          background-color:lighten($c-color, 10%);
+        }
+      }
 
-  article.category-politics {
-    a.article-title:hover {
-      color:$politics-color;
+      /* Author Info */
+      .author-info {
+        .author-details h4 a {
+          color:$c-color;
+        }
+      }
+      /* Related Posts */
+      #related-posts a {
+        color:#333;
+      }
     }
-  }
-
-  article.category-gaming {
-    a.article-title:hover {
-      color:$gaming-color;
+     article .author-info .author-details .author-articles a.primary-#{$category} {
+      &:hover {
+        color:$c-color;
+      }
     }
   }
 

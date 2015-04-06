@@ -28,12 +28,12 @@ $i = 0; ?>
       $categoryLinks[] = '<a href="' . get_category_link($category->term_id) . '" class="category-' . $category->slug . '" rel="category tag">' . $category->name . '</a>';
     }
     ?>
-      <article class="<?php if (!is_single()): ?>filterable<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?>">
+      <article class="<?php if (!is_single()): ?>filterable<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?> <?php if (strlen(get_field('primary_category')) > 0): ?>primary-<?php the_field('primary_category'); ?><?php else: ?>neutral<?php endif; ?>">
         <div class="article">
           <div class="category-info colorize-categories">
             In <?php echo implode(', ', $categoryLinks); ?>
           </div>
-          <h2><a href="<?php the_permalink(); ?>" class="article-title <?php if ($categoryCount > 1): ?>neutral<?php endif; ?>"><?php the_title(); ?></a></h2>
+          <h2><a href="<?php the_permalink(); ?>" class="article-title"><?php the_title(); ?></a></h2>
           <hr class="small desktop-only">
           <p class="subtitle mobile-only"><?php the_field('post_subtitle'); ?></p>
           <div class="meta-row text-center pad-bottom">

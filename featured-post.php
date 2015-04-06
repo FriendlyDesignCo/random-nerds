@@ -7,7 +7,7 @@ foreach ($categories as $category) {
   $categoryLinks[] = '<a href="' . get_category_link($category->cat_ID) . '">' . $category->cat_name . '</a>';
 }
  ?>
-  <article class="<?php echo implode(' ', $categorySlugs); ?> first-article">
+  <article class="<?php echo implode(' ', $categorySlugs); ?> primary-<?php the_field('primary_category'); ?> first-article">
     <?php $thumbnail = false; if (has_post_thumbnail()) { $thumbObject = wp_get_attachment_image_src(get_post_thumbnail_id(), 'single-post-thumbnail'); $thumbnail = $thumbObject[0]; } ?>
     <div class="article-header-image <?php the_field('color_mode', get_the_ID()); ?> page-header <?php if ($thumbnail === false): ?>no-header-image<?php endif; ?>" style="<?php if ($thumbnail !== false): ?>background-image:url('<?php echo $thumbnail; ?>');<?php endif; ?>">
       <div class="cover">
