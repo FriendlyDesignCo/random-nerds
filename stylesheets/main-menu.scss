@@ -141,17 +141,27 @@ body.past-header {
   }
 
   li a {
+    text-transform:uppercase;
     color:#fff;
-    font-family: 'Playfair Display', serif;
-    -webkit-font-smoothing: subpixel-antialiased;
-    font-size:35px;
+    font-family:'Montserrat', sans-serif;
+    font-size:20px;
     font-weight:bold;
     line-height:1.5em;
     @include transition(all, 0.3s, ease-in-out);
     opacity:1;
   }
   li a:hover {
-    opacity:0.5;
+    opacity:0.75;
+  }
+
+  .categories li a {
+    font-size:30px;
+
+    @each $category, $c-color, $c-type in $categories {
+      &.#{$category} {
+        color:$c-color;
+      }
+    }
   }
 
   li {

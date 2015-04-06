@@ -38,6 +38,13 @@
     <div id="main-menu" style="display:none;">
       <a id="search-button"><i class="fa fa-search"></i></a>
       <hr>
+      <ul class="categories">
+        <li><a href="/category/politics" class="politics">Politics</a></li>
+        <li><a href="/category/gaming" class="gaming">Gaming</a></li>
+        <li><a href="/category/tech/" class="tech">Tech</a></li>
+        <li><a href="/category/pop-culture/" class="pop-culture">Pop Culture</a></li>
+      </ul>
+      <hr>
       <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
       <hr>
       <form method="POST" id="mailchimp-subscribe">
