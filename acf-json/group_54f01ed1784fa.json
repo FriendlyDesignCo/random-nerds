@@ -26,11 +26,11 @@
         },
         {
             "key": "field_54f0b74f4752a",
-            "label": "Color Mode",
+            "label": "Title Mode",
             "name": "color_mode",
             "prefix": "",
             "type": "radio",
-            "instructions": "For posts with a lightly-colored feature image, choose \"Light Mode\" to use a dark headline color for contrast. For posts with a darkly-colored feature image, choose \"Dark Mode\".",
+            "instructions": "For posts with a darkly-colored feature image, choose \"Light Mode\" to use a dark headline color for contrast. For posts with a lightly-colored feature image, choose \"Dark Mode\".",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -39,8 +39,8 @@
                 "id": ""
             },
             "choices": {
-                "light-mode": "Light Mode",
-                "dark-mode": "Dark Mode",
+                "dark-mode": "Light Mode",
+                "light-mode": "Dark Mode",
                 "ghost-mode": "Ghost Mode"
             },
             "other_choice": 0,
@@ -102,6 +102,23 @@
             "save_other_choice": 0,
             "default_value": "",
             "layout": "horizontal"
+        },
+        {
+            "key": "field_5524017680e14",
+            "label": "Enable Patronizing",
+            "name": "enable_patronizing",
+            "prefix": "",
+            "type": "true_false",
+            "instructions": "Allow users to patronize this post.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1
         }
     ],
     "location": [
@@ -119,5 +136,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1428304438
+    "modified": 1428423075
 }
