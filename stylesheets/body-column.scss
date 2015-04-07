@@ -22,7 +22,9 @@
 
     .loading-text {
       position:relative;
-      top:50%;
+      top:50px;
+      padding: 20px;
+      font-size: 12px;
       transform:translateY(-50%);
       -webkit-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
@@ -44,7 +46,7 @@
   .filtering .loading-overlay {
     opacity:1;
     z-index:15;
-    background-color:rgba(150,145,143,0.8);
+    background-color:rgba(150,145,143,0.9);
     display:block;
   }
 }
@@ -224,15 +226,15 @@
       color:#666;
       font-family: 'Playfair Display', serif;
       -webkit-font-smoothing: subpixel-antialiased;
-      font-size:80px;
-      font-weight:bold;
+      font-size:60px;
+      font-weight:900;      
       margin-top:40px;
       margin-bottom:40px;
       @media (max-width: 1024px){
-        font-size: 60px;
+        font-size: 50px;
       }
       @media (max-width: 770px){
-        font-size: 40px;
+        font-size: 35px;
       }
     }
     h5 {
@@ -613,8 +615,8 @@
     .article-header-image {
       z-index:6;
       background-size:cover;
-      height:600px;
       background-position:right bottom;
+      background-attachment: fixed;
       position:relative;
 
       .cover {
@@ -628,9 +630,31 @@
         background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%,rgba(0,0,0,0.65) 100%); /* W3C */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6000000', endColorstr='#00000000',GradientType=0 ); /* IE6-9 */
         min-height:600px;
+        @media screen and (max-width: 1140px){
+          min-height:400px;
+        }
+        @media screen and (max-width: 1024px){
+          min-height:300px;
+        }
+        @media screen and (max-width: 770px){
+          min-height:250px;
+        }
+
 
         a h2 {
           @include transition(opacity, 0.25s, ease-in-out);
+          font-size: 60px;
+          width: 70%;
+          @media screen and (max-width: 1140px){
+            font-size: 40px;
+          }
+          @media screen and (max-width: 1024px){
+            width: 90%;
+          }
+          @media screen and (max-width: 770px){
+            font-size: 35px;
+            margin-bottom: 30px;
+          }
         }
         a:hover h2 {
           opacity:0.75;
@@ -672,14 +696,12 @@
       }
 
       @media screen and (max-width:640px) {
-        height:290px;
         .cover {
           min-height:250px;
         }
         h2 {
           width:90%;
           padding-top:70px;
-          height:160px;
           font-size:20px;
           box-sizing:border-box;
           display:block;

@@ -61,6 +61,9 @@ $hr-color: #dbd8d5;
 
 $mobile-footer-height: 45px;
 
+
+$mobile-break-width: 640px;
+
 @media screen and (min-width:641px) {
   body {
     padding-left:$avatar-sidebar-width

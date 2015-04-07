@@ -43,7 +43,7 @@ body.past-header {
   @include transition(top, 0.3s, ease-in-out);
 
   .icon-bar {
-    background-color:#fff;
+    background-color:#e5e0d8;
     display: block;
     width: 30px;
     height: 5px;
@@ -112,7 +112,7 @@ body.past-header {
 
 #main-menu {
   width:$main-menu-width;
-  margin-right:-$main-menu-width;
+  right:-$main-menu-width;
   @media screen and (max-width:640px) {
     width:100%;
     margin-right:-100%;
@@ -120,19 +120,18 @@ body.past-header {
   height:100%;
   position:fixed;
   top:0;
-  right:0;
   z-index:9999;
   overflow-y:scroll;
 
-  padding-left:50px;
-  padding-right:40px;
+  padding-left:30px;
+  padding-right:30px;
   padding-top:35px;
   box-sizing:border-box;
 
   background-color:$main-menu-background;
   color:#fff;
 
-  @include transition(margin-right, 0.5s, ease-in-out);
+  @include transition(right, 0.5s, ease-in-out);
 
   hr {
     border:0;
@@ -213,7 +212,7 @@ body.past-header {
 }
 
 #main-menu.onscreen {
-  margin-right:0;
+  right: 0;
 }
 
 
