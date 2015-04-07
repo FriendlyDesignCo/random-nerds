@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <div class="category-header page-header">
-  <h1 class="mobile-fittext"><span>Search Results for "<span class="category-name"><?php echo htmlentities($_GET['s']); ?></span>"</span></h1>
+  <h1 class="mobile-fittext"><span>Search Results for &ldquo;<span class="category-name"><?php echo htmlentities($_GET['s']); ?></span>&rdquo;</span></h1>
 </div>
 
 <?php if (!have_posts()): ?>
