@@ -199,8 +199,12 @@
       initial-letter: 2;
       font-size:57px;
       float:left;
-      padding-top:18px;
+      padding-top:13px;
       padding-right:5px;
+      @media (max-width: 1024px){
+        font-size: 35px;
+        padding-top: 0;
+      }
     }
   }
 
@@ -218,6 +222,12 @@
       font-weight:bold;
       margin-top:40px;
       margin-bottom:40px;
+      @media (max-width: 1024px){
+        font-size: 60px;
+      }
+      @media (max-width: 770px){
+        font-size: 40px;
+      }
     }
     h5 {
       color:#ccc;
