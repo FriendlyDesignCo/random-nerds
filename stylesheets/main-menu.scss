@@ -5,7 +5,7 @@
   position:fixed;
   top:25px;
   left:25px;
-  z-index:9999;
+  z-index:9989;
   img {
     max-width:30px;
   }
@@ -29,8 +29,8 @@ body.past-header {
   top:40px;
   right:35px;
   @media (max-width:1024px) {
-    top:25px;
-    right:25px;
+    top:35px;
+    right:35px;
   }
   color:#fff;
   z-index: 20;
@@ -120,7 +120,7 @@ body.past-header {
   position:fixed;
   top:0;
   right:0;
-  z-index:11;
+  z-index:9999;
   overflow-y:scroll;
 
   padding-left:50px;
@@ -144,7 +144,7 @@ body.past-header {
     text-transform:uppercase;
     color:#fff;
     font-family:'Montserrat', sans-serif;
-    font-size:20px;
+    font-size:16px;
     font-weight:bold;
     line-height:1.5em;
     @include transition(all, 0.3s, ease-in-out);
@@ -162,6 +162,10 @@ body.past-header {
         color:$c-color;
       }
     }
+  }
+
+  #text-2{
+    margin-top:15px;
   }
 
   li {
@@ -213,7 +217,7 @@ body.past-header {
 
 
 #main-menu #mailchimp-subscribe {
-  margin-top:40px;
+  margin-top:30px;
   p {
     font-family: 'Lora', sans-serif;
     line-height: 1.3em;
@@ -253,7 +257,9 @@ body.past-header {
 
 #main-menu #search-button {
   color:#fff;
-  font-size:26px;
+  font-size:30px;
+  position: relative;
+  top: -5px;
   &:hover {
     opacity:0.5;
   }
