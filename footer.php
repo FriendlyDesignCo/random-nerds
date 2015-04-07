@@ -99,7 +99,7 @@
         event.preventDefault();
         if ($('#content').hasClass('closed')) {
           // Open it up
-          $.cookie('sidebar-state','open',{expires:7, path:'/'});
+          $.cookie('sidebar-state','open');
           $("#content").removeClass('closed');
           $("#collapse-sidebar").animate({left:$("#article-sidebar").width()}, {duration:300,queue:false,done:function(){$(this).toggleClass('closed');}});
           $("#article-sidebar").animate({'margin-left':0},{duration:300,queue:false});
@@ -112,7 +112,7 @@
           },300);
         } else {
           // Close it down
-          $.cookie('sidebar-state','closed',{expires:7, path:'/'});
+          $.cookie('sidebar-state','closed');
           $("#article-sidebar").animate({'margin-left':-1*$("#article-sidebar").width()}, {duration: 300, queue: false}, function(){
           });
           $("#content-body").animate({'margin-left':0}, {duration:300, queue:false});
@@ -356,7 +356,7 @@
         if (ignoredCategories.length == 0)
           $("#avatar-select").addClass('none-selected');
 
-        $.cookie('ignoredCategories',ignoredCategories,{path:'/',expires:365});
+        $.cookie('ignoredCategories',ignoredCategories,{path:'/'});
         updateIgnoredCategories(true, true);
       });
       updateIgnoredCategories(false, false);
