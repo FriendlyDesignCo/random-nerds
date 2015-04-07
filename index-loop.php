@@ -13,7 +13,7 @@ foreach (get_ordered_categories() as $category)
   $categoryLinks[] = '<a href="' . get_category_link($category->term_id) . '" class="category-' . $category->slug . '" rel="category tag">' . $category->name . '</a>';
 }
 ?>
-  <article class="<?php if (!is_single()): ?>filterable<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?> <?php if (strlen(get_field('primary_category')) > 0): ?>primary-<?php the_field('primary_category'); ?><?php else: ?>neutral<?php endif; ?>">
+  <article class="<?php echo implode(' ', $categorySlugs); ?> <?php if (strlen(get_field('primary_category')) > 0): ?>primary-<?php the_field('primary_category'); ?><?php else: ?>neutral<?php endif; ?>">
     <div class="article">
       <div class="category-info colorize-categories">
         In <?php echo implode(', ', $categoryLinks); ?>
