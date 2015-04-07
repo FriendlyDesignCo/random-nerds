@@ -3,6 +3,52 @@
     margin-top:40px;
     margin-bottom:40px;
 
+    #reason-dropdown {
+      margin-top:10px;
+
+      .value-select {
+        background:#fff;
+        position:relative;
+        box-sizing:border-box;
+        border:1px solid #ccc;
+        line-height:50px;
+        padding-left:15px;
+        width:513px;
+        max-width:100%;
+        cursor:pointer;
+
+        i {
+          position: absolute;
+          right:15px;
+          top:15px;
+        }
+
+        .value-options {
+          position:absolute;
+          background:#fff;
+          width:513px;
+          max-width:100%;
+          margin-top:-2px;
+          border:1px solid #ccc;
+          z-index:80;
+          padding-top:10px;
+          @include transition(all, 0.25s, ease-in-out);
+          overflow:hidden;
+          margin-left:-16px;
+
+          li {
+            padding-left:15px;
+            @include transition(all, 0.25s, ease-in-out);
+
+            &:hover {
+              color:#fff;
+              background:#399;
+            }
+          }
+        }
+      }
+    }
+
     &.sent {
       p {
         display:none;
