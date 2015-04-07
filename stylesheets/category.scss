@@ -8,10 +8,9 @@
       font-size:52px;
       font-family:'Playfair Display', serif;
       -webkit-font-smoothing: subpixel-antialiased;
-      line-height:275px;
-      padding-left:16%;
       max-width:100%;
-      white-space: nowrap;
+      text-align: center;
+      padding: 100px 5% 110px 5%;
 
       @media screen and (max-width:640px) {
         padding-left:20px;
