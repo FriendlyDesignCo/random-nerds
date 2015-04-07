@@ -441,9 +441,14 @@ $(".fittext").textfill({maxFontPixels: 100});
         if ($(event.target).data('value')) {
           var value = $(event.target).data('value');
           $("#tip-form input[name=tip_value]").val(value*100).trigger('change');
+          $("#paypal-amount").val(value.toFixed(2));
           $("#tip-form .value-select > span").html(value);
           $("#tip-form .value-options").slideUp();
         }
+      });
+      $("#paypal-tip-button").click(function(e){
+        e.preventDefault();
+        $("#paypal-tip-form").submit();
       });
       $("#tip-form input[name=tip_value]").change(function(){
         if ($(this).val() > 9000*100) {

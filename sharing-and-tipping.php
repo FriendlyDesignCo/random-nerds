@@ -28,8 +28,27 @@
     <a href="#" id="tip-button" class="button" style="color:#fff;">Support Now
       <span class="circle"><i class="fa fa-arrow-right"></i></span>
     </a>
+    <p class="paypal-link"><a href="#" id="paypal-tip-button">Or use PayPal if you're a big fan of that.</a></p>
     <div class="loader blue" style="display:none;">Loading</div>
     <div class="clearfix"></div>
     <img id="over-9000" src="<?php echo bloginfo('template_url'); ?>/images/goku-9000.gif" title="It's over 9000!" style="display:none;">
+  </form>
+  <form method="POST" id="paypal-tip-form" action="https://www.paypal.com/cgi-bin/webscr">
+    <input type="hidden" name="cmd" value="_xclick">
+    <input type="hidden" name="return" value="http://<?php echo $_SERVER['HTTP_HOST']; ?><?php echo $_SERVER['REQUEST_URI']; ?>?donated=yes">
+    <input type="hidden" name="cancel_return" value="http://<?php echo $_SERVER['HTTP_HOST']; ?><?php echo $_SERVER['REQUEST_URI']; ?>">
+    <?php require_once('extra-config.php'); ?>
+    <input type="hidden" name="business" value="<?php echo PAYPAL_EMAIL_ADDRESS; ?>">
+    <input type="hidden" name="lc" value="US">
+    <input type="hidden" name="item_name" value="Support <?php the_author(); ?>">
+    <input type="hidden" name="item_number" value="<?php the_author(); ?>">
+    <input type="hidden" name="amount" value="1.00" id="paypal-amount">
+    <input type="hidden" name="currency_code" value="USD">
+    <input type="hidden" name="button_subtype" value="services">
+    <input type="hidden" name="no_note" value="1">
+    <input type="hidden" name="cn" value="Add special instructions to the seller:">
+    <input type="hidden" name="no_shipping" value="1">
+    <input type="hidden" name="rm" value="1">
+    <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">
   </form>
 </section>
