@@ -32,9 +32,9 @@ body.page #content-body, body.error404 #content-body {
   .page-header {
     background:$category-header-background;
     width:100%;
-    min-height:200px;
+    //min-height:200px;
     @media screen and (min-width:720px) {
-      min-height:300px;
+      //min-height:300px;
     }
     position:relative;
     @include transition(all, 0.3s, ease-in-out);
@@ -51,6 +51,10 @@ body.page #content-body, body.error404 #content-body {
     .wrap {
       width:70%;
       margin:0 auto;
+      padding:100px 0;
+      @media screen and (max-width:720px) {
+        padding: 50px 0;
+      }
     }
 
     &.fat {
@@ -64,14 +68,12 @@ body.page #content-body, body.error404 #content-body {
         max-width:50%;
       }
       h2 {
-        font-size:100px;
+        font-size:80px;
         line-height:normal;
         font-weight:bold;
-        height:200px;
-        text-align:right;
-        line-height:200px;
-        @media screen and (min-width:720px) {
-          line-height:300px;
+        text-align: center;
+        @media screen and (max-width:720px) {
+          font-size: 50px;
         }
       }
     }
@@ -85,14 +87,13 @@ body.page #content-body, body.error404 #content-body {
         margin-bottom:-5px;
       }
       h2 {
-        position:absolute;
-        top:5%;
-        left:0;
-        height:20%;
-        margin:0 auto;
-        font-size:20px;
+        font-size:80px;
         text-align:center;
         width:100%;
+        font-weight: bold;
+        @media screen and (max-width:720px) {
+          font-size: 50px;
+        }
       }
     }
   }
