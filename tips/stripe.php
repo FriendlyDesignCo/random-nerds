@@ -10,7 +10,10 @@ try
     'amount'   => $_POST['tip_value'],
     'currency' => 'USD',
     'source'   => $_POST['token'],
-    'description' => 'Tip for ' . $_POST['author']
+    'description' => 'Tip for ' . $_POST['author'],
+    'metadata' => array(
+      'article' => $_POST['article']
+    )
   ));
 }
 catch (\Stripe\Error\Card $e)
