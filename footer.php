@@ -301,7 +301,11 @@
 
       <?php /* Filtering */ ?>
       $.cookie.json = true;
-      ignoredCategories = $.cookie('ignoredCategories');
+      <?php if (!is_home()): ?>
+        ignoredCategories = $.cookie('ignoredCategories');
+      <?php else: ?>
+        $.cookie('ignoredCategories',[],{path:'/'});
+      <?php endif; ?>
       if (ignoredCategories === undefined)
         ignoredCategories = [];
 

@@ -8,7 +8,7 @@
         <div class="loading-text sidebar-loading-message"><span>Refiltering Posts</span> <div class="loader"></div></div>
       </div>
   <?php
-  if (isset($_COOKIE['ignoredCategories']))
+  if (isset($_COOKIE['ignoredCategories']) && !is_home())
     $ignoredCategories = json_decode(stripslashes($_COOKIE['ignoredCategories']), true);
   else
     $ignoredCategories = array();
