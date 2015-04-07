@@ -34,9 +34,8 @@
     <?php if (has_post_format('status')): ?>
       <?php /* STATUS UPDATE */ ?>
       <div class="post" data-post-id="<?php the_ID(); ?>">
-        <div class="status-update filterable <?php if ($hidden): ?>hidden<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?> <?php the_field('avatar'); ?> avatar-<?php the_field('display_side'); ?>">
+        <div class="status-update filterable <?php if ($hidden): ?>hidden<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?> <?php the_field('avatar'); ?> avatar-<?php if (get_field('display_side') == ''): ?>left<?php else: ?><?php the_field('display_side'); ?><?php endif; ?>">
           <h2><?php the_content(); ?></h2>
-          <img class="avatar" src="<?php echo bloginfo('template_url'); ?>/images/<?php echo str_replace('avatar-','avatar-sidebar-',get_field('avatar')); ?>.png">
         </div>
       </div>
     <?php else: ?>
