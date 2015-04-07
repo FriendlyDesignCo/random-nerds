@@ -7,6 +7,16 @@
   z-index: 50;
   background-color: rgba(48,59,71, 0.95);
 
+
+  #cancel-search {
+    color:#fff;
+    position:absolute;
+    top:30px;
+    right:5%;
+    font-size:40px;
+    opacity:0.5;
+  }
+
   p {
     font-family:'Montserrat',sans-serif;
     font-size:14px;
@@ -33,7 +43,7 @@
     width:90%;
     margin-left:5%;
     margin-top:80px;
-    
+
     @media screen and (max-width:640px) {
       font-size: 50px;
     }

@@ -17,6 +17,7 @@
   <div id="search-anywhere" class="hidden">
     <p>Search at any time, just start typing. Return submits. ESC exits.</p>
     <?php get_search_form(); ?>
+    <a href="#" id="cancel-search"><i class="fa fa-times"></i></a>
   </div>
 
   <?php wp_footer(); ?>
@@ -229,12 +230,19 @@
 
       <?php /* Search Anywhere */ ?>
       $("#search-anywhere input[type=text]").attr('autocomplete','off').val('');
+      $("#cancel-search").click(function(e){
+        e.preventDefault();
+        $("#search-anywhere").fadeOut();
+        $("#search-anywhere input[type=text]").val('');
+        $("#menu-open").fadeIn();
+      });
       $("#search-button").click(function(e){
         e.preventDefault();
         if ($("#menu-open").hasClass('open')) {
           $("#menu-open").toggleClass('open');
           $("#main-menu").toggleClass('onscreen');
         }
+        $("#menu-open").fadeOut();
         var searchInput = $("#search-anywhere input[type=text]").first();
         $("#search-anywhere:hidden").fadeIn(400, function(){
           searchInput.focus();
@@ -247,6 +255,7 @@
         var isLetter = (key >= 65 && key <= 90) || (key >= 97 && key <= 122);
         if (isLetter && tag != 'input' && tag != 'textarea') {
           e.preventDefault();
+          $("#menu-open").fadeOut();
           var searchInput = $("#search-anywhere input[type=text]").first();
           searchInput.val(searchInput.val() + String.fromCharCode(e.which));
           $("#search-anywhere:hidden").fadeIn(400, function(){
@@ -260,6 +269,7 @@
         {
           $("#search-anywhere").fadeOut();
           $("#search-anywhere input[type=text]").val('');
+          $("#menu-open").fadeIn();
         }
       });
 
