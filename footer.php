@@ -271,9 +271,9 @@
           if ($(event.target).hasClass('value-select') || $(event.target).parent().hasClass('value-select')) {
             var options = $(this).find('.value-options');
             if (options.is(':visible'))
-              options.slideUp();
+              options.slideUp(100);
             else
-              options.slideDown();
+              options.slideDown(100);
           }
           if ($(event.target).data('index') !== undefined) {
             var index = $(event.target).data('index');
@@ -411,16 +411,16 @@
         if ($(event.target).hasClass('value-select') || $(event.target).parent().hasClass('value-select')) {
           var options = $(this).find('.value-options');
           if (options.is(':visible'))
-            options.slideUp();
+            options.slideUp(100);
           else
-            options.slideDown();
+            options.slideDown(100);
         }
         if ($(event.target).data('value')) {
           var value = $(event.target).data('value');
           $("#tip-form input[name=tip_value]").val(value*100).trigger('change');
           $("#paypal-amount").val(value.toFixed(2));
           $("#tip-form .value-select > span").html(value);
-          $("#tip-form .value-options").slideUp();
+          $("#tip-form .value-options").slideUp(100);
         }
       });
       $("#paypal-tip-button").click(function(e){
