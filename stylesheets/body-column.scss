@@ -614,9 +614,8 @@
 
     .article-header-image {
       z-index:6;
-      background-size:cover;
-      background-position:right bottom;
-      background-attachment: fixed;
+      background-size: cover;
+      background-position: right bottom;
       position:relative;
 
       .cover {
@@ -650,10 +649,10 @@
           }
           @media screen and (max-width: 1024px){
             width: 90%;
+            margin-bottom: 30px;
           }
           @media screen and (max-width: 770px){
             font-size: 35px;
-            margin-bottom: 30px;
           }
         }
         a:hover h2 {
