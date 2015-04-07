@@ -529,13 +529,13 @@
         padding-bottom:10px
       }
       @media screen and (max-width:1280px) {
-        padding-bottom:30px;
+        padding-top:30px;
         float:none;
-        margin:0 auto;
+        margin:20px auto 0;
         width:90%;
-        transform:rotate(-2deg);
-        -webkit-transform:rotate(-2deg);
-        -moz-transform:rotate(-2deg);
+        transform:rotate(-1deg);
+        -webkit-transform:rotate(-1deg);
+        -moz-transform:rotate(-1deg);
         br {
           display:none;
         }
@@ -627,6 +627,7 @@
           padding-left:10px;
         }
         @media screen and (max-width:720px) {
+          max-width: 30%;
           img {
             max-width:100%;
           }
