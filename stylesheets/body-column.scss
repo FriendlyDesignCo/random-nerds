@@ -320,6 +320,12 @@
           background-color:$tech-type-color;
         }
       }
+      a.category-features {
+        color:#399;
+        &:before {
+          background-color:#399;
+        }
+      }
       a:before {
         content: "";
         position:absolute;
@@ -821,6 +827,12 @@
       color:$tech-type-color;
       &:before {
         background-color:$tech-type-color;
+      }
+    }
+    a.category-features {
+      color:#399;
+      &:before {
+        background-color:#399;
       }
     }
   }
