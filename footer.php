@@ -231,6 +231,10 @@
       $("#search-anywhere input[type=text]").attr('autocomplete','off').val('');
       $("#search-button").click(function(e){
         e.preventDefault();
+        if ($("#menu-open").hasClass('open')) {
+          $("#menu-open").toggleClass('open');
+          $("#main-menu").toggleClass('onscreen');
+        }
         var searchInput = $("#search-anywhere input[type=text]").first();
         $("#search-anywhere:hidden").fadeIn(400, function(){
           searchInput.focus();
