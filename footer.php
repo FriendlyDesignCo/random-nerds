@@ -172,6 +172,12 @@
           });
         }
       }
+      $("a.link-list").each(function(){
+        if ($(this).data('primary-category')) {
+          $(this).wrap('<article class="primary-' + $(this).data('primary-category') + '"></article>');
+          $(this).addClass('article-title');
+        }
+      });
 
       <?php /* Infinite Scroll */ ?>
       $.fn.whenScrolledToBottom = function (cback_fxn, offset) {

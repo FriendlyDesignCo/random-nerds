@@ -39,6 +39,14 @@
     ob_start(); if ( function_exists( "get_yuzo_related_posts" ) ) { get_yuzo_related_posts(); }
     $related = ob_get_contents();
     ob_end_clean();
+    preg_match_all('/href="http:\/\/.*?\/(.*?)\/"/', $related, $matches);
+    for ($i = 0; $i < count($matches[1]); $i++)
+    {
+      if (($post = get_page_by_path($matches[1][$i], ARRAY_A, 'post')) !== null)
+      {
+        $related = str_replace($matches[1][$i].'/"', $matches[1][$i] . '/" data-post-id="' . $post['ID'] . '" data-primary-category="' . get_field('primary_category', $post['ID']) . '"', $related);
+      }
+    }
     echo strip_tags(
       preg_replace('/style=".*?"/','',
         preg_replace('/<style>.*?<\/style>/ims','',$related))
