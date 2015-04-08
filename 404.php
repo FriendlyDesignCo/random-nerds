@@ -3,8 +3,9 @@
 <?php include('page-header.php'); ?>
 <div class="page-content-box">
   <article>
-    <div class="giphy">
-    </div>
+    <img src="<?php get_template_directory_uri(); ?>/wp-content/themes/random-nerds/images/nerds-404-edit.png">
+<!--     <div class="giphy">
+    </div> -->
     <p>We know, this isn’t the page you were hoping to see. Most pages say “we can’t find that page” but who exactly is the “we”, anyway? Is it supposed to be the gremlins in your computer?</p>
     <p>Okay, we got off topic there. See? I did it again. “We.” UGH.</p>
     <p>OKAY. So, real talk. This is our catch-all error page. Either the link you followed doesn’t exist anymore, or maybe there was some kind of typo. We’re not blaming you, it’s not your fault. You’re just trying to read something.</p>
