@@ -249,6 +249,7 @@
           $("#main-menu").toggleClass('onscreen');
         }
         $("#menu-open").fadeOut();
+        $("#mobile-home").fadeOut();
         var searchInput = $("#search-anywhere input[type=text]").first();
         $("#search-anywhere:hidden").fadeIn(400, function(){
           searchInput.focus();
@@ -276,6 +277,7 @@
           $("#search-anywhere").fadeOut();
           $("#search-anywhere input[type=text]").val('');
           $("#menu-open").fadeIn();
+          $("#mobile-home").fadeIn();
         }
       });
 
