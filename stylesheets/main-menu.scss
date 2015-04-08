@@ -115,7 +115,7 @@ body.past-header {
   right:-$main-menu-width;
   @media screen and (max-width:640px) {
     width:100%;
-    margin-right:-100%;
+    right: -100%;
   }
   height:100%;
   position:fixed;
