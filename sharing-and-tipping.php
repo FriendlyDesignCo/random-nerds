@@ -1,6 +1,6 @@
 <section id="like-it">
-  <h3>Like what you read? Share.</h3>
-  <p>(You know how that works.)</p>
+  <h3>Like what you read? Share it.</h3>
+  <p>(That helps us.)</p>
   <p class="sharing-links">
     <a href="https://www.facebook.com/sharer.php?u=<?php echo urlencode('http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']); ?>" class="facebook"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span></a>
     <a href="#" class="twitter"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a>
@@ -10,7 +10,8 @@
 
 <?php if (get_field('enable_patronizing') === true): ?>
   <section id="love-it">
-    <h3>Love what you read? Support <?php the_author(); ?></h3>
+    <h3>Love what you read? Patronize <?php the_author(); ?>.</h3>
+    <p>That helps us <strong>and</strong> the writer.</p>
     <form method="POST" id="tip-form" action="<?php echo blogInfo('template_url'); ?>/tips/stripe.php">
       <input type="hidden" name="action" value="tip">
       <input type="hidden" name="article_id" value="<?php the_ID(); ?>">
@@ -53,5 +54,6 @@
       <input type="hidden" name="rm" value="1">
       <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">
     </form>
+    <p>What is Patronizing? <a href="#">Learn more here.</a></p>
   </section>
 <?php endif; ?>
