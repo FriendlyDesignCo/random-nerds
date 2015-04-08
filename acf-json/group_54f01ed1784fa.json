@@ -93,6 +93,7 @@
                 "id": ""
             },
             "choices": {
+                "features": "Features",
                 "politics": "Politics",
                 "gaming": "Gaming",
                 "tech": "Tech",
@@ -136,5 +137,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1428423075
+    "modified": 1428529186
 }
