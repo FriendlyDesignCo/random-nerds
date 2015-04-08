@@ -331,6 +331,7 @@
         if (animate) {
           if (addFilteringClass)
             $("body").addClass('filtering');
+            console.log(".filterable" + selector + ":not(.hidden)");
           setTimeout(function(){ $("body").removeClass('filtering'); },1000);
           $(".filterable" + selector + ":not(.hidden)").slideUp(400,function(){
             $(this).addClass('hidden').removeAttr('style');
