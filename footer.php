@@ -304,7 +304,6 @@
           if ($(event.target).data('index') !== undefined) {
             var index = $(event.target).data('index');
             var value = $("select[name=reason] option:eq(" + index + ")").prop('selected',true).val();
-            console.log($(event.target));
             $("#reason-dropdown .value-select > span").html(value);
             $("#reason-dropdown .value-options").slideUp();
           }
