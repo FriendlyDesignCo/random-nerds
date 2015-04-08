@@ -184,3 +184,32 @@ function orderedCategorySort($a, $b)
   $order = getDefaultCategoryOrder();
   return array_search($a->slug, $order) - array_search($b->slug, $order);
 }
+
+function TinyMCESettings($settings)
+{
+  $settings['formats'] = "{ alignleft: [
+    {selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li', styles: {textAlign:'left'}},
+    {selector: 'img,table,dl.wp-caption,blockquote', classes: 'alignleft'} ],
+    aligncenter: [ {selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li', styles: {textAlign:'center'}},
+    {selector: 'img,table,dl.wp-caption,blockquote', classes: 'aligncenter'} ],
+    alignright: [ {selector: 'p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li', styles: {textAlign:'right'}},
+    {selector: 'img,table,dl.wp-caption', classes: 'alignright'} ], strikethrough: {inline: 'del'} }";
+  return $settings;
+}
+add_filter('tiny_mce_before_init', 'TinyMCESettings');
+
+function TinyMCEButtons1($buttons)
+{
+  $newButtons = array_slice($buttons, 0, 6, true);
+  $newButtons[] = 'blockquote_right';
+  $newButtons = array_merge($newButtons, array_slice($buttons, 6));
+  return $newButtons;
+}
+add_filter('mce_buttons', 'TinyMCEButtons1');
+
+function TinyMCEButtonPlugin($pluginArray)
+{
+  $pluginArray['randomnerds'] = get_template_directory_uri().'/js/tinymce-plugin.js';
+  return $pluginArray;
+}
+add_filter('mce_external_plugins', 'TinyMCEButtonPlugin');
