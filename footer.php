@@ -26,12 +26,9 @@
   <script src="<?php echo bloginfo('template_url'); ?>/js/jquery.resize.js"></script>
   <?php if (is_single()): ?>
     <script src="https://checkout.stripe.com/checkout.js"></script>
-    <script type="text/javascript">var confetti;</script>
-    <script src="<?php echo bloginfo('template_url'); ?>/js/confetti.js"></script>
   <?php endif; ?>
 
   <script type="text/javascript">
-  var confetti;
   var sidebarLoadingMoreContent = false;
   var ignoredCategories; var categories = ['gaming','politics','pop-culture','tech'];
   var refilteringTexts = ['Refiltering posts','Reticulating splines','Dynotherms connecting','Refactoring pixelations','Powering atomic batteries'];
@@ -466,16 +463,11 @@
           }
         }
         if ($(this).val() > 499 && $(this).val() < 9000*100) {
-          $("body").append($("<canvas id='confetti' style='position:fixed;top:0;z-index:5;height:'+$(window).height()+';width:'+window.width()+'></canvas>"));
-          window.confettiPaperCount = $("#tip-form input[name=tip_value]").val();
-          window.speed = 100;
-          confetti = getConfettiContext();
-          confetti = new confetti.Context('confetti');
-          confetti.start();
-          setTimeout(function(){
-            confetti.stop(); confetti = null;
-            $("canvas#confetti").remove();
-          }, 5000);
+          // Start confetti
+          $("body").append('<div id="confetti" style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:10;background-image:url(\'/wp-content/themes/random-nerds/images/confetti.gif\');display:none;"></div>"');
+          $("#confetti").fadeIn(1000, function(){
+            $("#confetti").fadeOut(1000, function(){$("#confetti").remove();});
+          });
         }
       });
 
