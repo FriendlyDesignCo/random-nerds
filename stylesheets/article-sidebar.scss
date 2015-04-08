@@ -1,3 +1,7 @@
+body.admin-bar #end-of-the-net {
+  margin-bottom:32px;
+}
+
 #article-sidebar {
   position:fixed;
   width:$article-sidebar-width-tablet;
@@ -9,7 +13,30 @@
   overflow-x:hidden;
 
   .post:last-child {
-    margin-bottom: 32px;
+  }
+
+  #end-of-the-net {
+    width:100%;
+    display:block;
+    background-image:url('images/end-of-the-internet.png');
+    background-repeat:no-repeat;
+    background-position:bottom right;
+    background-color:#edeae5;
+    font-family: 'Playfair Display', serif;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-size:16px;
+    padding:15px;
+    padding-top:100px;
+    padding-bottom:150px;
+    box-sizing:border-box;
+
+    p, h2 {
+      opacity:0.5;
+    }
+    h2 {
+      font-size:20px;
+      margin-bottom:10px;
+    }
   }
 
   .article {

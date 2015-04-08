@@ -206,6 +206,9 @@
           updateIgnoredCategories(true, false);
           $("#article-sidebar .loader-container").slideUp(300,function(){$("#article-sidebar .loader-container").addClass("hidden").removeAttr('style');});
           $(data).find('a.load-more-sidebar-pages').insertBefore($(".loader-container"));
+          if ($(data).find('a.load-more-sidebar-pages').length == 0) {
+            $("#end-of-the-net").slideDown();
+          }
           window.sidebarLoadingMoreContent = false;
         });
       };

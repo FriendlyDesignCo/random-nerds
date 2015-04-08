@@ -64,4 +64,8 @@
       <div class="loader-container hidden"><div class="loader">Loading...</div><div class="clearfix"></div></div>
     <?php endif; ?>
   </div>
+  <div id="end-of-the-net" style="display:none;">
+    <h2>Welp, that's it.</h2>
+    <p>You've reached the end of our little internet.</p>
+  </div>
 </section>
