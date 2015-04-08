@@ -45,7 +45,7 @@ foreach ($categories as $category) {
         </div>
       <?php endif; ?>
       <hr class="small desktop-only">
-      <?php if (!is_home()): ?><p><span class="date"><?php the_date('M j, Y'); ?></span></p><?php endif; ?>
+      <?php if (!is_home()): ?><div class="meta-row text-center"><span class="date"><?php the_date('F j, Y'); ?></span></div><?php endif; ?>
       <div class="article-body">
         <?php if (is_single()): ?>
           <?php the_content(); ?>
