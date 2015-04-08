@@ -58,6 +58,7 @@
     color: #399;
   }
   article .article-body p {
+    margin-top: 30px;
     a {
       position:relative;
     }
@@ -209,7 +210,7 @@
       float:left;
       padding-top:13px;
       padding-right:5px;
-      @media (max-width: 1024px){
+      @media screen and (max-width: 1024px){
         font-size: 35px;
         padding-top: 0;
       }
@@ -230,10 +231,10 @@
       font-weight:900;      
       margin-top:40px;
       margin-bottom:40px;
-      @media (max-width: 1024px){
+      @media screen and (max-width: 1024px){
         font-size: 50px;
       }
-      @media (max-width: 770px){
+      @media screen and (max-width: 770px){
         font-size: 35px;
       }
     }
@@ -247,7 +248,7 @@
 
     .article {
       width:70%;
-      @media (max-width:1024px) {
+      @media screen and (max-width:1024px) {
         width:90%;
       }
       max-width:1000px;
@@ -257,8 +258,11 @@
         background-color: $light-grey;
         border:0;
         height:1px;
-        margin-top:20px;
-        margin-bottom:20px;
+        margin-top:0px;
+        margin-bottom:0px;
+        @media screen and (max-width: 640px){
+          margin: 20px 0;
+        }
       }
       position:relative;
     }
@@ -270,6 +274,7 @@
       padding-top:10px;
       padding-bottom:10px;
       text-align:center;
+      margin-bottom: 10px;
     }
     h2:hover {
       @include transition(all, 0.25s, ease-in-out);
@@ -278,6 +283,7 @@
       position:relative;
       width:100%;
       color:#333;
+      margin-bottom: 20px;
       @include transition(all, 0.25s, ease-in-out);
     }
     h2 a.article-title.neutral:hover {
@@ -286,11 +292,11 @@
 
     .category-info {
       text-align:center;
-      padding-top:20px;
-      padding-bottom:10px;
+      padding-top:15px;
+      padding-bottom:15px;
       text-transform:uppercase;
       font-family: 'Montserrat', sans-serif;
-      font-size:11px;
+      font-size:12px;
       letter-spacing:0.1em;
       color: $light-grey;
 
@@ -362,7 +368,7 @@
       margin-top:40px;
       .light-grey {
         font-family: 'Montserrat', sans-serif;
-        color:#a8a19d;
+        color:$light-grey;
         font-size:16px;
         text-transform:uppercase;
       }
@@ -370,11 +376,18 @@
 
     .meta-row {
       font-family: 'Lora', serif;
-      font-size:14px;
-
+      font-size:12px;
+      color: $light-grey;
+      margin-bottom: 15px;
+      @media screen and (max-width: 640px){
+        margin-bottom: 0;
+      }
+      .light-grey{
+        color: $light-grey;
+      }
       .categories {
         font-family: 'Montserrat', sans-serif;
-        font-size:16px;
+        font-size:12px;
         &.upper {
           text-transform:uppercase;
         }
@@ -460,8 +473,8 @@
 
       .light-grey {
         font-family: 'Montserrat', sans-serif;
-        color:#a8a19d;
-        font-size:16px;
+        color:$light-grey;
+        font-size:12px;
         text-transform:uppercase;
       }
 
@@ -735,9 +748,12 @@
       }
       .pad-bottom {
         padding-bottom:20px;
+        @media screen and (max-width: 640px){
+          padding-bottom: 0px;
+        }
       }
       .subtitle {
-        color:#399;
+        color:$handwriting-color;
         font-family: 'Covered By Your Grace', cursive;
         line-height:1.2em;
         font-size:20px;
@@ -745,7 +761,7 @@
       }
       .meta-row {
         .light-grey {
-          font-size:11px;
+          font-size:12px;
         }
         .author-link {
           font-size:16px;
@@ -771,7 +787,7 @@
   }
 
   .pad-bottom {
-    padding-bottom:40px;
+    padding-bottom:10px;
   }
 
   @each $category, $c-color, $c-type in $categories {
