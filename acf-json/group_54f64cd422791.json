@@ -55,6 +55,40 @@
             "save_other_choice": 0,
             "default_value": "left",
             "layout": "vertical"
+        },
+        {
+            "key": "field_552589a2cbe53",
+            "label": "Link",
+            "name": "link",
+            "prefix": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_552589accbe54",
+            "label": "Open in New Window",
+            "name": "open_in_new_window",
+            "prefix": "",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0
         }
     ],
     "location": [
@@ -80,5 +114,5 @@
         "featured_image",
         "tags"
     ],
-    "modified": 1428305178
+    "modified": 1428523565
 }

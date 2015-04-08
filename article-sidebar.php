@@ -33,12 +33,14 @@
 
     <?php if (has_post_format('status')): ?>
       <?php /* STATUS UPDATE */ ?>
+      <?php if (get_field('link') != ''): ?><a href="<?php the_field('link'); ?>" <?php if (get_field('open_in_new_window') === true): ?>target="_blank"<?php endif; ?>><?php endif; ?>
       <div class="post" data-post-id="<?php the_ID(); ?>">
         <div class="status-update filterable <?php if ($hidden): ?>hidden<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?> <?php the_field('avatar'); ?> avatar-<?php if (get_field('display_side') == ''): ?>left<?php else: ?><?php the_field('display_side'); ?><?php endif; ?>">
           <h2><?php the_content(); ?></h2>
           <img class="preload hidden" src="<?php echo bloginfo('template_url'); ?>/images/<?php echo str_replace('avatar-','avatar-sidebar-',get_field('avatar')); ?>-<?php if (get_field('display_side') == ''): ?>left<?php else: ?><?php the_field('display_side'); ?><?php endif; ?>-hover.png">
         </div>
       </div>
+      <?php if (get_field('link') != ''): ?></a><?php endif; ?>
     <?php else: ?>
       <?php /* REGULAR POST */ ?>
       <div class="post" data-post-id="<?php the_ID(); ?>">
