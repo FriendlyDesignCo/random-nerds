@@ -471,6 +471,16 @@
         }
       });
 
+      <?php /* Authors Page Leveling */ ?>
+      if ($(".authors-page a.author").length > 0) {
+        var maxHeight = 0;
+        $(".authors-page a.author").each(function(){
+          if ($(this).height() > maxHeight)
+            maxHeight = $(this).height();
+        });
+        $(".authors-page a.author").css({'min-height': maxHeight});
+      }
+
       <?php /* Hide menu on clicking elsewhere */ ?>
       $(document).on('click',function(event){
         if (!$(event.target).closest('#main-menu').length && $(event.target).attr('id') !== 'menu-open' && !$(event.target).hasClass('icon-bar')) {
