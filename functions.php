@@ -5,6 +5,7 @@ if (!function_exists('randomNerdsInit'))
   function randomNerdsInit()
   {
     add_post_type_support('post', 'excerpt');
+    add_theme_support( 'html5', array( 'search-form' ) );
   }
 }
 add_action('init', 'randomNerdsInit');

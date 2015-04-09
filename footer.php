@@ -235,11 +235,12 @@
       });
 
       <?php /* Search Anywhere */ ?>
-      $("#search-anywhere input[type=text]").attr('autocomplete','off').val('');
+      $("#search-anywhere input[type=search]").attr('autocomplete','off').val('');
+      $("#search-anywhere input[type=search]").attr('placeholder','Tap here to search');
       $("#cancel-search").click(function(e){
         e.preventDefault();
         $("#search-anywhere").fadeOut();
-        $("#search-anywhere input[type=text]").val('');
+        $("#search-anywhere input[type=search]").val('');
         $("#menu-open").fadeIn();
       });
       $("#search-button").click(function(e){
@@ -250,7 +251,7 @@
         }
         $("#menu-open").fadeOut();
         $("#mobile-home").fadeOut();
-        var searchInput = $("#search-anywhere input[type=text]").first();
+        var searchInput = $("#search-anywhere input[type=search]").first();
         $("#search-anywhere:hidden").fadeIn(400, function(){
           searchInput.focus();
           searchInput[0].setSelectionRange(searchInput.val().length*2, searchInput.val().length*2);
@@ -263,7 +264,7 @@
         if (isLetter && tag != 'input' && tag != 'textarea') {
           e.preventDefault();
           $("#menu-open").fadeOut();
-          var searchInput = $("#search-anywhere input[type=text]").first();
+          var searchInput = $("#search-anywhere input[type=search]").first();
           searchInput.val(searchInput.val() + String.fromCharCode(e.which));
           $("#search-anywhere:hidden").fadeIn(400, function(){
             searchInput.focus();

@@ -27,11 +27,11 @@
     left:5%;
   }
 
-  label {
+  .screen-reader-text {
     display:none;
   }
 
-  input#s {
+  input.search-field {
     border: none;
     background: transparent;
     font-size: 120px;
