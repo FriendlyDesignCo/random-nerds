@@ -944,6 +944,12 @@
 @media screen and (max-width:640px) {
   width:90%;
 }
+.error404 #content-body .page-content-box {
+  padding-top:0;
+  h1.article-title {
+    text-align:center;
+  }
+}
 
 @import 'writers-page.scss';
 
