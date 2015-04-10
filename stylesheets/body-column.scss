@@ -202,21 +202,6 @@
     }
   }
 
-  /* Drop cap */
-  .first-article .article-body {
-    > p:first-of-type::first-letter {
-      initial-letter: 2;
-      font-size:57px;
-      float:left;
-      padding-top:13px;
-      padding-right:5px;
-      @media screen and (max-width: 1024px){
-        font-size: 35px;
-        padding-top: 0;
-      }
-    }
-  }
-
   article {
     .article-header {
       position:relative;
