@@ -297,15 +297,15 @@
           if ($(event.target).hasClass('value-select') || $(event.target).parent().hasClass('value-select')) {
             var options = $(this).find('.value-options');
             if (options.is(':visible'))
-              options.slideUp(100);
+              options.hide();
             else
-              options.slideDown(100);
+              options.show();
           }
           if ($(event.target).data('index') !== undefined) {
             var index = $(event.target).data('index');
             var value = $("select[name=reason] option:eq(" + index + ")").prop('selected',true).val();
             $("#reason-dropdown .value-select > span").html(value);
-            $("#reason-dropdown .value-options").slideUp();
+            $("#reason-dropdown .value-options").hide();
           }
         });
       }
@@ -331,7 +331,6 @@
         if (animate) {
           if (addFilteringClass)
             $("body").addClass('filtering');
-            console.log(".filterable" + selector + ":not(.hidden)");
           setTimeout(function(){ $("body").removeClass('filtering'); },1000);
           $(".filterable" + selector + ":not(.hidden)").slideUp(400,function(){
             $(this).addClass('hidden').removeAttr('style');
@@ -441,16 +440,16 @@
         if ($(event.target).hasClass('value-select') || $(event.target).parent().hasClass('value-select')) {
           var options = $(this).find('.value-options');
           if (options.is(':visible'))
-            options.slideUp(100);
+            options.hide();
           else
-            options.slideDown(100);
+            options.show();
         }
         if ($(event.target).data('value')) {
           var value = $(event.target).data('value');
           $("#tip-form input[name=tip_value]").val(value*100).trigger('change');
           $("#paypal-amount").val(value.toFixed(2));
           $("#tip-form .value-select > span").html(value);
-          $("#tip-form .value-options").slideUp(100);
+          $("#tip-form .value-options").hide();
         }
       });
       $("#paypal-tip-button").click(function(e){
