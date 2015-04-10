@@ -54,6 +54,6 @@
       <input type="hidden" name="rm" value="1">
       <input type="hidden" name="bn" value="PP-BuyNowBF:btn_buynowCC_LG.gif:NonHosted">
     </form>
-    <p>What is Patronizing? <a href="#">Learn more here.</a></p>
+    <p>What is Patronizing? <a href="/patronizing/">Learn more here.</a></p>
   </section>
 <?php endif; ?>
