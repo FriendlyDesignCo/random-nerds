@@ -169,9 +169,13 @@
       font-size:32px;
     }
     .wp-caption {
+      max-width:100%;
       .wp-caption-text {
         font-style:italic;
         font-size:16px;
+      }
+      img {
+        max-width:100%;
       }
     }
 
