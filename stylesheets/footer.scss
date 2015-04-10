@@ -40,25 +40,25 @@ footer, body #content-body footer {
     background-size: 30% auto;
     background-position-x: -40px;
   }
-  &.category-gaming {
+  &.avatar-gaming {
     background:$footer-background url("images/footer-avatar-gaming.png") no-repeat left bottom;
     &.right {
       background:$footer-background url("images/footer-avatar-gaming.png") no-repeat right bottom;
     }
   }
-  &.category-pop-culture {
+  &.avatar-pop-culture {
     background:$footer-background url("images/footer-avatar-pop-culture.png") no-repeat left bottom;
     &.right {
       background:$footer-background url("images/footer-avatar-pop-culture.png") no-repeat right bottom;
     }
   }
-  &.category-tech {
+  &.avatar-tech {
     background:$footer-background url("images/footer-avatar-tech.png") no-repeat left bottom;
     &.right {
       background:$footer-background url("images/footer-avatar-tech.png") no-repeat right bottom;
     }
   }
-  &.category-politics {
+  &.avatar-politics {
     background:$footer-background url("images/footer-avatar-politics.png") no-repeat left bottom;
     &.right {
       background:$footer-background url("images/footer-avatar-politics.png") no-repeat right bottom;
