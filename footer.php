@@ -102,7 +102,7 @@
           $("#article-sidebar").animate({'margin-left':0},{duration:300,queue:false});
           $("#content-body").animate({'margin-left':250},{duration:300,queue:false});
           setTimeout(function(){
-            var newHeight = 0;
+            var newHeight = 10;
             if ($("body").hasClass("admin-bar"))
               newHeight += 32;
             $("#avatar-select").animate({'padding-top':newHeight}, {duration:300, queue:false});
@@ -114,7 +114,7 @@
           });
           $("#content-body").animate({'margin-left':0}, {duration:300, queue:false});
           $("#collapse-sidebar").animate({left:0}, {duration:300,queue:false}).toggleClass('closed');
-          var newHeight = $("#collapse-sidebar").height();
+          var newHeight = 65;
           if ($("body").hasClass("admin-bar"))
             newHeight += 32;
           $("#avatar-select").animate({'padding-top':newHeight}, {duration:300, queue:false});
