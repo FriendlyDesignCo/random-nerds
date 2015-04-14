@@ -74,7 +74,7 @@
   box-sizing:border-box;
   @include transition(all, 0.5s, ease-out);
 }
-@media screen and (max-width:640px) {
+@media screen and (max-width:#{$mobile-breakpoint}) {
   .column-left {
     padding-left:10px;
     padding-right:10px;

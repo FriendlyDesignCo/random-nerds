@@ -29,6 +29,8 @@ $gaming-type-color:#a26300;
 $tech-color: #a9c5d3;
 $tech-type-color: #85b3c6;
 
+$mobile-breakpoint: 750px;
+
 // <name> <color> <type color>
 $categories: features $features-color $features-color, gaming $gaming-color $gaming-type-color, tech $tech-color $tech-type-color, pop-culture $pop-culture-color $pop-culture-color, politics $politics-color $politics-color;
 
@@ -63,9 +65,9 @@ $hr-color: #dbd8d5;
 $mobile-footer-height: 45px;
 
 
-$mobile-break-width: 640px;
+$mobile-break-width: #{$mobile-breakpoint};
 
-@media screen and (min-width:641px) {
+@media screen and (min-width:($mobile-breakpoint+1)) {
   body {
     padding-left:$avatar-sidebar-width
   }
@@ -102,7 +104,7 @@ hr.divider {
   text-align: center;
   margin-top:80px;
   margin-bottom:80px;
-  @media screen and (max-width:640px) {
+  @media screen and (max-width:#{$mobile-breakpoint}) {
     margin-top:40px;
     margin-bottom:40px;
   }
@@ -147,7 +149,7 @@ hr.compact-bottom {
   display:none;
 }
 
-@media screen and (min-width:641px) {
+@media screen and (min-width:($mobile-breakpoint+1)) {
   .mobile-only {
     display:none;
   }
@@ -155,7 +157,7 @@ hr.compact-bottom {
     display:block;
   }
 }
-@media screen and (max-width:640px) {
+@media screen and (max-width:#{$mobile-breakpoint}) {
   .mobile-only {
     display:block;
   }

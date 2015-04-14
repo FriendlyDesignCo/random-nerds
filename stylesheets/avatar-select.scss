@@ -102,7 +102,7 @@
     line-height:67px;
     color:#c1bebc;
   }
-  @media screen and (max-width:640px) {
+  @media screen and (max-width:#{$mobile-breakpoint}) {
     display:none;
   }
 }
@@ -166,7 +166,7 @@ body.admin-bar #collapse-sidebar {
   }
 }
 
-@media screen and (max-width:640px) {
+@media screen and (max-width:#{$mobile-breakpoint}) {
   .admin-bar #avatar-select {
     padding-top:0;
   }
@@ -219,7 +219,7 @@ body.admin-bar #collapse-sidebar {
   }
 }
 
-@media screen and (max-width:640px) {
+@media screen and (max-width:#{$mobile-breakpoint}) {
   #avatar-select:not(.none-selected) .avatar-icon:not(.disabled) .close-button {
     position:absolute;
     right: -16px;

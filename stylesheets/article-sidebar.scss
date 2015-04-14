@@ -281,7 +281,7 @@ body.admin-bar #end-of-the-net {
   margin-left:-$article-sidebar-width;
 }
 
-@media screen and (max-width:640px) {
+@media screen and (max-width:#{$mobile-breakpoint}) {
   #article-sidebar {
     display:none;
   }

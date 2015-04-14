@@ -75,11 +75,11 @@
         if (!contentBody.hasClass('sub-1000') && contentBody.width() <= 1000) {
           contentBody.addClass('sub-1000');
         }
-        if (contentBody.hasClass('mobile-width') && contentBody.width() > 640) {
+        if (contentBody.hasClass('mobile-width') && contentBody.width() > 750) {
           contentBody.removeClass('mobile-width');
           contentBody.find('article').removeClass('mobile-width');
         }
-        if (!contentBody.hasClass('mobile-width') && contentBody.width() <= 640) {
+        if (!contentBody.hasClass('mobile-width') && contentBody.width() <= 750) {
           contentBody.addClass('mobile-width');
           contentBody.find('article').addClass('mobile-width');
         }
@@ -154,7 +154,7 @@
         }
       });
       $(window).scroll(function(){
-        if ($(window).width() <= 640) {
+        if ($(window).width() <= 750) {
           if ($(window).scrollTop() > 25) {
             $("#menu-open, #mobile-home").addClass('fixed');
           } else {
@@ -164,7 +164,7 @@
       });
 
       <?php /* Related Posts Leveling */ ?>
-      if ($("#content-body").width() > 640) {
+      if ($("#content-body").width() > 750) {
         if ($("#related-posts").length > 0) {
           var lowest = 0;
           $("#related-posts span.yuzo_text").each(function(){
@@ -289,7 +289,7 @@
           $("#search-anywhere").fadeOut();
           $("#search-anywhere input[type=text]").val('');
           $("#menu-open").fadeIn();
-          if ($(window).width() <= 640) {
+          if ($(window).width() <= 750) {
             $("#mobile-home").fadeIn();
           }
         }

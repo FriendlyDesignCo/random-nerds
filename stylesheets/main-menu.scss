@@ -1,5 +1,5 @@
 #mobile-home {
-  @media screen and (min-width:641px) {
+  @media screen and (min-width:($mobile-breakpoint+1)) {
     display:none;
   }
   position:absolute;
@@ -44,14 +44,14 @@ body.past-header {
       padding-right:0;
     }
   }
-  @media (max-width:640px) {
+  @media (max-width:#{$mobile-breakpoint}) {
     position:absolute;
     &.fixed {
       position:fixed;
       top:10px;
     }
   }
-  @media (min-width:641px) {
+  @media (min-width:($mobile-breakpoint+1)) {
     @include transition(top, 0.3s, ease-in-out);
   }
   color:#fff;
@@ -136,7 +136,7 @@ body.past-header {
 #main-menu {
   width:$main-menu-width;
   right:-$main-menu-width;
-  @media screen and (max-width:640px) {
+  @media screen and (max-width:#{$mobile-breakpoint}) {
     width:100%;
     right: -100%;
   }
