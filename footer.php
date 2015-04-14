@@ -153,6 +153,15 @@
           }
         }
       });
+      $(window).scroll(function(){
+        if ($(window).width() <= 640) {
+          if ($(window).scrollTop() > 25) {
+            $("#menu-open, #mobile-home").addClass('fixed');
+          } else {
+            $("#menu-open, #mobile-home").removeClass('fixed');
+          }
+        }
+      });
 
       <?php /* Related Posts Leveling */ ?>
       if ($("#content-body").width() > 640) {

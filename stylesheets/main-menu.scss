@@ -2,9 +2,13 @@
   @media screen and (min-width:641px) {
     display:none;
   }
-  position:fixed;
+  position:absolute;
   top:25px;
   left:25px;
+  &.fixed {
+    position:fixed;
+    top:10px;
+  }
   z-index:9989;
   img {
     max-width:45px;
@@ -40,6 +44,16 @@ body.past-header {
       padding-right:0;
     }
   }
+  @media (max-width:640px) {
+    position:absolute;
+    &.fixed {
+      position:fixed;
+      top:10px;
+    }
+  }
+  @media (min-width:641px) {
+    @include transition(top, 0.3s, ease-in-out);
+  }
   color:#fff;
   z-index: 20;
   background-color: transparent;
@@ -47,7 +61,6 @@ body.past-header {
   height:41px;
   width:30px;
   @include transition(opacity, 0.3s, ease-in-out);
-  @include transition(top, 0.3s, ease-in-out);
 
   .icon-bar {
     background-color:#e5e0d8;
