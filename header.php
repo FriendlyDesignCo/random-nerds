@@ -32,6 +32,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
+      <div class="clearfix"></div>
     </div>
     <div id="mobile-home">
       <a href="/"><img src="<?php echo bloginfo('template_url'); ?>/images/small_signature.png"></a>

@@ -31,7 +31,14 @@ body.past-header {
   right:35px;
   @media (max-width:1024px) {
     top:35px;
-    right:35px;
+    right:25px;
+    padding-left:10px;
+    padding-right:10px;
+
+    &.open {
+      right:25px;
+      padding-right:0;
+    }
   }
   color:#fff;
   z-index: 20;
@@ -95,6 +102,9 @@ body.past-header {
   span:nth-child(2) {
     width: 0%;
     opacity: 0;
+    @media (max-width:1024px) {
+      right:10px;
+    }
   }
 
   span:nth-child(3) {
