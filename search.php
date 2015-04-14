@@ -5,9 +5,10 @@
 </div>
 
 <?php if (!have_posts()): ?>
-  <div class="page-content-box">
+  <div class="page-content-box search">
     <article>
-      <h1>Sorry, but no articles match your search.</h1>
+      <h1>Sorry, no results match your search.</h1>
+      <img src="<?php echo bloginfo('template_url'); ?>/images/avatar-downtime-sketch.png">
     </article>
   </div>
 <?php endif; ?>

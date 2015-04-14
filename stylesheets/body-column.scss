@@ -68,6 +68,9 @@
 
   /* Article Styling */
   .article-body, .page-content-box {
+    &.search{
+      padding-top: 0;
+    }
     h1,h2,h3,h4,h5,h6 {
       line-height:1.2em;
       margin:1em 0;
