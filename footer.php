@@ -88,8 +88,8 @@
       checkBodyColumnWidth();
 
       <?php /* Sidebar Collapse Button */ ?>
-      var sidePosition = $("#article-sidebar").offset().left+$("#article-sidebar").width()-$("#collapse-sidebar").width();
-      if (sidePosition < 0)
+      var sidePosition = 250;
+      if (sidePosition < 0 || $("#avatar-select").hasClass('sidebar-hidden'))
         sidePosition = 2;
       $("#collapse-sidebar").css('left',sidePosition);
       $("#collapse-sidebar").click(function(event){
@@ -98,9 +98,9 @@
           // Open it up
           $.cookie('sidebar-state','open');
           $("#content").removeClass('closed');
-          $("#collapse-sidebar").animate({left:$("#article-sidebar").width()}, {duration:300,queue:false,done:function(){$(this).toggleClass('closed');}});
+          $("#collapse-sidebar").animate({left:250}, {duration:300,queue:false,done:function(){$(this).toggleClass('closed');}});
           $("#article-sidebar").animate({'margin-left':0},{duration:300,queue:false});
-          $("#content-body").animate({'margin-left':$("#article-sidebar").width()},{duration:300,queue:false});
+          $("#content-body").animate({'margin-left':250},{duration:300,queue:false});
           setTimeout(function(){
             var newHeight = 0;
             if ($("body").hasClass("admin-bar"))
@@ -110,7 +110,7 @@
         } else {
           // Close it down
           $.cookie('sidebar-state','closed');
-          $("#article-sidebar").animate({'margin-left':-1*$("#article-sidebar").width()}, {duration: 300, queue: false}, function(){
+          $("#article-sidebar").animate({'margin-left':-250}, {duration: 300, queue: false}, function(){
           });
           $("#content-body").animate({'margin-left':0}, {duration:300, queue:false});
           $("#collapse-sidebar").animate({left:0}, {duration:300,queue:false}).toggleClass('closed');
