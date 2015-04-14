@@ -289,7 +289,7 @@
         $("span.wpcf7-form-control-wrap.reason").append('<div id="reason-dropdown"><div class="value-select"><span class="value"></span><i class="fa fa-caret-down"></i><div class="value-options hidden"><ul></ul></div></div></div>');
         $("#reason-dropdown span.value").html($("select[name=reason] option:selected").val());
         if ($("#select[name=reason] option:selected").length == 0) {
-          $("#reason-dropdown span.value").html("&nbsp;");
+          $("#reason-dropdown span.value").html("<span class='placeholder'>ask a question.</span>");
         }
         $("select[name=reason] option").each(function(index){
           $("#reason-dropdown ul").append('<li data-index="' + index + '">'+$(this).val()+'</li>');
