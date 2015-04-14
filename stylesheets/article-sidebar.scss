@@ -45,6 +45,7 @@ body.admin-bar #end-of-the-net {
     color:$paragraph-color;
     font-family: 'Playfair Display', serif;
     -webkit-font-smoothing: subpixel-antialiased;
+    -webkit-transform: translate3d(0, 0, 0);
     font-size:16px;
     line-height:1.2em;
     border-bottom:1px solid $line-color;
