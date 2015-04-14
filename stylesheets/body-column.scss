@@ -173,9 +173,15 @@
       .wp-caption-text {
         font-style:italic;
         font-size:16px;
+        text-align: center;
+        &:after{
+          content: " ";
+          border-bottom: 1px solid $line-color;
+        }
       }
       img {
         max-width:100%;
+        height: auto;
       }
     }
 
