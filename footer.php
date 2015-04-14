@@ -269,7 +269,7 @@
       $(document).on('keypress', function(e) {
         var tag = e.target.tagName.toLowerCase();
         var key = e.which;
-        if (e.ctrlKey)
+        if (e.ctrlKey || e.metaKey)
           return;
         var isLetter = (key >= 65 && key <= 90) || (key >= 97 && key <= 122);
         if (isLetter && tag != 'input' && tag != 'textarea') {
