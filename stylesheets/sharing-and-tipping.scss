@@ -27,12 +27,13 @@
     }
   }
   a.reddit {
+    color:#ff4500 !important;
     &:hover {
       color:#fff !important;
       @include transition(all, 0.25s, ease-out);
       i.fa-inverse {
         @include transition(all, 0.25s, ease-out);
-        color:$link-hover-color;
+        color:#ff4500;
       }
     }
   }
