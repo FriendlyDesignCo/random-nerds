@@ -280,7 +280,9 @@
           $("#search-anywhere").fadeOut();
           $("#search-anywhere input[type=text]").val('');
           $("#menu-open").fadeIn();
-          $("#mobile-home").fadeIn();
+          if ($(window).width() <= 640) {
+            $("#mobile-home").fadeIn();
+          }
         }
       });
 
