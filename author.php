@@ -49,7 +49,7 @@
         <hr>
         <div class="plus"><?php next_posts_link('<span>+</span>'); ?></div>
         <?php echo str_replace('<a', '<a class="load-more"', get_next_posts_link('Load More')); ?>
-        <div class="loader blue hidden">Loading...</div>
+        <div class="loader-blue hidden">Loading...</div>
       </div>
     <?php endif; ?>
     <div id="end-of-posts-marker"></div>

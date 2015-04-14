@@ -32,7 +32,7 @@
         <span class="circle"><i class="fa fa-arrow-right"></i></span>
       </a>
       <p class="paypal-link"><a href="#" id="paypal-tip-button">Or use PayPal if you're a big fan of that.</a></p>
-      <div class="loader blue" style="display:none;">Loading</div>
+      <div class="loader-blue" style="display:none;">Loading</div>
       <div class="clearfix"></div>
       <img id="over-9000" src="<?php echo bloginfo('template_url'); ?>/images/goku-9000.gif" title="It's over 9000!" style="display:none;">
     </form>
