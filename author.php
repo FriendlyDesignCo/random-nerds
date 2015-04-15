@@ -35,7 +35,7 @@
       <article class="primary-<?php the_field('primary_category'); ?>">
         <a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
         <div class="article-info">
-          <span>in <span class="colorize-categories"><?php the_category(', '); ?></span></span><br>
+          <span>Filed In<span class="colorize-categories"><?php the_category(', '); ?></span></span><br>
           <span>Submitted To</span> <span class="tags"><?php the_tags('', ', '); ?></span>
         </div>
         <?php if ($i < count($posts)-1): ?>
