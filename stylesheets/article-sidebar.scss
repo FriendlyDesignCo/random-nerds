@@ -40,7 +40,7 @@ body.admin-bar #end-of-the-net {
   }
 
   .article {
-    padding: 15px 15px 25px 15px;
+    padding: 25px 15px 30px 15px;
     box-sizing:border-box;
     color:$paragraph-color;
     font-family: 'Playfair Display', serif;
@@ -117,6 +117,7 @@ body.admin-bar #end-of-the-net {
     box-sizing:border-box;
     text-align:center;
     color:#fff;
+    -webkit-font-smoothing: antialiased;
 
     > div {
       position: relative;
@@ -317,7 +318,6 @@ body.admin-bar #end-of-the-net {
     }
   }
 }
-
 
 .random-angle-5 { -webkit-transform:rotate(-5deg);-moz-transform:rotate(-5deg);transform:rotate(-5deg); }
 .random-angle-6 { -webkit-transform:rotate(-6deg);-moz-transform:rotate(-6deg);transform:rotate(-6deg); }

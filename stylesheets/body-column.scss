@@ -261,6 +261,9 @@
     .article-header {
       position:relative;
       background-color: #303946;
+      @media screen and (max-width:#{$mobile-breakpoint}) {
+      margin-bottom: 20px;
+      }
     }
 
     h1.article-title {

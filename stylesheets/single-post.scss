@@ -1,11 +1,18 @@
 #content-body article {
+	.article-title{
+		@media screen and (max-width:#{$mobile-breakpoint}) {
+		margin-bottom: 10px;
+		}
+	}
   .meta-row {
     font-size:12px;
     .light-grey {
       font-size:12px;
     }
   }
-
+	hr.small{
+		margin: 15px 0 10px;
+	}
   .article-header-image .cover {
     background:transparent;
   }
