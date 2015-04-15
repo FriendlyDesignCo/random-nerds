@@ -15,7 +15,7 @@
   </section>
 
   <div id="search-anywhere" class="hidden">
-    <p>Search at any time, just start typing. Return submits. ESC exits.</p>
+    <p>Search at any time, just start typing.<br>Return submits. ESC exits.</p>
     <?php get_search_form(); ?>
     <a href="#" id="cancel-search"><i class="fa fa-times"></i></a>
   </div>
@@ -245,7 +245,7 @@
 
       <?php /* Search Anywhere */ ?>
       $("#search-anywhere input[type=search]").attr('autocomplete','off').val('');
-      $("#search-anywhere input[type=search]").attr('placeholder','Tap here to search');
+      $("#search-anywhere input[type=search]").attr('placeholder','Click here.');
       $("#cancel-search").click(function(e){
         e.preventDefault();
         $("#search-anywhere").fadeOut();
