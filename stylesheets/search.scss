@@ -15,6 +15,44 @@
     right:5%;
     font-size:40px;
     opacity:0.5;
+
+    display:block;
+    width:30px;
+    height:41px;
+    @include transition(all, 0.25s, ease-out);
+
+    &:hover {
+      opacity:1;
+    }
+
+    .icon-bar {
+      background-color: #fff;
+      display: block;
+      width: 30px;
+      height: 5px;
+      -webkit-transform-origin: left center;
+      -moz-transform-origin: left center;
+      -o-transform-origin: left center;
+      transform-origin: left center;
+      position:absolute;
+
+      &:nth-child(1) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        top: -3px;
+        left: 1px;
+      }
+      &:nth-child(2) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        top: 19px;
+        left: 1px;
+      }
+    }
   }
 
   p {

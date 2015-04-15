@@ -17,7 +17,7 @@
   <div id="search-anywhere" class="hidden">
     <p>Search at any time, just start typing.<br>Return submits. ESC exits.</p>
     <?php get_search_form(); ?>
-    <a href="#" id="cancel-search"><i class="fa fa-times"></i></a>
+    <a href="#" id="cancel-search"><span class="icon-bar"></span><span class="icon-bar"></span></a>
   </div>
 
   <?php wp_footer(); ?>
