@@ -1,0 +1,4 @@
+ExpiresActive On
+ExpiresByType text/css "access plus 1 month"
+ExpiresByType text/x-javascript "access plus 1 month"
+ExpiresDefault "access plus 2 day"
