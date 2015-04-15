@@ -16,7 +16,7 @@
 <div class="row">
   <div class="column-left">
     <?php the_field('extended_bio', 'user_'.$authorID); ?>
-    <p><img src="<?php the_field('signature', 'user_'.$authorID); ?>"></p>
+    <p><img src="<?php the_field('signature', 'user_'.$authorID); ?>" class="signature"></p>
   </div>
   <div class="column-right">
 

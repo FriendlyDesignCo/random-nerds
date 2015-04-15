@@ -74,6 +74,10 @@
   box-sizing:border-box;
   @include transition(all, 0.5s, ease-out);
 }
+.signature{
+  opacity: 0.7;
+}
+
 @media screen and (max-width:#{$mobile-breakpoint}) {
   .column-left {
     padding-left:10px;
@@ -183,6 +187,7 @@ article {
     font-size:27px;
     color:#333;
     padding-bottom:15px;
+    line-height: 1.2;
   }
 
   .article-info {
@@ -191,12 +196,17 @@ article {
     line-height:20px;
     span {
       text-transform:uppercase;
-      font-size:18px;
+      font-size:12px;
+      letter-spacing: 0.1em;
     }
     span.tags {
       font-family: 'Lora', serif;
       text-transform:none;
       font-style:italic;
+      letter-spacing: 0;
+      a{
+        color: #666;
+      }
     }
     .colorize-categories {
       a {
