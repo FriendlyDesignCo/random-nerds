@@ -65,6 +65,7 @@
       line-height:23px;
       @media screen and (max-width:#{$mobile-breakpoint}) {
         overflow:auto;
+        font-size: 16px;
       }
     }
 

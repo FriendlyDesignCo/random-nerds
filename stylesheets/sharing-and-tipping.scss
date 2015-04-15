@@ -54,7 +54,10 @@
   padding:30px;
   position:relative;
   z-index:11;
-
+  @media screen and (max-width:#{$mobile-breakpoint}) {
+  padding:20px;
+  margin-top: 20px;
+  }
   #tip-form {
     padding:20px;
     @media screen and (max-width:#{$mobile-breakpoint}) {
