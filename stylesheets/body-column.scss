@@ -153,7 +153,7 @@
       -webkit-font-smoothing: subpixel-antialiased;
     }
     h1 {
-      font-weight:bold;
+      font-weight:900;
       font-size:58px;
       @media screen and (max-width: #{$mobile-breakpoint}){
       font-size: 2.5rem;
@@ -168,7 +168,7 @@
       }
     }
     h3 {
-      font-weight:bold;
+      font-weight:900;
       font-size:46px;
       margin-bottom: 0;
       @media screen and (max-width: #{$mobile-breakpoint}){
@@ -704,18 +704,19 @@
 
         a h2 {
           @include transition(opacity, 0.25s, ease-in-out);
-          font-size: 90px;
-          width: 70%;
+          font-size: 80px;
+          width: 80%;
           @media screen and (max-width: 1140px){
-            font-size: 60px;
+            font-size: 50px;
             line-height: 110%;
           }
           @media screen and (max-width: 1024px){
+            font-size: 40px;
             width: 90%;
             margin-bottom: 30px;
           }
           @media screen and (max-width:#{$mobile-breakpoint}) {
-            font-size: 35px;
+            font-size: 30px;
           }
         }
         a:hover h2 {
@@ -734,7 +735,10 @@
         img {
           padding-left:10px;
         }
-        @media screen and (max-width:720px) {
+        @media screen and (max-width:1140px) {
+          max-width: 150px;
+        }
+        @media screen and (max-width:#{$mobile-breakpoint}) {
           max-width: 30%;
           img {
             max-width:100%;
@@ -753,14 +757,14 @@
         text-align:left;
         span {
           line-height:100%;
-          font-weight:bold;
+          font-weight:900;
         }
       }
 
       @media screen and (max-width:#{$mobile-breakpoint}) {
         h2 {
           width:90%;
-          padding-top:70px;
+          padding-top:25px;
           font-size:20px;
           box-sizing:border-box;
           display:block;
@@ -969,7 +973,13 @@
         color:#fff;
       }
     }
-
+    .load-done{
+      font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+      text-transform: uppercase;
+      font-size: 16px;
+      margin-top: 20px;
+      color:$light-grey;
+    }
     a.load-comments, a.load-more {
       padding-top:25px;
       display:block;
