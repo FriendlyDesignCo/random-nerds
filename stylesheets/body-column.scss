@@ -286,6 +286,7 @@
       width:100%;
       color:#333;
       margin-bottom: 20px;
+      line-height: 1.2;
       @include transition(all, 0.25s, ease-in-out);
     }
     h2 a.article-title.neutral:hover {
@@ -731,6 +732,10 @@
     .meta-row {
       padding-top: 15px;
       margin-bottom: 15px;
+      @media screen and (max-width:#{$mobile-breakpoint}) {
+      padding-top: 5px;
+      margin-bottom: 5px;
+      }
     }
   }
 
@@ -746,6 +751,7 @@
       h2 {
         font-size:20px;
         text-align:left;
+        margin-bottom: 0;
       }
       .category-info {
         text-align:left;
@@ -762,7 +768,7 @@
         line-height:1.2em;
         font-size:20px;
         padding-bottom:0px;
-        margin-top:10px;
+        margin-top:0px;
       }
       .meta-row {
         .light-grey {
