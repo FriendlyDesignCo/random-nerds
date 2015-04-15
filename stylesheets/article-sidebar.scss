@@ -333,48 +333,49 @@ body.admin-bar #end-of-the-net {
 .random-angle-14 { -webkit-transform:rotate(-6deg);-moz-transform:rotate(-6deg);transform:rotate(-6deg); }
 .random-angle-15 { -webkit-transform:rotate(-7deg);-moz-transform:rotate(-7deg);transform:rotate(-7deg); }
 
+@media screen and (min-width:($mobile-breakpoint+1)) {
+  body.sidebar-open {
+    #article-sidebar {
+      transform: translate3d(0,0,0);
+      -webkit-transform: translate3d(0,0,0);
+    }
+    #collapse-sidebar {
+      transform: translate3d(0,0,0);
+      -webkit-transform: translate3d(0,0,0);
+      left:250px;
+    }
+    #content-body {
+      transform: translate3d(0,0,0);
+      -webkit-transform: translate3d(0,0,0);
+    }
+  }
 
-body.sidebar-open {
-  #article-sidebar {
-    transform: translate3d(0,0,0);
-    -webkit-transform: translate3d(0,0,0);
+  body.sidebar-closed {
+    #article-sidebar {
+      transform: translate3d(-250px,0,0);
+      -webkit-transform: translate3d(-250px,0,0);
+      transition-delay:0s;
+      -webkit-transition-delay:0s;
+    }
+    #collapse-sidebar {
+      transform: translate3d(-250px,0,0);
+      -webkit-transform: translate3d(-250px,0,0);
+      transition-delay:0s;
+      -webkit-transition-delay:0s;
+      left:250px;
+    }
+    #content-body {
+      transform: translate3d(-250px,0,0);
+      -webkit-transform: translate3d(-250px,0,0);
+    }
+    #avatar-select {
+      padding-top:65px;
+    }
   }
-  #collapse-sidebar {
-    transform: translate3d(0,0,0);
-    -webkit-transform: translate3d(0,0,0);
-    left:250px;
-  }
-  #content-body {
-    transform: translate3d(0,0,0);
-    -webkit-transform: translate3d(0,0,0);
-  }
-}
 
-body.sidebar-closed {
-  #article-sidebar {
-    transform: translate3d(-250px,0,0);
-    -webkit-transform: translate3d(-250px,0,0);
-    transition-delay:0s;
-    -webkit-transition-delay:0s;
-  }
-  #collapse-sidebar {
-    transform: translate3d(-250px,0,0);
-    -webkit-transform: translate3d(-250px,0,0);
-    transition-delay:0s;
-    -webkit-transition-delay:0s;
-    left:250px;
-  }
-  #content-body {
-    transform: translate3d(-250px,0,0);
-    -webkit-transform: translate3d(-250px,0,0);
-  }
-  #avatar-select {
-    padding-top:65px;
-  }
-}
-
-body.sidebar-closed.admin-bar {
-  #avatar-select {
-    padding-top:97px;
+  body.sidebar-closed.admin-bar {
+    #avatar-select {
+      padding-top:97px;
+    }
   }
 }
