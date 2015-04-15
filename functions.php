@@ -224,3 +224,15 @@ function customBodyClass( $classes ) {
 	return $classes;
 }
 add_filter('body_class', 'customBodyClass');
+
+function my_login_logo() { ?>
+    <style type="text/css">
+        .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/signature-logo-dark.svg);
+            padding-bottom: 10px;
+            background-size:164px;
+            width:180px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
