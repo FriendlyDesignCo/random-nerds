@@ -106,10 +106,12 @@
           $("#content-body").css({'margin-left':0});
         } else {
           if ($("body").hasClass('sidebar-closed'))
+          {
             $("#content-body").css({'margin-right':-250});
+            $("#content-body").css({'margin-left':250});
+          }
           else
             $("#content-body").css({'margin-right':0});
-          $("#content-body").css({'margin-left':250});
         }
       }
       $("#content-body").resize(checkBodyColumnWidth);
