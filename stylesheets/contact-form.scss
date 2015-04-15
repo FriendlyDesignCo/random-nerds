@@ -68,9 +68,9 @@
     }
 
     label {
-      font-size:46px;
+      font-size:32px;
       @media screen and (max-width:#{$mobile-breakpoint}) {
-        font-size:32px;
+        font-size:24px;
       }
       font-family: 'Playfair Display', serif;
       -webkit-font-smoothing: subpixel-antialiased;
