@@ -218,12 +218,16 @@ body.admin-bar #end-of-the-net {
           background-image:url('images/avatar-sidebar-#{$category}-left.png');
           &:hover {
             background-image:url('images/avatar-sidebar-#{$category}-left-hover.png');
+            background-color:$c-color;
+            color:#fff;
           }
         }
         &.avatar-right {
           background-image:url('images/avatar-sidebar-#{$category}-right.png');
           &:hover {
             background-image:url('images/avatar-sidebar-#{$category}-right-hover.png');
+            background-color:$c-color;
+            color:#fff;
           }
         }
       }
@@ -320,9 +324,9 @@ body.admin-bar #end-of-the-net {
 .random-angle-7 { -webkit-transform:rotate(-7deg);-moz-transform:rotate(-7deg);transform:rotate(-7deg); }
 .random-angle-8 { -webkit-transform:rotate(-8deg);-moz-transform:rotate(-8deg);transform:rotate(-8deg); }
 .random-angle-9 { -webkit-transform:rotate(-9deg);-moz-transform:rotate(-9deg);transform:rotate(-9deg); }
-.random-angle-10 { -webkit-transform:rotate(-10deg);-moz-transform:rotate(-10deg);transform:rotate(-10deg); }
-.random-angle-11 { -webkit-transform:rotate(-11deg);-moz-transform:rotate(-11deg);transform:rotate(-11deg); }
-.random-angle-12 { -webkit-transform:rotate(-12deg);-moz-transform:rotate(-12deg);transform:rotate(-12deg); }
-.random-angle-13 { -webkit-transform:rotate(-13deg);-moz-transform:rotate(-13deg);transform:rotate(-13deg); }
-.random-angle-14 { -webkit-transform:rotate(-14deg);-moz-transform:rotate(-14deg);transform:rotate(-14deg); }
-.random-angle-15 { -webkit-transform:rotate(-15deg);-moz-transform:rotate(-15deg);transform:rotate(-15deg); }
+.random-angle-10 { -webkit-transform:rotate(-8deg);-moz-transform:rotate(-8deg);transform:rotate(-8deg); }
+.random-angle-11 { -webkit-transform:rotate(-7deg);-moz-transform:rotate(-7deg);transform:rotate(-7deg); }
+.random-angle-12 { -webkit-transform:rotate(-6deg);-moz-transform:rotate(-6deg);transform:rotate(-6deg); }
+.random-angle-13 { -webkit-transform:rotate(-5deg);-moz-transform:rotate(-5deg);transform:rotate(-5deg); }
+.random-angle-14 { -webkit-transform:rotate(-6deg);-moz-transform:rotate(-6deg);transform:rotate(-6deg); }
+.random-angle-15 { -webkit-transform:rotate(-7deg);-moz-transform:rotate(-7deg);transform:rotate(-7deg); }
