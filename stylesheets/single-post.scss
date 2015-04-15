@@ -6,12 +6,13 @@
 	}
   .meta-row {
     font-size:12px;
+    letter-spacing: 0.1em;
     .light-grey {
       font-size:12px;
     }
   }
 	hr.small{
-		margin: 15px 0 10px;
+		//margin: 15px auto 10px auto;
 	}
   .article-header-image .cover {
     background:transparent;

@@ -10,6 +10,7 @@ footer, body #content-body footer {
 
   @media screen and (max-width:#{$mobile-breakpoint}) {
     //margin-bottom:$mobile-footer-height;
+    margin-top: 30px;
   }
 
   .footer-content {
