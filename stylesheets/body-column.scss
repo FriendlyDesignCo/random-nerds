@@ -854,7 +854,7 @@
 
   @each $category, $c-color, $c-type in $categories {
     article.primary-#{$category} {
-      a.article-title:hover, #related-posts a:hover {
+      a.article-title:hover, #related-posts a:hover, a.author-link:hover {
         color:$c-color;
       }
       p a {
