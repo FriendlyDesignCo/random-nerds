@@ -90,8 +90,8 @@
   font-weight:bolder;
   font-size: 22px;
   @include transition(all, 0.5s, ease-in-out);
-  animation-delay:0.4s;
-  -webkit-animation-delay:0.4s;
+  transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0,0,0);
   position:fixed;
   top:0;
   right:0;

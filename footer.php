@@ -88,19 +88,15 @@
       checkBodyColumnWidth();
 
       <?php /* Sidebar Collapse Button */ ?>
-      var sidePosition = 250;
-      if (sidePosition < 0 || $("#avatar-select").hasClass('sidebar-hidden'))
-        sidePosition = 2;
-      $("#collapse-sidebar").css('left',sidePosition);
       $("#collapse-sidebar").click(function(event){
         event.preventDefault();
         if ($('#content').hasClass('closed')) {
           // Open it up
           $.cookie('sidebar-state','open');
+          $("body").toggleClass('sidebar-open').toggleClass('sidebar-closed');
           $("#content").removeClass('closed');
-          $("#collapse-sidebar").animate({left:250}, {duration:300,queue:false,done:function(){$(this).toggleClass('closed');}});
-          $("#article-sidebar").animate({'margin-left':0},{duration:300,queue:false});
-          $("#content-body").animate({'margin-left':250},{duration:300,queue:false});
+          $("#content-body").css({'margin-left':0});
+          $("#content-body").animate({'margin-left':250},500);
           setTimeout(function(){
             var newHeight = 10;
             if ($("body").hasClass("admin-bar"))
@@ -110,15 +106,16 @@
         } else {
           // Close it down
           $.cookie('sidebar-state','closed');
-          $("#article-sidebar").animate({'margin-left':-250}, {duration: 300, queue: false}, function(){
-          });
-          $("#content-body").animate({'margin-left':0}, {duration:300, queue:false});
-          $("#collapse-sidebar").animate({left:0}, {duration:300,queue:false}).toggleClass('closed');
+          $("body").toggleClass('sidebar-open').toggleClass('sidebar-closed');
           var newHeight = 65;
           if ($("body").hasClass("admin-bar"))
             newHeight += 32;
           $("#avatar-select").animate({'padding-top':newHeight}, {duration:300, queue:false});
           $("#content").addClass('closed');
+          $("#content-body").css({'margin-left':250});
+          setTimeout(function(){
+            $("#content-body").animate({'margin-left':0},500);
+          },500);
           setTimeout(function(){
             $("#article-sidebar .article.featured").removeAttr('style');
             $("#article-sidebar .article.featured h2").removeAttr('style');

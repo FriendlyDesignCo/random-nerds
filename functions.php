@@ -214,3 +214,14 @@ function TinyMCEButtonPlugin($pluginArray)
   return $pluginArray;
 }
 add_filter('mce_external_plugins', 'TinyMCEButtonPlugin');
+
+
+function customBodyClass( $classes ) {
+  if (isset($_COOKIE['sidebar-state']) && stristr($_COOKIE['sidebar-state'], 'closed') && !is_home())
+	  $classes[] = 'sidebar-closed';
+  else
+    $classes[] = 'sidebar-open';
+	// return the $classes array
+	return $classes;
+}
+add_filter('body_class', 'customBodyClass');
