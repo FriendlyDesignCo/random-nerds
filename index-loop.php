@@ -43,6 +43,12 @@ foreach (get_ordered_categories() as $category)
     <?php echo str_replace('<a', '<a class="load-more"', get_next_posts_link('Load More')); ?>
     <div class="loader-blue hidden">Loading...</div>
   </div>
+<?php else: ?>
+  <div class="comment-divider more-posts-link">
+    <hr>
+    <div class="plus"><a href='#'><span>-</span></a></div>
+    <h2 class="text-center">That's it!</h2>
+  </div>
 <?php endif; ?>
 
 <div id="end-of-posts-marker"></div>
