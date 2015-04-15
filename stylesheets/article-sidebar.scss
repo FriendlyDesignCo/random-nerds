@@ -284,10 +284,6 @@ body.admin-bar #end-of-the-net {
   margin-bottom:32px;
 }
 
-.sidebar-hidden #article-sidebar {
-  margin-left:-$article-sidebar-width;
-}
-
 @media screen and (max-width:#{$mobile-breakpoint}) {
   #article-sidebar {
     display:none;

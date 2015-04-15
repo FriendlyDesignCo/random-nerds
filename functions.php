@@ -217,7 +217,10 @@ add_filter('mce_external_plugins', 'TinyMCEButtonPlugin');
 
 function customBodyClass( $classes ) {
   if (isset($_COOKIE['sidebar-state']) && stristr($_COOKIE['sidebar-state'], 'closed') && !is_home())
+  {
 	  $classes[] = 'sidebar-closed';
+    $classes[] = 'sidebar-start-closed';
+  }
   else
     $classes[] = 'sidebar-open';
 	// return the $classes array

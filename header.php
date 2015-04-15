@@ -15,8 +15,8 @@
 
     <?php wp_head(); ?>
   </head>
+  <?php if (is_home()) $_COOKIE['sidebar-state'] = 'open'; ?>
   <body <?php body_class(); ?>>
-    <?php if (is_home()) $_COOKIE['sidebar-state'] = 'open'; ?>
     <?php if (isset($_COOKIE['ignoredCategories']) && !is_home()) $ignoredCategories = json_decode(stripslashes($_COOKIE['ignoredCategories']), true); else $ignoredCategories = array(); ?>
     <div id="avatar-select" class="desktop-only <?php if (count($ignoredCategories) == 0): ?>none-selected<?php endif; ?> <?php if (isset($_COOKIE['sidebar-state']) && stristr($_COOKIE['sidebar-state'], 'closed') && !is_home()): ?>sidebar-hidden<?php else: ?>sidebar-visible<?php endif; ?>">
       <ul>
@@ -63,6 +63,6 @@
     <a href="#" id="collapse-sidebar" class="<?php if (isset($_COOKIE['sidebar-state'])): ?><?php echo stripslashes(str_replace('"','',$_COOKIE['sidebar-state'])); ?><?php endif; ?>"><i class="fa fa-chevron-left"></i></a>
     <section id="content" class="<?php if (isset($_COOKIE['sidebar-state']) && stristr($_COOKIE['sidebar-state'], 'closed')): ?>closed sidebar-hidden<?php else: ?>sidebar-visible<?php endif; ?>">
       <?php include('article-sidebar.php'); ?>
-      <section id="content-body" <?php if (isset($_COOKIE['sidebar-state']) && stristr($_COOKIE['sidebar-state'], 'closed') && !is_home()): ?>style="margin-right:-250px;"<?php else: ?><?php endif; ?>>
+      <section id="content-body" <?php if (isset($_COOKIE['sidebar-state']) && stristr($_COOKIE['sidebar-state'], 'closed') && !is_home()): ?>style="margin-left:250px;margin-right:0;"<?php else: ?><?php endif; ?>>
 
 <?php if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest' && isset($_GET['spage'])) exit(); ?>
