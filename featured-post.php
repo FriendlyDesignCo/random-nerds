@@ -8,7 +8,7 @@ foreach ($categories as $category) {
 }
  ?>
   <article class="<?php echo implode(' ', $categorySlugs); ?> primary-<?php the_field('primary_category'); ?> first-article">
-    <?php if (has_post_thumbnail() || is_home()): ?>
+    <?php if (has_post_thumbnail() || is_home() || get_field('header_mobile') || get_field('header_tablet') || get_field('header_desktop')): ?>
       <div class="article-header">
         <p class="loading">[ This space intentionally left blank. ]</p>
         <?php $thumbnail = false; if (has_post_thumbnail()) { $thumbObject = wp_get_attachment_image_src(get_post_thumbnail_id(), 'single-post-thumbnail'); $thumbnail = $thumbObject[0]; } ?>
@@ -17,7 +17,7 @@ foreach ($categories as $category) {
           <?php if ($thumbnail !== false): ?>data-featured-image="<?php echo $thumbnail; ?>"<?php endif; ?>
           <?php if (get_field('header_mobile')): ?>data-mobile-image="<?php the_field('header_mobile'); ?>"<?php endif; ?>
           <?php if (get_field('header_tablet')): ?>data-tablet-image="<?php the_field('header_tablet'); ?>"<?php endif; ?>
-          <?php if (get_field('header_desktop')): ?>data-desktop-image="<?php the_field('header_desktop'); ?>"<?php endif; ?> 
+          <?php if (get_field('header_desktop')): ?>data-desktop-image="<?php the_field('header_desktop'); ?>"<?php endif; ?>
         >
           <div class="cover">
             <?php if (is_home() && get_field('color_mode') !== 'ghost-mode'): ?><a href="<?php the_permalink(); ?>"><h2 class="fittext"><span><?php the_title(); ?></span></h2></a><?php endif; ?>

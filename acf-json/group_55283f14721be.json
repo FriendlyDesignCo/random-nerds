@@ -3,6 +3,22 @@
     "title": "Header Images",
     "fields": [
         {
+            "key": "field_552e8966edc6d",
+            "label": "Image Sizes",
+            "name": "image_sizes",
+            "prefix": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "Upload the post header images here. If smaller sizes are not uploaded, the page will automatically default to the next largest size available. When placing text on an image, it is best to upload images for each size breakdown to avoid squashed\/stretched text."
+        },
+        {
             "key": "field_55283f1ba56a8",
             "label": "Mobile (480x270)",
             "name": "header_mobile",
@@ -77,5 +93,5 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "modified": 1429111634
+    "modified": 1429113273
 }

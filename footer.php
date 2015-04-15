@@ -42,9 +42,9 @@
           var bodyWidth = $("#content-body").width();
           if (bodyWidth <= 480 && $("div.article-header-image").data('mobile-image'))
             headerImage = $("div.article-header-image").data('mobile-image');
-          if (bodyWidth > 480 && bodyWidth <= 768 && $("div.article-header-image").data('tablet-image'))
+          if ((headerImage === '' || (bodyWidth > 480 && bodyWidth <= 768)) && $("div.article-header-image").data('tablet-image'))
             headerImage = $("div.article-header-image").data('tablet-image');
-          if (bodyWidth > 768 && $("div.article-header-image").data('desktop-image'))
+          if ((headerImage === '' || (bodyWidth > 768)) && $("div.article-header-image").data('desktop-image'))
             headerImage = $("div.article-header-image").data('desktop-image');
           if (headerImage === '' && $("div.article-header-image").data('featured-image'))
             headerImage = $("div.article-header-image").data('featured-image');
