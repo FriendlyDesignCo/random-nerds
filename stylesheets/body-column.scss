@@ -116,6 +116,44 @@
       margin-top:20px;
       max-width:50%;
       line-height: 1.2;
+      position:relative;
+
+      &.center{
+        border: none;
+        box-sizing: border-box;
+        margin: 30px 0;
+        padding: 0 7%;
+        max-width: 100%;
+        float: none;
+        clear: both;
+        &:before, &:after{
+          font-size: 50px;
+          position: absolute;
+          font-weight: 900;
+          font-family: 'Playfair Display', Georgia, serif;
+          @media screen and (max-width: #{$mobile-breakpoint}){
+          font-size: 40px;
+          top: -4px;
+          }
+        }
+        &:before{
+          content:"\275D";
+          left: -5px;
+          top: -13px;
+        }
+        &:after{
+          content:"\275E";
+          right: -5px;
+          top: -11px;
+        }
+        p{
+          line-height: 1.4;
+          font-size: 25px;
+          @media screen and (max-width: #{$mobile-breakpoint}){
+            font-size: 20px;
+          }
+        }
+      }
       @media screen and (max-width: #{$mobile-breakpoint}){
         float: none;
         max-width: 100%;
