@@ -424,13 +424,13 @@
             $("#tip-form input[name=token]").val(token.id);
             $("#tip-form input[name=email]").val(token.email);
             $("#tip-form").find('input, select, a').slideUp();
-            $("#love-it .loader").slideDown();
+            $("#love-it .loader, #love-it .loader-blue").slideDown();
             $.post($("#tip-form").attr('action'), $("#tip-form").serialize(), function(data){
               $("#tip-form").html(data);
             }).done(function(){
-              $("#love-it .loader").slideUp();
+              $("#love-it .loader, #love-it .loader-blue").slideUp();
             }).error(function(data){
-              $("#love-it .loader").slideUp();
+              $("#love-it .loader, #love-it .loader-blue").slideUp();
               $("#tip-form").find('input, select, a').slideDown();
               $("#tip-form").append($("<p class='error'>Sorry, your card was declined - please try again</p>"));
             });

@@ -4,7 +4,7 @@ $("#content-body").on('click', '.more-posts-link a', function(event){
   var linkHolder = $(this).parents(".more-posts-link");
   var addDividerRow = linkHolder.hasClass('add-divider-row');
   $(this).parents(".more-posts-link").find('a.load-more').hide();
-  $(this).parents(".more-posts-link").find('.loader').show();
+  $(this).parents(".more-posts-link").find('.loader, .loader-blue').show();
   var targetURL = $(this).attr('href');
   $.get(targetURL, function(data){
     linkHolder.remove();
