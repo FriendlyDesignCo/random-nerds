@@ -111,7 +111,10 @@
             $("#content-body").css({'margin-left':250});
           }
           else
+          {
             $("#content-body").css({'margin-right':0});
+            $("#content-body").css({'margin-left':250});
+          }
         }
       }
       $("#content-body").resize(checkBodyColumnWidth);
@@ -382,7 +385,7 @@
 
       $("#avatar-select").on('click','a.apply-filter',function(event){
         event.preventDefault();
-        if ($("#collapse-sidebar").hasClass('closed')) {
+        if ($("body").hasClass('sidebar-closed')) {
           $("#collapse-sidebar").click();
         }
         $(".sidebar-loading-message > span").html(refilteringTexts[Math.floor(Math.random()*refilteringTexts.length)]);
