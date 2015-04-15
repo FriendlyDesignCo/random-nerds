@@ -45,7 +45,7 @@
     @include transition(border-color, 0.25s, ease-in-out);
   }
   a:hover .author-image {
-    border:8px solid $blue;
+    border:8px solid $features-color;
   }
   .author-details {
     @media screen and (min-width:($mobile-breakpoint+1)) {

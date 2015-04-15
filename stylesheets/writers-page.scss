@@ -26,6 +26,7 @@
       width:65%;
       margin:0 auto;
       margin-top:10px;
+      opacity: 0.7;
     }
     hr {
       border: none;
@@ -39,7 +40,7 @@
   }
   .author:hover {
     .image img {
-      border:15px solid $header-footer-background;
+      border-color:$features-color;
     }
   }
 }
