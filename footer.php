@@ -95,8 +95,9 @@
           $.cookie('sidebar-state','open');
           $("body").toggleClass('sidebar-open').toggleClass('sidebar-closed');
           $("#content").removeClass('closed');
-          $("#content-body").css({'margin-left':0});
-          $("#content-body").animate({'margin-left':250},500);
+          setTimeout(function(){
+            $("#content-body").css({'margin-right':0});
+          }, 1);
           setTimeout(function(){
             var newHeight = 10;
             if ($("body").hasClass("admin-bar"))
@@ -112,10 +113,9 @@
             newHeight += 32;
           $("#avatar-select").animate({'padding-top':newHeight}, {duration:300, queue:false});
           $("#content").addClass('closed');
-          $("#content-body").css({'margin-left':250});
           setTimeout(function(){
-            $("#content-body").animate({'margin-left':0},500);
-          },500);
+            $("#content-body").css({'margin-right':-250});
+          }, 1);
           setTimeout(function(){
             $("#article-sidebar .article.featured").removeAttr('style');
             $("#article-sidebar .article.featured h2").removeAttr('style');

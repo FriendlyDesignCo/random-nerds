@@ -51,7 +51,7 @@
   }
 }
 #content-body {
-  //@include transition(margin-left, 0.5s, ease-in-out);
+  @include transition(all, 0.5s, ease-in-out);
   overflow-x:hidden;
 
   article a, article a.author-link:hover {

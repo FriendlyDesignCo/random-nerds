@@ -338,18 +338,15 @@ body.sidebar-open {
   #article-sidebar {
     transform: translate3d(0,0,0);
     -webkit-transform: translate3d(0,0,0);
-    transition-delay:0.5s;
-    -webkit-transition-delay:0.5s;
   }
   #collapse-sidebar {
     transform: translate3d(0,0,0);
     -webkit-transform: translate3d(0,0,0);
-    transition-delay:0.5s;
-    -webkit-transition-delay:0.5s;
     left:250px;
   }
   #content-body {
-    margin-left:250px;
+    transform: translate3d(0,0,0);
+    -webkit-transform: translate3d(0,0,0);
   }
 }
 
@@ -368,7 +365,8 @@ body.sidebar-closed {
     left:250px;
   }
   #content-body {
-    margin-left:0;
+    transform: translate3d(-250px,0,0);
+    -webkit-transform: translate3d(-250px,0,0);
   }
   #avatar-select {
     padding-top:65px;

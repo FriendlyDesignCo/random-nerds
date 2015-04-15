@@ -63,6 +63,6 @@
     <a href="#" id="collapse-sidebar" class="<?php if (isset($_COOKIE['sidebar-state'])): ?><?php echo stripslashes(str_replace('"','',$_COOKIE['sidebar-state'])); ?><?php endif; ?>"><i class="fa fa-chevron-left"></i></a>
     <section id="content" class="<?php if (isset($_COOKIE['sidebar-state']) && stristr($_COOKIE['sidebar-state'], 'closed')): ?>closed sidebar-hidden<?php else: ?>sidebar-visible<?php endif; ?>">
       <?php include('article-sidebar.php'); ?>
-      <section id="content-body">
+      <section id="content-body" <?php if (isset($_COOKIE['sidebar-state']) && stristr($_COOKIE['sidebar-state'], 'closed') && !is_home()): ?>style="margin-right:-250px;"<?php else: ?><?php endif; ?>>
 
 <?php if (isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] == 'XMLHttpRequest' && isset($_GET['spage'])) exit(); ?>
