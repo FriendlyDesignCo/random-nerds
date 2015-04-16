@@ -121,6 +121,9 @@ body.admin-bar #collapse-sidebar {
   &:not(.disabled) .hover {
     background-position:-5px -398px;
   }
+  &:not(.disabled):hover {
+    background-position:-5px -286px;
+  }
 }
 .icon-gaming {
   background-position:-5px -118px;
@@ -133,9 +136,12 @@ body.admin-bar #collapse-sidebar {
   &:not(.disabled) .hover {
     background-position:-5px -174px;
   }
+  &:not(.disabled):hover {
+    background-position:-5px -62px;
+  }
 }
 .icon-tech {
-  background-position:-5px -789px;
+  background-position:-5px -790px;
   &.disabled {
     background-position:-5px -677px;
   }
@@ -144,6 +150,9 @@ body.admin-bar #collapse-sidebar {
   }
   &:not(.disabled) .hover {
     background-position:-5px -845px;
+  }
+  &:not(.disabled):hover {
+    background-position:-5px -734px;
   }
 }
 .icon-pop-culture {
@@ -156,6 +165,9 @@ body.admin-bar #collapse-sidebar {
   }
   &:not(.disabled) .hover {
     background-position:-6px -622px;
+  }
+  &:not(.disabled):hover {
+    background-position:-5px -510px;
   }
 }
 
