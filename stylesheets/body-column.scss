@@ -744,6 +744,7 @@
           @include transition(opacity, 0.25s, ease-in-out);
           font-size: 80px;
           width: 80%;
+          padding-left:15px;
           @media screen and (max-width: 1140px){
             font-size: 50px;
             line-height: 110%;
@@ -792,6 +793,7 @@
         height:340px;
         margin:0 auto;
         padding-top:50px;
+        padding-left:15px;
         text-align:left;
         span {
           line-height:100%;
