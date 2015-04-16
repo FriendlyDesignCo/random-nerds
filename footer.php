@@ -183,15 +183,28 @@
           }
         }
       });
-      $(window).scroll(function(){
+      var mobileScrolling = function() {
         if ($(window).width() <= 750) {
           if ($(window).scrollTop() > 25) {
             $("#menu-open, #mobile-home").addClass('fixed');
           } else {
             $("#menu-open, #mobile-home").removeClass('fixed');
           }
+
+          if ($('body').hasClass('home') || $('body').hasClass('single-post')) {
+            if ($(window).scrollTop() < $(".page-header").first().offset().top+parseInt($(".page-header").first().css('padding-bottom'))) {
+              $("#mobile-home:visible").fadeOut();
+            } else {
+              $("#mobile-home:hidden").fadeIn();
+            }
+          }
         }
+      };
+
+      $(window).scroll(function(){
+        mobileScrolling();
       });
+      mobileScrolling();
 
       <?php /* Related Posts Leveling */ ?>
       if ($("#content-body").width() > 750) {

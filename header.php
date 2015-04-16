@@ -34,7 +34,7 @@
       <span class="icon-bar"></span>
       <div class="clearfix"></div>
     </div>
-    <div id="mobile-home">
+    <div id="mobile-home" <?php if (is_singular('post') || is_home()): ?>style="display:none;"<?php endif; ?>>
       <a href="/"><img src="<?php echo bloginfo('template_url'); ?>/images/small_signature.png"></a>
     </div>
     <div id="main-menu" style="display:none;">
