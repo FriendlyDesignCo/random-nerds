@@ -198,6 +198,8 @@
               $("#mobile-home:hidden").fadeIn();
             }
           }
+        } else {
+          $("#mobile-home:visible").hide();
         }
       };
 
