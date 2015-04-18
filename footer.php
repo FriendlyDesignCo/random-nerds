@@ -483,7 +483,7 @@
           name: 'RandomNerds',
           description: '<?php global $stripeDescription; echo $stripeDescription; ?>',
           amount: $("#tip-form input[name=tip_value]").val(),
-          panelLabel: 'Tip {{amount}}'
+          panelLabel: 'Patronize {{amount}}'
         })
       });
       $("#tip-form").on('click', '#one-click-subscribe', function(event){
