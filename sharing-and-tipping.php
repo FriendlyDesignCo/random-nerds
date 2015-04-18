@@ -28,7 +28,7 @@
         </div>
       </div>
       <?php global $stripeDescription; $stripeDescription = 'Patronize ' . get_the_author(); ?>
-      <a href="#" id="tip-button" class="button" style="color:#fff;">Support Now
+      <a href="#" id="tip-button" class="button" style="color:#fff;">Patronize Now
         <span class="circle"><i class="fa fa-arrow-right"></i></span>
       </a>
       <p class="paypal-link"><a href="#" id="paypal-tip-button">Or use PayPal if you're a big fan of that.</a></p>
