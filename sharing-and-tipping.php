@@ -18,7 +18,7 @@
       <input type="hidden" name="author" value="<?php the_author(); ?>">
       <input type="hidden" name="email">
       <input type="hidden" name="token">
-      <input type="hidden" name="article" value="http://<?php echo $_SERVER['HTTP_HOST']; ?>/<?php echo $_SERVER['REQUEST_URI']; ?>">
+      <input type="hidden" name="article" value="http://<?php echo $_SERVER['HTTP_HOST']; ?><?php echo $_SERVER['REQUEST_URI']; ?>">
       <input type="hidden" name="tip_value" value="100">
       <div class="value-select">
         $<span class="amount">1</span>
