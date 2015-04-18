@@ -44,7 +44,7 @@
       <input type="hidden" name="business" value="<?php echo PAYPAL_EMAIL_ADDRESS; ?>">
       <input type="hidden" name="lc" value="US">
       <input type="hidden" name="item_name" value="Support <?php the_author(); ?>">
-      <input type="hidden" name="item_number" value="<?php the_author(); ?>">
+      <input type="hidden" name="item_number" value="<?php the_title(); ?>">
       <input type="hidden" name="amount" value="1.00" id="paypal-amount">
       <input type="hidden" name="currency_code" value="USD">
       <input type="hidden" name="button_subtype" value="services">
