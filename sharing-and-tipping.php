@@ -27,7 +27,7 @@
           <ul><?php foreach (array(1,2,3,5,10,20,50,100,9001) as $value): ?><li data-value="<?php echo $value; ?>">$<?php echo $value; ?></li><?php endforeach; ?></ul>
         </div>
       </div>
-      <?php global $stripeDescription; $stripeDescription = 'Tip ' . get_the_author(); ?>
+      <?php global $stripeDescription; $stripeDescription = 'Patronize ' . get_the_author(); ?>
       <a href="#" id="tip-button" class="button" style="color:#fff;">Support Now
         <span class="circle"><i class="fa fa-arrow-right"></i></span>
       </a>
@@ -43,7 +43,7 @@
       <?php require_once('extra-config.php'); ?>
       <input type="hidden" name="business" value="<?php echo PAYPAL_EMAIL_ADDRESS; ?>">
       <input type="hidden" name="lc" value="US">
-      <input type="hidden" name="item_name" value="Support <?php the_author(); ?>">
+      <input type="hidden" name="item_name" value="Patronize <?php the_author(); ?>">
       <input type="hidden" name="item_number" value="<?php the_title(); ?>">
       <input type="hidden" name="amount" value="1.00" id="paypal-amount">
       <input type="hidden" name="currency_code" value="USD">
