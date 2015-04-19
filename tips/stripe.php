@@ -13,7 +13,8 @@ try
     'description' => 'Tip for ' . $_POST['author'],
     'metadata' => array(
       'article' => $_POST['article']
-    )
+    ),
+    'receipt_email' => $_POST['email']
   ));
 }
 catch (\Stripe\Error\Card $e)
