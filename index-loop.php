@@ -1,4 +1,6 @@
 <?php while (have_posts()): the_post();
+if (isset($skipID) && get_the_ID() === $skipID)
+  continue;
 $categories = get_the_category();
 $categoryNames = array(); $categorySlugs = array(); $categoryLinks = array();
 $neutralColor = true; $categoryCount = 0;
