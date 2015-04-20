@@ -15,7 +15,7 @@
   $page = isset($_GET['spage']) ? $_GET['spage'] : 1;
   $sidebarQuery = new WP_Query(array('posts_per_page' => ot_get_option('sidebar_post_count'), 'paged' => $page));
   while ($sidebarQuery->have_posts()): $sidebarQuery->the_post();
-  $categories = get_the_category();
+  $categories = get_ordered_categories();
   $categoryNames = array(); $categorySlugs = array();
   $hidden = true;
   foreach ($categories as $category) {
@@ -45,7 +45,7 @@
       <?php /* REGULAR POST */ ?>
       <div class="post" data-post-id="<?php the_ID(); ?>">
         <a href="<?php the_permalink(); ?>">
-          <div class="article filterable <?php if ($hidden): ?>hidden<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?>">
+          <div class="article filterable <?php if ($hidden): ?>hidden<?php endif; ?> <?php echo implode(' ', $categorySlugs); ?> primary-<?php the_field('primary_category'); ?>">
             <div class="cover">
               <div><div class="random-angle-<?php echo rand(5,15); ?>"><?php the_field('post_subtitle'); ?></div></div>
             </div>

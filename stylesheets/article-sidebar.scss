@@ -147,17 +147,20 @@ body.admin-bar #end-of-the-net {
     border:1px solid #fff;
     @include transition(all, 0.1s, ease-in-out);
   }
-  .article.category-politics:hover {
+  .article.primary-politics:hover {
     background-color:$politics-color;
   }
-  .article.category-gaming:hover {
+  .article.primary-gaming:hover {
     background-color:$gaming-color;
   }
-  .article.category-tech:hover {
+  .article.primary-tech:hover {
     background-color:$tech-color;
   }
-  .article.category-pop-culture:hover {
+  .article.primary-pop-culture:hover {
     background-color:$pop-culture-color;
+  }
+  .article.primary-features:hover {
+    background-color:$features-color;
   }
 
   h3.category {
