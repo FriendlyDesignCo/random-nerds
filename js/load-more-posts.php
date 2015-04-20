@@ -1,5 +1,7 @@
 $("#content-body").on('click', '.more-posts-link a', function(event){
   event.preventDefault();
+  if ($(this).hasClass('disabled'))
+    return false;
 
   var linkHolder = $(this).parents(".more-posts-link");
   var addDividerRow = linkHolder.hasClass('add-divider-row');

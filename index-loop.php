@@ -46,7 +46,7 @@ foreach (get_ordered_categories() as $category)
 <?php else: ?>
   <div class="comment-divider more-posts-link">
     <hr>
-    <div class="plus"><a href='#'><span>-</span></a></div>
+    <div class="plus"><a href='#' class="disabled"><span>-</span></a></div>
     <h2 class="text-center load-done">That's it!</h2>
   </div>
 <?php endif; ?>
