@@ -98,7 +98,7 @@ function excludeStatusPosts($query)
 {
   // The === 2 is to catch Yuzo's query for two related posts and eliminate
   // the "status" post format. We also eliminate it on the main query
-  if (($query->is_main_query() || $query->query_vars['posts_per_page'] === 2) && !is_admin())
+  if (($query->is_main_query() || ($query->query_vars['showposts'] === 2) && !is_admin())
   {
     $taxQuery = array(array(
       'taxonomy' => 'post_format',
