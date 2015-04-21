@@ -8,6 +8,7 @@ foreach ($categories as $category) {
 }
  ?>
   <article class="<?php echo implode(' ', $categorySlugs); ?> primary-<?php the_field('primary_category'); ?> first-article">
+    <?php $articleID = get_the_ID(); ?>
     <?php if (has_post_thumbnail() || is_home() || get_field('header_mobile') || get_field('header_tablet') || get_field('header_desktop')): ?>
       <div class="article-header">
         <p class="loading">[ This space intentionally left blank. ]</p>
@@ -77,7 +78,7 @@ foreach ($categories as $category) {
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = '<?php echo ot_get_option('disqus_shortname'); ?>';
-      var disqus_identifier = 'post_<?php the_ID(); ?>';
+      var disqus_identifier = 'post_<?php $articleID; ?>';
       (function() {
           var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
           dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
