@@ -629,7 +629,7 @@
           };
 
           target.bind( 'mouseleave', remove_tooltip );
-          tooltip.bind( 'click', remove_tooltip );
+          setTimeout(function(){tooltip.bind( 'click', remove_tooltip );}, 1000);
       });
     });
   </script>
