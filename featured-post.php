@@ -7,8 +7,8 @@ foreach ($categories as $category) {
   $categoryLinks[] = '<a href="' . get_category_link($category->cat_ID) . '">' . $category->cat_name . '</a>';
 }
  ?>
+ <?php $articleID = get_the_ID(); ?>
   <article class="<?php echo implode(' ', $categorySlugs); ?> primary-<?php the_field('primary_category'); ?> first-article">
-    <?php $articleID = get_the_ID(); ?>
     <?php if (has_post_thumbnail() || is_home() || get_field('header_mobile') || get_field('header_tablet') || get_field('header_desktop')): ?>
       <div class="article-header">
         <p class="loading">[ This space intentionally left blank. ]</p>
