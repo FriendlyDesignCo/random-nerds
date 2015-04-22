@@ -98,7 +98,7 @@ function excludeStatusPosts($query)
 {
   // The === 2 is to catch Yuzo's query for two related posts and eliminate
   // the "status" post format. We also eliminate it on the main query
-  if (($query->is_main_query() || ($query->query_vars['showposts'] === 2) && !is_admin())
+  if (($query->is_main_query() || $query->query_vars['showposts'] === 2) && !is_admin())
   {
     $taxQuery = array(array(
       'taxonomy' => 'post_format',
@@ -243,19 +243,19 @@ add_action( 'login_enqueue_scripts', 'my_login_logo' );
 // Facebook Open Graph
 add_action('wp_head', 'add_fb_open_graph_tags');
 function add_fb_open_graph_tags() {
-        if (is_single()) {
-                global $post;
-                if(get_the_post_thumbnail($post->ID, 'thumbnail')) {
-                        $thumbnail_id = get_post_thumbnail_id($post->ID);
-                        $thumbnail_object = get_post($thumbnail_id);
-                        $image = $thumbnail_object->guid;
-                } else {
-                        $image = get_field('header_mobile', $post->ID);
-                }
-                //$description = get_bloginfo('description');
-                $description = my_excerpt( $post->post_content, $post->post_excerpt );
-                $description = strip_tags($description);
-                $description = str_replace("\"", "'", $description);
+	if (is_single()) {
+		global $post;
+		if(get_the_post_thumbnail($post->ID, 'thumbnail')) {
+			$thumbnail_id = get_post_thumbnail_id($post->ID);
+			$thumbnail_object = get_post($thumbnail_id);
+			$image = $thumbnail_object->guid;
+		} else {
+			$image = get_field('header_mobile', $post->ID);
+		}
+		//$description = get_bloginfo('description');
+		$description = my_excerpt( $post->post_content, $post->post_excerpt );
+		$description = strip_tags($description);
+		$description = str_replace("\"", "'", $description);
 ?>
 <meta property="og:title" content="<?php the_title(); ?>" />
 <meta property="og:type" content="article" />
@@ -266,29 +266,29 @@ function add_fb_open_graph_tags() {
 <meta property="og:description" content="<?php echo $description ?>" />
 <meta property="og:site_name" content="<?php echo get_bloginfo('name'); ?>" />
 
-<?php   }
+<?php 	}
 }
 
 function my_excerpt($text, $excerpt){
 
-  if ($excerpt) return $excerpt;
+    if ($excerpt) return $excerpt;
 
-  $text = strip_shortcodes( $text );
+    $text = strip_shortcodes( $text );
 
-  $text = apply_filters('the_content', $text);
-  $text = str_replace(']]>', ']]&gt;', $text);
-  $text = strip_tags($text);
-  $excerpt_length = apply_filters('excerpt_length', 55);
-  $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
-  $words = preg_split("/[\n
-     ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
-  if ( count($words) > $excerpt_length ) {
-    array_pop($words);
-    $text = implode(' ', $words);
-    $text = $text . $excerpt_more;
-  } else {
-    $text = implode(' ', $words);
-  }
+    $text = apply_filters('the_content', $text);
+    $text = str_replace(']]>', ']]&gt;', $text);
+    $text = strip_tags($text);
+    $excerpt_length = apply_filters('excerpt_length', 55);
+    $excerpt_more = apply_filters('excerpt_more', ' ' . '[...]');
+    $words = preg_split("/[\n
+	 ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
+    if ( count($words) > $excerpt_length ) {
+            array_pop($words);
+            $text = implode(' ', $words);
+            $text = $text . $excerpt_more;
+    } else {
+            $text = implode(' ', $words);
+    }
 
-  return apply_filters('wp_trim_excerpt', $text, $excerpt);
+    return apply_filters('wp_trim_excerpt', $text, $excerpt);
 }
