@@ -143,7 +143,9 @@ function contactFormMailchimpSubscribe($form)
     require_once(__DIR__.'/mailchimp-api/src/Mailchimp.php');
 
     $mc = new Mailchimp(MAILCHIMP_API_KEY);
-    $mc->lists->subscribe(MAILCHIMP_LIST_ID, array('email' => $_POST['your-email']));
+    $mc->lists->subscribe(MAILCHIMP_LIST_ID, array('email' => $_POST['your-email']),
+      array('groupings' => array(array('id' => 17941, 'groups' => array('RandomNerds.com'))))
+    );
   }
 }
 add_action('wpcf7_mail_sent', 'contactFormMailchimpSubscribe');
@@ -154,7 +156,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['mailchimp_email_subscr
   require_once(__DIR__.'/mailchimp-api/src/Mailchimp.php');
 
   $mc = new Mailchimp(MAILCHIMP_API_KEY);
-  $mc->lists->subscribe(MAILCHIMP_LIST_ID, array('email' => $_POST['mailchimp_email_subscribe']));
+  $mc->lists->subscribe(MAILCHIMP_LIST_ID, array('email' => $_POST['mailchimp_email_subscribe']),
+    array('groupings' => array(array('id' => 17941, 'groups' => array('RandomNerds.com'))))
+  );
   exit();
 }
 
