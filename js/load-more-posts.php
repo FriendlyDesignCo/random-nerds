@@ -22,6 +22,9 @@ $("#content-body").on('click', '.more-posts-link a', function(event){
       $("#end-of-posts-marker").prev().append($('<div class="divider-row"><hr class="divider"></div>'));
     }
     newPosts.insertBefore($("#end-of-posts-marker"));
+    $("span.colorize-categories a").each(function(){
+      $(this).addClass('category-'+$(this).html().toLowerCase().replace(' ','-'));
+    });
     updateIgnoredCategories(true, false);
     $(data).find('.more-posts-link').insertBefore($("#end-of-posts-marker"));
   });
