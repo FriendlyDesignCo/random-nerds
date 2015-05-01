@@ -3,7 +3,7 @@
   <p>(That helps us.)</p>
   <p class="sharing-links">
     <a target="_blank" href="https://www.facebook.com/sharer.php?u=<?php echo urlencode('http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']); ?>" class="facebook"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-facebook fa-stack-1x fa-inverse"></i></span></a>
-    <a target="_blank" href="https://www.twitter.com/share?text=<?php echo urlencode(get_the_title() . ' on @random_nerds'); ?>" class="twitter"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a>
+    <a target="_blank" href="https://www.twitter.com/share?text=<?php echo urlencode(html_entity_decode(get_the_title()) . ' on @random_nerds'); ?>" class="twitter"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-twitter fa-stack-1x fa-inverse"></i></span></a>
     <a target="_blank" href="http://www.reddit.com/submit?url=<?php echo urlencode('http://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']); ?>&amp;title=<?php echo urlencode(get_the_title()); ?>" class="reddit"><span class="fa-stack fa-lg"><i class="fa fa-circle fa-stack-2x"></i><i class="fa fa-reddit fa-stack-1x fa-inverse"></i></span></a>
   </p>
 </section>
