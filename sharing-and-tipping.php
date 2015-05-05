@@ -18,7 +18,7 @@
       <input type="hidden" name="author" value="<?php the_author(); ?>">
       <input type="hidden" name="email">
       <input type="hidden" name="token">
-      <input type="hidden" name="article" value="http://<?php echo $_SERVER['HTTP_HOST']; ?><?php echo $_SERVER['REQUEST_URI']; ?>">
+      <input type="hidden" name="article" value="<?php echo htmlentities(get_the_title()); ?>">
       <input type="hidden" name="tip_value" value="100">
       <div class="value-select">
         $<span class="amount">1</span>
@@ -43,7 +43,7 @@
       <?php require_once('extra-config.php'); ?>
       <input type="hidden" name="business" value="<?php echo PAYPAL_EMAIL_ADDRESS; ?>">
       <input type="hidden" name="lc" value="US">
-      <input type="hidden" name="item_name" value="Patronize <?php the_author(); ?>">
+      <input type="hidden" name="item_name" value="Patronizing <?php the_author(); ?>">
       <input type="hidden" name="item_number" value="<?php the_title(); ?>">
       <input type="hidden" name="amount" value="1.00" id="paypal-amount">
       <input type="hidden" name="currency_code" value="USD">
