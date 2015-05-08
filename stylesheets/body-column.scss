@@ -661,6 +661,7 @@
         float:none;
         margin: 5px auto 0;
         width: 90%;
+        padding-left:40px;
         transform:rotate(-0.5deg);
         -webkit-transform:rotate(-0.5deg);
         -moz-transform:rotate(-0.5deg);
@@ -668,6 +669,7 @@
           display:none;
         }
         img {
+          margin-left:-40px;
           float:left;
           padding-right:10px;
           transform:rotate(-75deg);
