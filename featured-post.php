@@ -74,7 +74,7 @@ foreach ($categories as $category) {
       <?php endif; ?>
     </div>
   </article>
-  <?php if (is_single()): ?>
+  <?php if (is_single() && get_post_status($articleID) === 'publish'): ?>
     <div id="disqus_thread"></div>
     <script type="text/javascript">
       var disqus_shortname = '<?php echo ot_get_option('disqus_shortname'); ?>';
