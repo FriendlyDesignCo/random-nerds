@@ -481,7 +481,7 @@
         event.preventDefault();
         stripeHandler.open({
           name: 'Random Nerds',
-          description: '<?php global $stripeDescription; echo $stripeDescription; ?>',
+          description: '<?php global $stripeDescription; echo addslashes($stripeDescription); ?>',
           amount: $("#tip-form input[name=tip_value]").val(),
           panelLabel: 'Patronize {{amount}}'
         })
