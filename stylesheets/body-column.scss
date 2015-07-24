@@ -900,7 +900,7 @@
       a.article-title:hover, #related-posts a:hover, a.author-link:hover {
         color:$c-color;
       }
-      p a {
+      p a, ul a, ol a {
         color:#{$c-color};
         &:hover {
           border-color:#{$c-color};
