@@ -240,21 +240,23 @@
        });
       };
       var $fixed = $("#article-sidebar");
-      var loadMoreSidebarPosts = function(){
+      var loadMoreSidebarPosts = function(scrollToBottom){
+        scrollToBottom = typeof scrollToBottom !== 'undefined' ? scrollToBottom : false;
         var targetURL = $("a.load-more-sidebar-pages").last().attr('href');
         if (targetURL == undefined)
           return;
         $("a.load-more-sidebar-pages").remove();
         $("#article-sidebar .loader-container").toggleClass('hidden');
-        $fixed.animate({scrollTop:$fixed.get(0).scrollHeight},400);
+        if (scrollToBottom)
+          $fixed.animate({scrollTop:$fixed.get(0).scrollHeight},400);
         $.get(targetURL, function(data){
           var newPosts = $(data).find('#sidebar-posts div.post');
           newPosts.each(function(){
             var post = $(this);
-            post.find('filterable').addClass('hidden');
+            post.find('filterable').css({'display':'none'}).addClass('hidden').css({'display':'inherit'});
           });
           $("#sidebar-posts").append(newPosts);
-          updateIgnoredCategories(true, false);
+          updateIgnoredCategories(false, false);
           $("#article-sidebar .loader-container").slideUp(300,function(){$("#article-sidebar .loader-container").addClass("hidden").removeAttr('style');});
           $(data).find('a.load-more-sidebar-pages').insertBefore($(".loader-container"));
           if ($(data).find('a.load-more-sidebar-pages').length == 0) {
@@ -265,9 +267,9 @@
       };
       $("#article-sidebar").on('click','a.load-more-sidebar-pages', function(event){
         event.preventDefault();
-        loadMoreSidebarPosts();
+        loadMoreSidebarPosts(true);
       });
-      $fixed.whenScrolledToBottom(loadMoreSidebarPosts, 0);
+      $fixed.whenScrolledToBottom(function(){loadMoreSidebarPosts(false);}, 0);
 
       <?php /* Animated pull quotes */ ?>
       $.fn.blockQuoteBecomesVisible = function (cback_fxn, offset) {
